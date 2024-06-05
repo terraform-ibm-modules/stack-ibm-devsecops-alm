@@ -1,33 +1,29 @@
 package tests
 
 import (
-	"fmt"
 	"github.com/stretchr/testify/assert"
+	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/common"
 	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/testprojects"
-	"os"
 	"testing"
 )
 
 func TestProjectsFullTest(t *testing.T) {
-
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 		Testing: t,
+		Prefix:  "alm-stack",
 		StackConfigurationOrder: []string{
-			"primary-da",
-			"secondary-da",
+			"1 - Infrastructure for Application Lifecycle Management",
+			"2 - Application Lifecycle Management"
 		},
 	})
-	options.StackMemberInputs = map[string]map[string]interface{}{
-		"primary-da": {
-			"prefix": fmt.Sprintf("p%s", options.Prefix),
-		},
-		"secondary-da": {
-			"prefix": fmt.Sprintf("s%s", options.Prefix),
-		},
+
+	privateKey, _, kerr := common.GenerateTempGPGKeyPairBase64()
+	if kerr != nil {
+		t.Fatal(kerr)
 	}
 	options.StackInputs = map[string]interface{}{
-		"resource_group_name": options.ResourceGroup,
-		"ibmcloud_api_key":    os.Getenv("TF_VAR_ibmcloud_api_key"),
+		"ibmcloud_api_key":            options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"],
+		"prefix":                      options.Prefix,
 	}
 
 	err := options.RunProjectsTest()
@@ -37,3 +33,4 @@ func TestProjectsFullTest(t *testing.T) {
 		t.Error("TestProjectsFullTest Failed")
 	}
 }
+

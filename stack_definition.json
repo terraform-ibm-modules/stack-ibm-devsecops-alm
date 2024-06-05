@@ -1,70 +1,123 @@
 {
   "inputs": [
     {
-      "name": "ibmcloud_api_key",
+      "name": "region",
       "required": true,
-      "type": "password",
-      "hidden": false
+      "type": "string",
+      "hidden": false,
+      "default": "us-south"
     },
     {
-      "name": "resource_group_name",
+      "name": "prefix",
       "required": false,
       "type": "string",
-      "hidden": false
+      "hidden": false,
+      "default": "devsecops"
+    },
+    {
+      "name": "Application Repositories",
+      "required": false,
+      "type": "json",
+      "hidden": false,
+      "default": "ALM"
+    },
+    {
+      "name": "Pipeline Environment Properties",
+      "required": false,
+      "type": "json",
+      "hidden": false,
+      "default": "ALM"
+    },
+    {
+      "name": "Toolchains",
+      "required": false,
+      "type": "json",
+      "hidden": false,
+      "default": "ALL / CI Only/ CD only/ CC Only"
     }
   ],
   "members": [
     {
+      "name": "1 - Infrastructure for Application Lifecycle Management",
+      "version_locator": "823fc106-60db-41df-96cc-b84703382b47.61c1987d-9164-452f-bcaf-bfb856279bb9",
       "inputs": [
         {
-          "name": "resource_group",
-          "value": "ref:../../inputs/resource_group_name"
-        },
-        {
-          "name": "resource_tags",
-          "value": "[]"
-        },
-        {
-          "name": "testing",
-          "value": "__NULL__"
-        },
-        {
-          "name": "prefix",
-          "value": "primary"
-        },
-        {
           "name": "ibmcloud_api_key",
-          "value": "ref:../../inputs/ibmcloud_api_key"
+          "value": ""
+        },
+        {
+          "name": "region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "resource_group",
+          "value": "ref:../../inputs/prefix"
         }
-      ],
-      "name": "primary-da",
-      "version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.a8887a40-ff3f-4ee8-bcfe-bcfd55360074"
+      ]
     },
     {
+      "name": "2 - Application Lifecycle Management",
+      "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.3202356b-d72a-4263-af31-46d0f33f6614-global",
       "inputs": [
         {
-          "name": "resource_group",
-          "value": "ref:../../inputs/resource_group_name"
-        },
-        {
-          "name": "resource_tags",
-          "value": "[]"
-        },
-        {
-          "name": "testing",
-          "value": "__NULL__"
-        },
-        {
-          "name": "prefix",
-          "value": "secondary"
-        },
-        {
           "name": "ibmcloud_api_key",
-          "value": "ref:../../inputs/ibmcloud_api_key"
+          "value": ""
+        },
+        {
+          "name": "toolchain_region",
+          "value": "ref:../../inputs/region"
+        },
+        {
+          "name": "toolchain_resource_group",
+          "value": "ref:../1 - Infrastructure for Application Lifecycle Management/outputs/resource_group_name"
+        },
+        {
+          "name": "sm_secret_group",
+          "value": "ref:../1 - Infrastructure for Application Lifecycle Management/outputs/secrets_manager_secrets_group"
+        },
+        {
+          "name": "sm_resource_group",
+          "value": "ref:../1 - Infrastructure for Application Lifecycle Management/outputs/secrets_manager_resource_group_name"
+        },
+        {
+          "name": "sm_name",
+          "value": "ref:../1 - Infrastructure for Application Lifecycle Management/outputs/secrets_manager_name"
+        },
+        {
+          "name": "sm_location",
+          "value": "ref:../1 - Infrastructure for Application Lifecycle Management/outputs/secrets_manager_location"
+        },
+        {
+          "name": "registry_namespace",
+          "value": "ref:../1 - Infrastructure for Application Lifecycle Management/outputs/icr_namespace"
+        },
+        {
+          "name": "repositories_prefix",
+          "value": "ref:../../inputs/prefix"
+        },
+        {
+          "name": "cos_bucket_name",
+          "value": "ref:../1 - Infrastructure for Application Lifecycle Management/outputs/cos_bucket_name"
+        },
+        {
+          "name": "cos_endpoint",
+          "value": "ref:../1 - Infrastructure for Application Lifecycle Management/outputs/cos_s3_endpoint_direct"
         }
-      ],
-      "name": "secondary-da",
-      "version_locator": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd.a8887a40-ff3f-4ee8-bcfe-bcfd55360074"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "compliance-ci-toolchain",
+      "value": "ref:./members/2 - Application Lifecycle Management/outputs/compliance_ci_toolchain_url"
+    },
+    {
+      "name": "compliance-cd-toolchain",
+      "value": "ref:./members/2 - Application Lifecycle Management/outputs/compliance_cd_toolchain_url"
+    },
+    {
+      "name": "compliance-cc-toolchain",
+      "value": "ref:./members/2 - Application Lifecycle Management/outputs/compliance_cc_toolchain_url"
     }
   ]
 }
