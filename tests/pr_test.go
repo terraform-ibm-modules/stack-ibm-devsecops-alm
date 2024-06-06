@@ -17,13 +17,11 @@ func TestProjectsFullTest(t *testing.T) {
 		},
 	})
 
-	privateKey, _, kerr := common.GenerateTempGPGKeyPairBase64()
-	if kerr != nil {
-		t.Fatal(kerr)
-	}
 	options.StackInputs = map[string]interface{}{
 		"ibmcloud_api_key":            options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"],
 		"prefix":                      options.Prefix,
+		"prefix":                      options.Region
+		
 	}
 
 	err := options.RunProjectsTest()
