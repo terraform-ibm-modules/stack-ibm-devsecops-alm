@@ -20,7 +20,7 @@ func TestProjectsFullTest(t *testing.T) {
 	options.StackInputs = map[string]interface{}{
 		"ibmcloud_api_key":            options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"],
 		"prefix":                      options.Prefix,
-		"prefix":                      options.Region
+		"region":                      options.Region
 		
 	}
 
