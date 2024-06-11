@@ -13,27 +13,6 @@
       "type": "string",
       "hidden": false,
       "default": "devsecops"
-    },
-    {
-      "name": "Application Repositories",
-      "required": false,
-      "type": "json",
-      "hidden": false,
-      "default": "ALM"
-    },
-    {
-      "name": "Pipeline Environment Properties",
-      "required": false,
-      "type": "json",
-      "hidden": false,
-      "default": "ALM"
-    },
-    {
-      "name": "Toolchains",
-      "required": false,
-      "type": "json",
-      "hidden": false,
-      "default": "ALL / CI Only/ CD only/ CC Only"
     }
   ],
   "members": [
