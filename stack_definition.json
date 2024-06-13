@@ -96,7 +96,7 @@
 					"value": "ref:../../inputs/region"
 				}
 			],
-			"name": "3 - core-security-services-en",
+			"name": "2 - core-security-services-en",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.32981b83-1aba-493e-be15-9c951578b1fb-global"
 		},
 		{
@@ -123,7 +123,7 @@
 				},
 				{
 					"name": "existing_en_crn",
-					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -135,14 +135,14 @@
 				},
 				{
 					"name": "existing_en_crn",
-					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
 				},
 				{
 					"name": "scc_service_plan",
 					"value": "ref:../../inputs/scc_service_plan"
 				}
 			],
-			"name": "4 - core-security-services-scc",
+			"name": "3 - core-security-services-scc",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.09aeab5e-2f02-4a86-a281-844fa19d969d-global"
 		},
 		{
@@ -169,19 +169,19 @@
 				},
 				{
 					"name": "existing_event_notification_instance_crn",
-					"value": "ref:../../members/3 - core-security-services-en/outputs/crn"
+					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
 				},
 				{
 					"name": "service_plan",
 					"value": "ref:../../inputs/sm_service_plan"
 				}
 			],
-			"name": "4a - core-security-services-sm",
+			"name": "4 - core-security-services-sm",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ba032ffb-286c-4a00-ad79-ae9e09cea687-global"
 		},
     {
       "name": "5 - Infrastructure for Application Lifecycle Management",
-      "version_locator": "823fc106-60db-41df-96cc-b84703382b47.2f65a220-5a21-45f1-ad9e-993dccef82e0",
+      "version_locator": "823fc106-60db-41df-96cc-b84703382b47.183d434e-b776-4e2d-93ea-19afde3fc4d4",
       "inputs": [
         {
           "name": "ibmcloud_api_key",
@@ -197,15 +197,15 @@
 				},
         {
 					"name": "sm_instance_id",
-					"value": "ref:../../members/4a - core-security-services-sm/outputs/secrets_manager_id"
+					"value": "ref:../../members/4 - core-security-services-sm/outputs/secrets_manager_id"
 				},
         {
 					"name": "resource_group_id",
-					"value": "ref:../../members/4a - core-security-services-sm/outputs/resource_group_id"
+					"value": "ref:../../members/4 - core-security-services-sm/outputs/resource_group_id"
 				},
         {
 					"name": "sm_location",
-					"value": "ref:../../members/4a - core-security-services-sm/outputs/secrets_manager_region"
+					"value": "ref:../../members/4 - core-security-services-sm/outputs/secrets_manager_region"
 				},
         {
 					"name": "sm_group_endpoint_type",
@@ -255,7 +255,7 @@
         },
         {
           "name": "cos_bucket_name",
-          "value": "ref:../3 - core-security-services-en/outputs/at_cos_target_bucket_name"
+          "value": "ref:../5 - Infrastructure for Application Lifecycle Management/outputs/cos_bucket_name"
         }
       ]
     }

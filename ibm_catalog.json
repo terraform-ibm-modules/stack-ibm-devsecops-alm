@@ -1,9 +1,9 @@
 {
 	"products": [
 		{
-			"label": "ALM Demo v3",
-			"name": "ALM_Demo_Security_Stack2",
-			"version": "0.0.3-dev",
+			"label": "ALM Demo v4",
+			"name": "ALM_Demo_Security_Stack4",
+			"version": "0.0.4-dev",
 			"product_kind": "solution",
 			"tags": [
 				"enterprise_app"
