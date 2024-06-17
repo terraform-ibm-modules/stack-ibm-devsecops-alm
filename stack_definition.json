@@ -135,7 +135,7 @@
 		},
     {
       "name": "4 - Infrastructure for Application Lifecycle Management",
-      "version_locator": "823fc106-60db-41df-96cc-b84703382b47.183d434e-b776-4e2d-93ea-19afde3fc4d4",
+      "version_locator": "823fc106-60db-41df-96cc-b84703382b47.996090dc-ab36-4181-832f-328d01da7862",
       "inputs": [
         {
           "name": "ibmcloud_api_key",
