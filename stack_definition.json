@@ -134,7 +134,7 @@
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ba032ffb-286c-4a00-ad79-ae9e09cea687-global"
 		},
     {
-      "name": "4 - Infrastructure for Application Lifecycle Management",
+      "name": "4 - alm-devsecops-infrastructure",
       "version_locator": "823fc106-60db-41df-96cc-b84703382b47.996090dc-ab36-4181-832f-328d01da7862",
       "inputs": [
         {
@@ -181,6 +181,10 @@
 					"name": "scc_region",
 					"value": "ref:../../inputs/region"
 				},
+        {
+					"name": "cos_region",
+					"value": "ref:../../inputs/region"
+				},
 				{
 					"name": "prefix",
 					"value": "ref:../../inputs/prefix"
@@ -211,14 +215,14 @@
 				},
         {
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../4 -Infrastructure for Application Lifecycle Management/outputs/cos_instance_id"
+					"value": "ref:../4 - alm-devsecops-infrastructure/outputs/cos_instance_id"
 				}
 			],
 			"name": "5 - core-security-services-scc",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.09aeab5e-2f02-4a86-a281-844fa19d969d-global"
 		},
     {
-      "name": "6 - Application Lifecycle Management",
+      "name": "6 - alm-devsecops-toolchain",
       "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.3202356b-d72a-4263-af31-46d0f33f6614-global",
       "inputs": [
         {
@@ -235,23 +239,23 @@
         },
         {
           "name": "sm_secret_group",
-          "value": "ref:../4 -Infrastructure for Application Lifecycle Management/outputs/secrets_manager_secrets_group"
+          "value": "ref:../4 - alm-devsecops-infrastructure/outputs/secrets_manager_secrets_group"
         },
         {
           "name": "sm_resource_group",
-          "value": "ref:../4 -Infrastructure for Application Lifecycle Management/outputs/secrets_manager_resource_group_name"
+          "value": "ref:../3 - core-security-services-sm/outputs/resource_group_name"
         },
         {
           "name": "sm_name",
-          "value": "ref:../4 -Infrastructure for Application Lifecycle Management/outputs/secrets_manager_name"
+          "value": "ref:../3 - core-security-services-sm/outputs/secrets_manager_name"
         },
         {
           "name": "sm_location",
-          "value": "ref:../4 -Infrastructure for Application Lifecycle Management/outputs/secrets_manager_location"
+          "value": "ref:../3 - core-security-services-sm/outputs/secrets_manager_region"
         },
         {
           "name": "registry_namespace",
-          "value": "ref:../4 -Infrastructure for Application Lifecycle Management/outputs/icr_namespace"
+          "value": "ref:../4 - alm-devsecops-infrastructure/outputs/icr_namespace"
         },
         {
           "name": "repositories_prefix",
@@ -259,7 +263,7 @@
         },
         {
           "name": "cos_bucket_name",
-          "value": "ref:../4 -Infrastructure for Application Lifecycle Management/outputs/cos_bucket_name"
+          "value": "ref:../4 - alm-devsecops-infrastructure/outputs/cos_bucket_name"
         }
       ]
     }
@@ -267,15 +271,15 @@
   "outputs": [
     {
       "name": "compliance-ci-toolchain",
-      "value": "ref:./members/6 - Application Lifecycle Management/outputs/compliance_ci_toolchain_url"
+      "value": "ref:./members/6 - alm-devsecops-toolchain/outputs/compliance_ci_toolchain_url"
     },
     {
       "name": "compliance-cd-toolchain",
-      "value": "ref:./members/6 - Application Lifecycle Management/outputs/compliance_cd_toolchain_url"
+      "value": "ref:./members/6 - alm-devsecops-toolchain/outputs/compliance_cd_toolchain_url"
     },
     {
       "name": "compliance-cc-toolchain",
-      "value": "ref:./members/6 - Application Lifecycle Management/outputs/compliance_cc_toolchain_url"
+      "value": "ref:./members/6 - alm-devsecops-toolchain/outputs/compliance_cc_toolchain_url"
     }
   ]
 }
