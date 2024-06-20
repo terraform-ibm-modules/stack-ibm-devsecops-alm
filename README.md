@@ -1,12 +1,12 @@
 # BM DevSecOps Application Lifecycle Management Stack
 
-The following [deployable architecture](https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-understand-module-da#what-is-da) automates the deployment of a sample NodeJS application on IBM Cloud, including all underlying IBM Cloud infrastructure. This architecture implements the best practices for in [reference architecture](https://cloud.ibm.com/docs/pattern-genai-rag?topic=pattern-genai-rag-genai-pattern).
+The following [deployable architecture](https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-understand-module-da#what-is-da) automates the deployment of a sample NodeJS application on IBM Cloud, including all underlying IBM Cloud infrastructure. This architecture implements the best practices for in [reference architecture]().
 
 This deployable architecture provides a comprehensive foundation for trust, observability, security, and regulatory compliance by configuring the IBM Cloud account to align with compliance settings, deploying key and secret management services, and deploying the infrastructure to support CI/CD/CC pipelines for secure application lifecycle management. These pipelines facilitate the deployment of the application, vulnerability checks, and auditability, ensuring a secure and trustworthy deployment of applications on IBM Cloud.
 
 # Objective and Benefits
 
-This deployable architecture is designed to showcase a fully automated deployment of a retrieval augmented generation application through IBM Cloud Project, providing a flexible and customizable foundation for your own Watson-based application deployments on IBM Cloud. This architecture deploys the following [sample application]() by default.
+This deployable architecture is designed to showcase a fully automated deployment of a retrieval augmented generation application through IBM Cloud Project, providing a flexible and customizable foundation for your own application deployments on IBM Cloud. This architecture deploys the following [sample application]() by default.
 
 By leveraging this architecture, you can accelerate your deployment and tailor it to meet your unique business needs and enterprise goals.
 
@@ -40,7 +40,7 @@ Before deploying the deployable architecture, ensure you have:
 * Select **Create new** and enter the following details:
    - Name and Description (e.g., "Retrieval Augmented Generation Pattern")
    - Region and Resource Group for the project. e.g. for evaluation purposes, you may select the region the closest to you, and the Default resource group. For more insights on the recommended production topology, refer to the Enterprise account architecture Central administration account [white paper](https://cloud.ibm.com/docs/enterprise-account-architecture?topic=enterprise-account-architecture-admin-hub-account).
-   - Configuration Name (name of the automation in the project, e.g., "RAG", "dev" or "prod", ideally matching the deployment target, but this can be any name)
+   - Configuration Name (name of the automation in the project, e.g.,  "dev" or "prod", ideally matching the deployment target, but this can be any name)
 
         ![project](./images/min/2-project.png)
 
