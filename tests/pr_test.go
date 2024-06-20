@@ -19,7 +19,7 @@ func TestProjectsFullTest(t *testing.T) {
 		"prefix":                      options.Prefix,
 		"resource_group_name":         options.Prefix,
 		"sm_service_plan":             "trial",
-		"scc_service_plan":            "security-compliance-center-trial-plan",
+		"scc_service_plan":            "security-compliance-center-standard-plan",
 		"region":                      "us-south",
 		"use_existing_resource_group": false,
 		"ibmcloud_api_key":            options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
