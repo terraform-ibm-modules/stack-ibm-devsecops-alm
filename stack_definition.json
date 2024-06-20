@@ -26,7 +26,7 @@
 			"required": true,
 			"type": "string",
 			"hidden": false,
-			"default": "__NOT_SET__",
+			"default": "__NULL__",
 			"custom_config": {}
 		},
 		{
@@ -44,7 +44,21 @@
 			"hidden": false,
 			"default": "security-compliance-center-standard-plan",
 			"custom_config": {}
-		}
+		},
+    {
+      "name": "scc_region",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "us-south"
+    },
+    {
+      "name": "en_region",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "us-south"
+    }
   ],
   "members": [
     {
@@ -93,7 +107,7 @@
 				},
 				{
 					"name": "region",
-					"value": "ref:../../inputs/region"
+					"value": "ref:../../inputs/en_region"
 				}
 			],
 			"name": "2 - core-security-services-en",
@@ -135,7 +149,7 @@
 		},
     {
       "name": "4 - alm-devsecops-infrastructure",
-      "version_locator": "823fc106-60db-41df-96cc-b84703382b47.996090dc-ab36-4181-832f-328d01da7862",
+      "version_locator": "0f9f49d8-7437-402e-b143-d3712a5ae473.ff2ed7af-df25-49ae-b629-0d51c7decfe7",
       "inputs": [
         {
           "name": "ibmcloud_api_key",
@@ -145,26 +159,26 @@
           "name": "region",
           "value": "ref:../../inputs/region"
         },
-				{
+		{
 					"name": "existing_resource_group",
 					"value": "ref:../../members/1 - core-security-services-kms/outputs/resource_group_name"
-				},
+		},
         {
 					"name": "sm_instance_id",
 					"value": "ref:../../members/3 - core-security-services-sm/outputs/secrets_manager_guid"
-				},
+		},
         {
-					"name": "resource_group_id",
+					"name": "sm_resource_group_id",
 					"value": "ref:../../members/3 - core-security-services-sm/outputs/resource_group_id"
-				},
+		},
         {
 					"name": "sm_location",
 					"value": "ref:../../members/3 - core-security-services-sm/outputs/secrets_manager_region"
-				},
+		},
         {
 					"name": "sm_group_endpoint_type",
 					"value": "private"
-				}
+		}
       ]
     },
     {
@@ -179,7 +193,7 @@
 				},
 				{
 					"name": "scc_region",
-					"value": "ref:../../inputs/region"
+					"value": "ref:../../inputs/scc_region"
 				},
         {
 					"name": "cos_region",
@@ -262,8 +276,8 @@
           "value": "ref:../../inputs/prefix"
         },
         {
-          "name": "cos_bucket_name",
-          "value": "ref:../4 - alm-devsecops-infrastructure/outputs/cos_bucket_name"
+          "name": "event_notifications_crn",
+          "value": "ref:../2 - core-security-services-en/outputs/crn"
         }
       ]
     }
