@@ -282,6 +282,10 @@
 		{
 		  "name": "autostart",
 		  "value": "true"
+		},
+		{
+		  "name": "code_engine_project_prefix",
+		  "value": "ref:../../inputs/prefix"
 		}
       ]
     }
