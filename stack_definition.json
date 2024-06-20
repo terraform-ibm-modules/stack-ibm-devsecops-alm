@@ -278,7 +278,11 @@
         {
           "name": "event_notifications_crn",
           "value": "ref:../2 - core-security-services-en/outputs/crn"
-        }
+        },
+		{
+		  "name": "autostart",
+		  "value": "true"
+		}
       ]
     }
   ],
