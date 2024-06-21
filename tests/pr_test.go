@@ -12,7 +12,7 @@ func TestProjectsFullTest(t *testing.T) {
 		Testing:        t,
 		ResourceGroup:  "default",
 		Prefix:         "alm", // setting prefix here gets a random string appended to it
-		ParallelDeploy: true,
+		ParallelDeploy: false,
 	})
 
 	options.StackInputs = map[string]interface{}{

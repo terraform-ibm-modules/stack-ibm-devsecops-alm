@@ -220,10 +220,6 @@
 					"value": "false"
 				},
 				{
-					"name": "existing_en_crn",
-					"value": "ref:../../members/2 - core-security-services-en/outputs/crn"
-				},
-				{
 					"name": "scc_service_plan",
 					"value": "ref:../../inputs/scc_service_plan"
 				},
