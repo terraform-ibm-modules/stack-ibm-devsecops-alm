@@ -1,12 +1,14 @@
 {
 	"products": [
 		{
-			"label": "ALM Demo v4",
-			"name": "ALM_Demo_Security_Stack4",
-			"version": "0.0.6-dev",
+			"label": "DevSecOps Application Lifecycle Management Stack",
+			"name": "deploy-arch-ibm-alm-stack",
 			"product_kind": "solution",
 			"tags": [
-				"enterprise_app"
+				"solution",
+				"enterprise_app",
+				"ibm_beta",
+				"security"
 			],
 			"keywords": [
 				"compliance",
@@ -43,7 +45,8 @@
 			"flavors": [
 				{
 					"label": "Deploy on Code Engine",
-					"name": "Code-Engine-d7b9",
+					"name": "alm-stack-ce",
+					"compliance": {},
 					"architecture": {
 						"features": [
 							{
