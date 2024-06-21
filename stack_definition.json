@@ -249,7 +249,7 @@
         },
         {
           "name": "toolchain_resource_group",
-          "value": "ref:../../members/1 - core-security-services-kms/outputs/resource_group_name"
+          "value": "ref:../../members/5 - core-security-services-scc/outputs/resource_group_name"
         },
         {
           "name": "sm_secret_group",
