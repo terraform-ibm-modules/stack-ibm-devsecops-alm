@@ -1,7 +1,7 @@
 {
 	"products": [
 		{
-			"label": "ALM Stack",
+			"label": "DevSecOps Application Lifecycle Management Stack",
 			"name": "deploy-arch-ibm-alm-stack",
 			"product_kind": "solution",
 			"tags": [
@@ -45,7 +45,7 @@
 			"flavors": [
 				{
 					"label": "Deploy on Code Engine",
-					"name": "cealmstack",
+					"name": "alm-stack-ce",
 					"compliance": {},
 					"architecture": {
 						"features": [
