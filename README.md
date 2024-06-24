@@ -37,6 +37,7 @@ Before deploying the deployable architecture, ensure you have:
 
     ![image](./images/min/1-catalog.jpg)
 
+
 * Select **Create new** and enter the following details:
    - Name and Description (e.g., "Retrieval Augmented Generation Pattern")
    - Region and Resource Group for the project. e.g. for evaluation purposes, you may select the region the closest to you, and the Default resource group. For more insights on the recommended production topology, refer to the Enterprise account architecture Central administration account [white paper](https://cloud.ibm.com/docs/enterprise-account-architecture?topic=enterprise-account-architecture-admin-hub-account).
@@ -50,7 +51,9 @@ Before deploying the deployable architecture, ensure you have:
 
 After completing `Step 2 - Deploy the Stack in a New Project from Catalog`, you are directed to a page allowing you to enter the configuration for you deployment:
 * Under Security -> Authentication, enter the API Key from the prereqs in the `api_key` field.
+
   ![inputs](./images/min/3-inputs.jpg)
+  
 * Under Required, input a prefix. This prefix will be appended to the name of most resources created by automation, ensuring uniqueness and avoiding clashes when provisioning names in the same account.
 * Under Optional, input the signing_key field. While not necessary for deploying Cloud resources, it is recommended and required to enable the building and deployment of the sample app.
 
@@ -149,3 +152,4 @@ ibmcloud resource reclamation-delete <reclamation-id>
 You may see notifications in IBM Cloud Project indicating that one or more configurations in the stack have new versions available. You can safely ignore these messages at this point, as they will not prevent you from deploying the stack. No specific action is required from you.
 
 Please note that these notifications are expected, as we are rapidly iterating on the development of the underlying components. As new stack versions become available, the versions of the underlying components will also be updated accordingly.
+=======
