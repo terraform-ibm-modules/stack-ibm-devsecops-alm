@@ -1,4 +1,4 @@
-# BM DevSecOps Application Lifecycle Management Stack
+# IBM DevSecOps Application Lifecycle Management Stack
 
 The following [deployable architecture](https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-understand-module-da#what-is-da) automates the deployment of a sample NodeJS application on IBM Cloud, including all underlying IBM Cloud infrastructure. This architecture implements the best practices for in [reference architecture]().
 
