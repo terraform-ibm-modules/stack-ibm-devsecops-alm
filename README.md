@@ -6,7 +6,7 @@ This deployable architecture provides a comprehensive foundation for trust, obse
 
 # Objective and Benefits
 
-This deployable architecture is designed to showcase a fully automated deployment of a retrieval augmented generation application through IBM Cloud Project, providing a flexible and customizable foundation for your own application deployments on IBM Cloud. This architecture deploys the following [sample application]() by default.
+This deployable architecture is designed to showcase a fully automated deployment of a Code Engine NodeJS application through IBM Cloud Project, providing a flexible and customizable foundation for your own application deployments on IBM Cloud. This architecture deploys the following [sample application]() by default.
 
 By leveraging this architecture, you can accelerate your deployment and tailor it to meet your unique business needs and enterprise goals.
 
@@ -49,13 +49,13 @@ Before deploying the deployable architecture, ensure you have:
 
 ## 3. Set the Input Configuration for the Stack
 
-After completing `Step 2 - Deploy the Stack in a New Project from Catalog`, you are directed to a page allowing you to enter the configuration for you deployment:
+After completing `Step 2 - Deploy the Stack in a New Project from Catalog`, you are directed to a page allowing you to enter the configuration for your deployment:
 * Under Security -> Authentication, enter the API Key from the prereqs in the `api_key` field.
 
   ![inputs](./images/min/3-inputs.jpg)
-  
-* Under Required, input a prefix. This prefix will be appended to the name of most resources created by automation, ensuring uniqueness and avoiding clashes when provisioning names in the same account.
-* Under Optional, input the signing_key field. While not necessary for deploying Cloud resources, it is recommended and required to enable the building and deployment of the sample app.
+
+* Under Required, select a region to deploy the resources and specify a name for the resource that is created.
+* Under Optional, there are entries to specifiy an alternative resource prefix as well as plans for Secret Manager `sm_service_plan` and SCC `scc_service_plan`. Setting the option `use_existing_resource_group` to `true` changes the behaviour of `resource_group_name` from creating a new resource group to treating the specified resource group name as an existing resource group.
 
 You may explore the other available inputs, such as the region and resource group name (under optional tab), leave them as is, or modify them as needed.
 
