@@ -81,7 +81,7 @@ To enable auto-deployment:
 1. Go to **Manage** > **Settings** > **Auto-deploy** and toggle **On**.
    ![auto-deploy](./images/15-auto-deploy.png)
 2. Return to the **Configurations** tab and click **Validate** under stack configuration.
-    ![validate button](./images/5b-validate.jpg)
+    ![validate button](./images/min/5b-validate.jpg)
 
 The project will then validate, approve, and deploy each stack member, taking approximately one hour to complete.
 
@@ -93,7 +93,7 @@ The project will then validate, approve, and deploy each stack member, taking ap
 
 2. Wait for validation
 
-    ![validation](./images/min/6-validation.jpg)
+    ![validation](./images/min/16-validate.jpg)
 
 3. Approve and click the deploy button
 
