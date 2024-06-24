@@ -35,7 +35,7 @@ Before deploying the deployable architecture, ensure you have:
 * Locate the [tile]() for the Deployable Architecture in the IBM Cloud Catalog.
 * Click the "Add to project" button.
 
-    ![image](./images/min/1- catalog.jpg)
+    ![image](./images/min/1-catalog.jpg)
 
 * Select **Create new** and enter the following details:
    - Name and Description (e.g., "Retrieval Augmented Generation Pattern")
@@ -67,7 +67,7 @@ Navigate to the project deployment view by clicking the project name in the brea
 
 You should be directed to a screen looking like:
 
-![validate](./images/min/5-validate.jpg)
+![validate](./images/min/5b-validate.jpg)
 
 Note: in some rare occurences, the first member of the stack may not be marked as "Ready to validate". Refreshing the page in your browser window should solve this problem.
 
