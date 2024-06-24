@@ -113,9 +113,7 @@ To monitor the build and deployment of the application, follow these steps:
 1. **Access the DevOps Toolchains View**: Navigate to the [DevOps / Toolchains view](https://cloud.ibm.com/devops/toolchains) in the target account.
 2. **Select the Resource Group and Region**: Choose the resource group and region where the infrastructure was deployed. The resource group name is based on the prefix and resource_group_name inputs of the deployable architecture.
 3. **Select the Toolchain**: Select "DevSecOps CI Toolchain"
-    ![toolchain](./images/min/8-toolchain.png)
 4. **Access the Delivery Pipeline**: In the toolchain view, select ci-pipeline under Delivery pipeline
-    ![toolchain](./images/min/9-pipeline.png)
 5. **View the CI Pipeline Status**: The current status of the CI pipeline execution can be found under the "ci-webhook-trigger" section.
 
 ### Verifying the Application Deployment
