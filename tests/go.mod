@@ -1,4 +1,4 @@
-module github.com/terraform-ibm-modules/stack-ibm-devescops-alm
+module github.com/terraform-ibm-modules/stack-ibm-devsecops-alm
 
 go 1.21
 
