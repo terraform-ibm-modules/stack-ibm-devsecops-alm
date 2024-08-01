@@ -29,6 +29,13 @@
 		"default": ""
 	  },
 	  {
+		"name": "registry_namespace",
+		"required": true,
+		"type": "string",
+		"hidden": false,
+		"default": "devsecops"
+	  },
+	  {
 			  "name": "resource_group_name",
 			  "required": true,
 			  "type": "string",
@@ -196,7 +203,7 @@
 			"inputs": [
 			{
 				"name" : "bucket_name",
-				"value" : ""
+				"value" : "ref:../../inputs/bucket_name"
 			},
 			{
 				"name" : "add_bucket_name_suffix",
@@ -315,6 +322,10 @@
 		  {
 			"name" : "cos_endpoint",
 			"value" : "ref:../4 - core-security-service-cos-bucket/outputs/s3_endpoint_direct"
+		  },
+		  {
+			"name" : "registry_namespace",
+			"value" : "ref:../../inputs/registry_namespace"
 		  },
 		  {
 			"name": "autostart",

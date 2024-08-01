@@ -111,6 +111,20 @@
 							"required": false
 						},
 						{
+							"key": "bucket_name",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The name of the COS bucket that is created.",
+							"required": false
+						},
+						{
+							"key": "registry_region",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The name of the COS bucket that is created.",
+							"required": false
+						},
+						{
 							"key": "sm_service_plan",
 							"type": "string",
 							"default_value": "standard",
