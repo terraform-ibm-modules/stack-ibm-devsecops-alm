@@ -111,6 +111,13 @@
 							"required": false
 						},
 						{
+							"key": "resource_group_name",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The name of the resource group",
+							"required": false
+						},
+						{
 							"key": "bucket_name",
 							"type": "string",
 							"default_value": "devsecops",
