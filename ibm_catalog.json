@@ -135,7 +135,7 @@
 							"key": "pipeline_ibmcloud_api_key_secret_name",
 							"type": "string",
 							"default_value": "ibmcloud-api-key",
-							"description": "The name of the IBMclodu apikey for running the pipelines.",
+							"description": "The name of the IBMcloud api key for running the pipelines.",
 							"required": false
 						},
 						{
@@ -149,14 +149,14 @@
 							"key": "cd_code_signing_cert_secret_name",
 							"type": "string",
 							"default_value": "signing-certificate",
-							"description": "The name of the signing certifact.",
+							"description": "The name of the signing certificate.",
 							"required": false
 						},
 						{
 							"key": "cos_api_key_secret_name",
 							"type": "string",
 							"default_value": "cos-api-key",
-							"description": "The name of the cos api key.",
+							"description": "The name of the COS api key.",
 							"required": false
 						},
 						{
@@ -194,7 +194,7 @@
 							]
 						},
 						{
-							"key": "scc-region",
+							"key": "scc_region",
 							"type": "string",
 							"default_value": "us-south",
 							"description": "The region in which all resources are deployed except SCC and Event Notifications which default to us-south but can do change in optional properties.",
