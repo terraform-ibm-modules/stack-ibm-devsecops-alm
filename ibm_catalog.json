@@ -121,7 +121,35 @@
 							"key": "registry_namespace",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The name name of the registry namespace.",
+							"description": "The name of the registry namespace.",
+							"required": false
+						},
+						{
+							"key": "pipeline_ibmcloud_api_key_secret_name",
+							"type": "string",
+							"default_value": "ibmcloud-api-key",
+							"description": "The name of the IBMclodu apikey for running the pipelines.",
+							"required": false
+						},
+						{
+							"key": "ci_signing_key_secret_name",
+							"type": "string",
+							"default_value": "signing_key",
+							"description": "The name of the signing key.",
+							"required": false
+						},
+						{
+							"key": "cd_code_signing_cert_secret_name",
+							"type": "string",
+							"default_value": "signing-certificate",
+							"description": "The name of the signing certifact.",
+							"required": false
+						},
+						{
+							"key": "cos_api_key_secret_name",
+							"type": "string",
+							"default_value": "cos-api-key",
+							"description": "The name of the cos api key.",
 							"required": false
 						},
 						{
