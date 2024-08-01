@@ -104,7 +104,8 @@
 		"required": false,
 		"type": "string",
 		"hidden": false,
-		"default": "us-south"
+		"default": "us-south",
+		"custom_config": {}
 	  },
 	  {
 		"name": "en_region",
@@ -171,11 +172,11 @@
 				  },
 				  {
 					  "name": "kms_endpoint_url",
-					  "value": "ref:../../members/1 - core-security-services-kms/outputs/kp_private_endpoint"
+					  "value": "ref:../../members/1 - core-security-services-kms/outputs/kms_private_endpoint"
 				  },
 				  {
 					  "name": "existing_kms_instance_crn",
-					  "value": "ref:../../members/1 - core-security-services-kms/outputs/key_protect_crn"
+					  "value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
 				  },
 				  {
 					  "name": "kms_endpoint_type",
@@ -217,7 +218,7 @@
 				  },
 				  {
 					  "name": "existing_kms_instance_crn",
-					  "value": "ref:../../members/1 - core-security-services-kms/outputs/key_protect_crn"
+					  "value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
 				  },
 				  {
 					  "name": "existing_event_notification_instance_crn",
@@ -247,7 +248,7 @@
 			  },
 			  {
 				"name": "existing_kms_instance_crn",
-				"value": "ref:../../members/1 - core-security-services-kms/outputs/key_protect_crn"
+				"value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
 			  },
 			  {
 				"name": "skip_iam_authorization_policy",
@@ -281,7 +282,7 @@
 				  },
 				  {
 					  "name": "existing_kms_instance_crn",
-					  "value": "ref:../../members/1 - core-security-services-kms/outputs/key_protect_crn"
+					  "value": "ref:../../members/1 - core-security-services-kms/outputs/kms_instance_crn"
 				  },
 				  {
 					  "name": "existing_en_crn",
@@ -301,7 +302,7 @@
 				  },
 		  			{
 					  "name": "existing_cos_instance_crn",
-					  "value": "ref:../4 - alm-devsecops-infrastructure/outputs/cos_instance_id"
+					  "value": "ref:../../members/1b - core-security-service-cos/outputs/cos_instance_id"
 				  }
 			  ],
 			  "name": "5 - core-security-services-scc",
