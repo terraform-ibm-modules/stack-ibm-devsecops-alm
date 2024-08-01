@@ -236,6 +236,13 @@
 									]
 								}
 							}
+						},
+						{
+							"key": "use_existing_resource_group",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Set to `true` to create and add a `cos-api-key` to the Secrets Provider.",
+							"required": false
 						}
 					],
 					"outputs": [
