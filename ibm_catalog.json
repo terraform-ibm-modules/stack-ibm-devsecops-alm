@@ -118,10 +118,10 @@
 							"required": false
 						},
 						{
-							"key": "registry_region",
+							"key": "registry_namespace",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The name of the COS bucket that is created.",
+							"description": "The name name of the registry namespace.",
 							"required": false
 						},
 						{
