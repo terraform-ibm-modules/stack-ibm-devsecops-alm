@@ -160,6 +160,13 @@
 							"required": false
 						},
 						{
+							"key": "sm_secret_group",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The secrets group created in Secrets Manager",
+							"required": false
+						},
+						{
 							"key": "sm_service_plan",
 							"type": "string",
 							"default_value": "standard",
