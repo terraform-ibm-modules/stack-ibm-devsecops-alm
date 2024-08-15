@@ -211,10 +211,6 @@
 				{
 					"name": "prefix",
 					"value": "ref:../../inputs/prefix"
-				},
-				{
-					"name": "existing_kms_instance_guid",
-					"value": "ref:../../members/1 - core-security-services-kms/outputs/key_protect_guid"
 				}
 			],
 			"name": "1b - core-security-service-cos",
