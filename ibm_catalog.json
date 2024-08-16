@@ -133,6 +133,13 @@
 							"required": false
 						},
 						{
+							"key": "create_cd_instance",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set to `true` to create Continuous Delivery Service. ",
+							"required": false
+						},
+						{
 							"key": "pipeline_ibmcloud_api_key_secret_name",
 							"type": "string",
 							"default_value": "ibmcloud-api-key",
@@ -363,6 +370,13 @@
 							"type": "string",
 							"default_value": "devsecops",
 							"description": "The name of the registry namespace.",
+							"required": false
+						},
+						{
+							"key": "create_cd_instance",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set to `true` to create Continuous Delivery Service. ",
 							"required": false
 						},
 						{

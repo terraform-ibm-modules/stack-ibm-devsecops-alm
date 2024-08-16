@@ -51,6 +51,14 @@
 			"default": "devsecops"
 		},
 		{
+			"name": "create_cd_instance",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": true,
+			"custom_config": {}
+		},
+		{
 			"name": "ci_cluster_name",
 			"required": true,
 			"type": "string",
@@ -191,7 +199,7 @@
 					"value": "ref:../../inputs/prefix"
 				}
 			],
-			"name": "1a - Key management",
+			"name": "1a - Key Management",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.650ff7c9-5a41-4d32-a0db-6720ff56a016-global"
 		},
 		{
@@ -213,7 +221,7 @@
 					"value": "ref:../../inputs/prefix"
 				}
 			],
-			"name": "1b- Object storage",
+			"name": "1b- Cloud Object Storage",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.75709d42-41a3-41ca-8f45-807652f0d1f7-global"
 		},
 		{
@@ -228,29 +236,29 @@
 				},
 				{
 					"name": "existing_cos_instance_id",
-					"value": "ref:../../members/1b- Object storage/outputs/cos_instance_id"
+					"value": "ref:../../members/1b- Cloud Object Storage/outputs/cos_instance_id"
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+					"value": "ref:../../members/1a - Key Management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "skip_iam_authorization_policy",
 					"value": false
 				}
 			],
-			"name": "2 - COS Bucket",
+			"name": "2 - Cloud Object Bucket",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1218c52a-4c9c-433a-817d-ae2f0cdc8be4-global"
 		},
 		{
 			"inputs": [
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - COS Bucket/outputs/cos_instance_id"
+					"value": "ref:../../members/2 - Cloud Object Bucket/outputs/cos_instance_id"
 				},
 				{
 					"name": "kms_endpoint_url",
-					"value": "ref:../../members/1a - Key management/outputs/kms_private_endpoint"
+					"value": "ref:../../members/1a - Key Management/outputs/kms_private_endpoint"
 				},
 				{
 					"name": "skip_cos_kms_auth_policy",
@@ -258,7 +266,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+					"value": "ref:../../members/1a - Key Management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "kms_endpoint_type",
@@ -266,7 +274,7 @@
 				},
 				{
 					"name": "resource_group_name",
-					"value": "ref:../../members/1a - Key management/outputs/resource_group_name"
+					"value": "ref:../../members/1a - Key Management/outputs/resource_group_name"
 				},
 				{
 					"name": "use_existing_resource_group",
@@ -284,7 +292,7 @@
 			"inputs": [
 				{
 					"name": "resource_group_name",
-					"value": "ref:../../members/1a - Key management/outputs/resource_group_name"
+					"value": "ref:../../members/1a - Key Management/outputs/resource_group_name"
 				},
 				{
 					"name": "use_existing_resource_group",
@@ -300,7 +308,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+					"value": "ref:../../members/1a - Key Management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "existing_event_notification_instance_crn",
@@ -318,7 +326,7 @@
 			"inputs": [
 				{
 					"name": "resource_group_name",
-					"value": "ref:../../members/1a - Key management/outputs/resource_group_name"
+					"value": "ref:../../members/1a - Key Management/outputs/resource_group_name"
 				},
 				{
 					"name": "use_existing_resource_group",
@@ -338,7 +346,7 @@
 				},
 				{
 					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1a - Key management/outputs/kms_instance_crn"
+					"value": "ref:../../members/1a - Key Management/outputs/kms_instance_crn"
 				},
 				{
 					"name": "existing_en_crn",
@@ -358,7 +366,7 @@
 				},
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/1b- Object storage/outputs/cos_instance_id"
+					"value": "ref:../../members/1b- Cloud Object Storage/outputs/cos_instance_id"
 				}
 			],
 			"name": "5 - Security and Compliance Center",
@@ -406,11 +414,11 @@
 				},
 				{
 					"name" : "cos_bucket_name",
-					"value" : "ref:../../members/2 - COS Bucket/outputs/bucket_name"
+					"value" : "ref:../../members/2 - Cloud Object Bucket/outputs/bucket_name"
 				},
 				{
 					"name" : "cos_endpoint",
-					"value" : "ref:../../members/2 - COS Bucket/outputs/s3_endpoint_direct"
+					"value" : "ref:../../members/2 - Cloud Object Bucket/outputs/s3_endpoint_direct"
 				},
 				{
 					"name" : "registry_namespace",
@@ -423,6 +431,10 @@
 				{
 					"name": "prefix",
 					"value": "ref:../../inputs/prefix"
+				},
+				{
+					"name": "create_cd_instance",
+					"value": "ref:../../inputs/create_cd_instance"
 				},
 				{
 					"name" : "create_secret_group",
