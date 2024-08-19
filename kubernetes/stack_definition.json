@@ -206,7 +206,7 @@
 			"inputs": [
 				{
 					"name": "resource_group_name",
-					"value": "ref:../../inputs/resource_group_name"
+					"value": "ref:../../members/1a - Key Management/outputs/resource_group_name"
 				},
 				{
 					"name": "existing_resource_group",
