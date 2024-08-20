@@ -23,6 +23,13 @@
 			"default": ""
 		},
 		{
+			"name": "cluster_name",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "mycluster"
+		},
+		{
 			"name": "prefix",
 			"required": false,
 			"type": "string",
@@ -49,6 +56,54 @@
 			"type": "boolean",
 			"hidden": false,
 			"default": true,
+			"custom_config": {}
+		},
+		{
+			"name": "ci_cluster_name",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "ci_cluster_namespace",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "dev",
+			"custom_config": {}
+		},
+		{
+			"name": "ci_cluster_region",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "us-south",
+			"custom_config": {}
+		},
+		{
+			"name": "ci_cluster_resource_group",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "cd_cluster_name",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "cd_cluster_namespace",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "prod",
 			"custom_config": {}
 		},
 		{
@@ -319,7 +374,7 @@
 		},
 		{
 			"name": "6 - DevSecOps Toolchains",
-			"version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.3a73ae21-ca89-4120-836a-3d4da7df7ce0-global",
+			"version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.9c2038e5-76ce-4b7f-8862-3e451f8392ef-global",
 			"inputs": [
 				{
 					"name": "ibmcloud_api_key",
@@ -416,7 +471,36 @@
 				{
 					"name" : "cos_api_key_secret_name",
 					"value" : "ref:../../inputs/cos_api_key_secret_name"
+				},
+				{
+					"name" : "cluster_name",
+					"value" : "ref:../../inputs/cluster_name"
+				},
+				{
+					"name" : "ci_cluster_name",
+					"value" : "ref:../../inputs/ci_cluster_name"
+				},
+				{
+					"name" : "cd_cluster_name",
+					"value" : "ref:../../inputs/cd_cluster_name"
+				},
+				{
+					"name" : "ci_cluster_namespace",
+					"value" : "ref:../../inputs/ci_cluster_namespace"
+				},
+				{
+					"name" : "cd_cluster_namespace",
+					"value" : "ref:../../inputs/cd_cluster_namespace"
+				},
+				{
+					"name" : "ci_cluster_region",
+					"value" : "ref:../../inputs/ci_cluster_region"
+				},
+				{
+					"name" : "ci_cluster_resource_group",
+					"value" : "ref:../../inputs/ci_cluster_resource_group"
 				}
+
 			]
 		}
 	],

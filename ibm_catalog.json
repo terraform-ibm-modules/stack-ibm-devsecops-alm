@@ -46,6 +46,7 @@
 				{
 					"label": "Deploy on Code Engine",
 					"name": "alm-stack-ce",
+					"working_directory": "./",
 					"compliance": {},
 					"architecture": {
 						"features": [
@@ -111,6 +112,69 @@
 							"required": false
 						},
 						{
+							"key": "resource_group_name",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The name of the resource group",
+							"required": false
+						},
+						{
+							"key": "bucket_name",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The name of the COS bucket that is created.",
+							"required": false
+						},
+						{
+							"key": "registry_namespace",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The name of the registry namespace.",
+							"required": false
+						},
+						{
+							"key": "create_cd_instance",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set to `true` to create Continuous Delivery Service. ",
+							"required": false
+						},
+						{
+							"key": "pipeline_ibmcloud_api_key_secret_name",
+							"type": "string",
+							"default_value": "ibmcloud-api-key",
+							"description": "The name of the IBMcloud api key for running the pipelines.",
+							"required": false
+						},
+						{
+							"key": "ci_signing_key_secret_name",
+							"type": "string",
+							"default_value": "signing_key",
+							"description": "The name of the signing key.",
+							"required": false
+						},
+						{
+							"key": "cd_code_signing_cert_secret_name",
+							"type": "string",
+							"default_value": "signing-certificate",
+							"description": "The name of the signing certificate.",
+							"required": false
+						},
+						{
+							"key": "cos_api_key_secret_name",
+							"type": "string",
+							"default_value": "cos-api-key",
+							"description": "The name of the COS api key.",
+							"required": false
+						},
+						{
+							"key": "sm_secret_group",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The secrets group created in Secrets Manager",
+							"required": false
+						},
+						{
 							"key": "sm_service_plan",
 							"type": "string",
 							"default_value": "standard",
@@ -145,7 +209,7 @@
 							]
 						},
 						{
-							"key": "scc-region",
+							"key": "scc_region",
 							"type": "string",
 							"default_value": "us-south",
 							"description": "The region in which all resources are deployed except SCC and Event Notifications which default to us-south but can do change in optional properties.",
@@ -187,6 +251,295 @@
 									]
 								}
 							}
+						},
+						{
+							"key": "use_existing_resource_group",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Set to `true` to create and add a `cos-api-key` to the Secrets Provider.",
+							"required": true
+						}
+					],
+					"outputs": [
+						{
+							"key": "compliance-ci-url",
+							"description": "The URL to the Continuous Integration toolchain for the sample application."
+						},
+						{
+							"key": "compliance-cd-url",
+							"description": "The URL to the Continuous Deployment toolchain for the sample application."
+						},
+						{
+							"key": "compliance-cc-url",
+							"description": "The URL to the Continuous Compliance toolchain for the sample application."
+						}
+					],
+					"install_type": "fullstack"
+				},
+				{
+					"label": "Deploy on Kubernetes",
+					"name": "alm-stack-kube",
+					"working_directory": "./kubernetes",
+					"compliance": {},
+					"architecture": {
+						"features": [
+							{
+								"title": "Implement Security",
+								"description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
+							},
+							{
+								"title": "Achieve Regulatory Compliance",
+								"description": "The architecture ensures regulatory compliance by implementing CI/CD/CC pipelines, along with IBM Security Compliance Center (SCC) for secure application lifecycle management."
+							},
+							{
+								"title": "Establish Trust",
+								"description": "The architecture ensures trust by configuring the IBM Cloud account to align with compliance settings as defined in the Financial Services framework."
+							}
+						],
+						"diagrams": [
+							{
+								"diagram": {
+									"url": "https://github.com/terraform-ibm-modules/terraform-ibm-devsecops-alm/blob/main/reference-architectures/diagram-deploy-arch-ibm-devsecops-alm-diagram.svg",
+									"caption": "Reference architecture",
+									"type": "image/svg+xml",
+									"thumbnail_url": "https://github.com/terraform-ibm-modules/terraform-ibm-devsecops-alm/blob/main/reference-architectures/diagram-deploy-arch-ibm-devsecops-alm-diagram.svg"
+								},
+								"description": "Reference architecture"
+							}
+						]
+					},
+					"configuration": [
+						{
+							"key": "ibmcloud_api_key",
+							"type": "password",
+							"description": "The API Key used to provision all resources created in this solution.",
+							"required": true
+						},
+						{
+							"key": "region",
+							"type": "string",
+							"default_value": "eu-gb",
+							"description": "The region in which all resources are deployed except SCC and Event Notifications that default to us-south but can be changed in optional properties.",
+							"display_name": "Region",
+							"required": true,
+							"custom_config": {
+								"type": "region",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"filterString": "id:au-syd,br-sao,ca-tor,eu-de,eu-es,eu-gb,jp-osa,jp-tok,us-east,us-south",
+									"showKinds": [
+										"region",
+										"zone",
+										"dc",
+										"location"
+									]
+								}
+							}
+						},
+						{
+							"key": "cluster_name",
+							"type": "string",
+							"default_value": "mycluster",
+							"description": "The name of cluster. Treats the dev and prod cluster as the same cluster.",
+							"required": true
+						},
+						{
+							"key": "prefix",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "Default prefix for repos and resources",
+							"required": false
+						},
+						{
+							"key": "resource_group_name",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The name of the resource group",
+							"required": false
+						},
+						{
+							"key": "bucket_name",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The name of the COS bucket that is created.",
+							"required": false
+						},
+						{
+							"key": "registry_namespace",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The name of the registry namespace.",
+							"required": false
+						},
+						{
+							"key": "create_cd_instance",
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set to `true` to create Continuous Delivery Service. ",
+							"required": false
+						},
+						{
+							"key": "ci_cluster_name",
+							"type": "string",
+							"default_value": "",
+							"description": "The name of dev cluster",
+							"required": false
+						},
+						{
+							"key": "ci_cluster_namespace",
+							"type": "string",
+							"default_value": "dev",
+							"description": "The name of dev cluster namespace.",
+							"required": false
+						},
+						{
+							"key": "ci_cluster_region",
+							"type": "string",
+							"default_value": "",
+							"description": "The region containing the cluster",
+							"required": false
+						},
+						{
+							"key": "ci_cluster_resource_group",
+							"type": "string",
+							"default_value": "",
+							"description": "The resource group containing the cluster",
+							"required": false
+						},
+						{
+							"key": "cd_cluster_name",
+							"type": "string",
+							"default_value": "",
+							"description": "The name of production cluster",
+							"required": false
+						},
+						{
+							"key": "cd_cluster_namespace",
+							"type": "string",
+							"default_value": "dev",
+							"description": "The name of production cluster namespace.",
+							"required": false
+						},
+						{
+							"key": "pipeline_ibmcloud_api_key_secret_name",
+							"type": "string",
+							"default_value": "ibmcloud-api-key",
+							"description": "The name of the IBMcloud api key for running the pipelines.",
+							"required": false
+						},
+						{
+							"key": "ci_signing_key_secret_name",
+							"type": "string",
+							"default_value": "signing_key",
+							"description": "The name of the signing key.",
+							"required": false
+						},
+						{
+							"key": "cd_code_signing_cert_secret_name",
+							"type": "string",
+							"default_value": "signing-certificate",
+							"description": "The name of the signing certificate.",
+							"required": false
+						},
+						{
+							"key": "cos_api_key_secret_name",
+							"type": "string",
+							"default_value": "cos-api-key",
+							"description": "The name of the COS api key.",
+							"required": false
+						},
+						{
+							"key": "sm_secret_group",
+							"type": "string",
+							"default_value": "devsecops",
+							"description": "The secrets group created in Secrets Manager",
+							"required": false
+						},
+						{
+							"key": "sm_service_plan",
+							"type": "string",
+							"default_value": "standard",
+							"description": "The pricing plan to use for Secrets Manager.",
+							"required": false,
+							"options": [
+								{
+									"displayname": "standard",
+									"value": "standard"
+								},
+								{
+									"displayname": "trial",
+									"value": "trial"
+								}
+							]
+						},
+						{
+							"key": "scc_service_plan",
+							"type": "string",
+							"default_value": "security-compliance-center-standard-plan",
+							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
+							"required": false,
+							"options": [
+								{
+									"displayname": "standard",
+									"value": "security-compliance-center-standard-plan"
+								},
+								{
+									"displayname": "trial",
+									"value": "security-compliance-center-trial-plan"
+								}
+							]
+						},
+						{
+							"key": "scc_region",
+							"type": "string",
+							"default_value": "us-south",
+							"description": "The region in which all resources are deployed except SCC and Event Notifications which default to us-south but can do change in optional properties.",
+							"display_name": "Region",
+							"required": false,
+							"custom_config": {
+								"type": "region",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"filterString": "id:ca-tor,eu-es,eu-de,eu-fr2,us-south",
+									"showKinds": [
+										"region",
+										"zone",
+										"dc",
+										"location"
+									]
+								}
+							}
+						},
+						{
+							"key": "en_region",
+							"type": "string",
+							"default_value": "us-south",
+							"description": "The region in which all resources are deployed except SCC and Event Notifications which default to us-south but can do change in optional properties.",
+							"display_name": "Region",
+							"required": false,
+							"custom_config": {
+								"type": "region",
+								"grouping": "deployment",
+								"original_grouping": "deployment",
+								"config_constraints": {
+									"filterString": "id:eu-gb,au-syd,eu-es,eu-de,eu-fr2,us-south",
+									"showKinds": [
+										"region",
+										"zone",
+										"dc",
+										"location"
+									]
+								}
+							}
+						},
+						{
+							"key": "use_existing_resource_group",
+							"type": "boolean",
+							"default_value": true,
+							"description": "Set to `true` to create and add a `cos-api-key` to the Secrets Provider.",
+							"required": true
 						}
 					],
 					"outputs": [
