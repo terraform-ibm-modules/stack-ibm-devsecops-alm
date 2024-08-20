@@ -312,6 +312,10 @@
 				{
 					"name": "existing_cos_instance_crn",
 					"value": "ref:../../members/1b- Cloud Object Storage/outputs/cos_instance_id"
+				},
+				{
+					"name" : "provision_scc_workload_protection",
+					"value" : false
 				}
 			],
 			"name": "5 - Security and Compliance Center",
