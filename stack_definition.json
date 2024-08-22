@@ -122,6 +122,13 @@
 			"hidden": false,
 			"default": "us-south",
 			"custom_config": {}
+		},
+		{
+			"name": "project_name",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "__NULL__"
 		}
 	],
 	"members": [
@@ -318,7 +325,29 @@
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1ac9df0e-d3d5-4ed8-abfc-043578670dbb-global"
 		},
 		{
-			"name": "6 - DevSecOps Toolchains",
+			"inputs": [
+				{
+					"name": "resource_group_name",
+					"value": "ref:../../members/1a - Key Management/outputs/resource_group_name"
+				},
+				{
+					"name": "existing_resource_group",
+					"value": true
+				},
+				{
+					"name": "existing_project_id",
+					"value": "core-services"
+				},
+				{
+					"name": "project_name",
+					"value": "ref:../../inputs/project_name"
+				}
+			],
+			"name": "6- Code Engine Project",
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.8327e747-4afb-4f42-86f1-ddd120019cd5-global"
+		},
+		{
+			"name": "7 - DevSecOps Toolchains",
 			"version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.3a73ae21-ca89-4120-836a-3d4da7df7ce0-global",
 			"inputs": [
 				{
@@ -331,7 +360,7 @@
 				},
 				{
 					"name": "toolchain_resource_group",
-					"value": "ref:../../members/5 - Security and Compliance Center/outputs/resource_group_name"
+					"value": "ref:../../members/1a - Key Management/outputs/resource_group_name"
 				},
 				{
 					"name": "sm_secret_group",
@@ -416,6 +445,10 @@
 				{
 					"name" : "cos_api_key_secret_name",
 					"value" : "ref:../../inputs/cos_api_key_secret_name"
+				},
+				{
+					"name" : "code_engine_project",
+					"value" : "ref:../../inputs/project_name"
 				}
 			]
 		}

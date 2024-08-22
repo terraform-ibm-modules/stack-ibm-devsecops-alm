@@ -105,6 +105,13 @@
 							}
 						},
 						{
+							"key": "project_name",
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The name of the project to add the IBM Cloud Code Engine resources to. If the value of `var.existing_project_id` is `__NULL__` , the project name is required.",
+							"required": true
+						},
+						{
 							"key": "prefix",
 							"type": "string",
 							"default_value": "devsecops",
