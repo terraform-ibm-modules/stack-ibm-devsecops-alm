@@ -79,14 +79,14 @@
 						{
 							"key": "ibmcloud_api_key",
 							"type": "password",
-							"description": "The API Key used to provision all resources created in this solution.",
+							"description": "The API Key used to provision all the resources created in this solution.",
 							"required": true
 						},
 						{
 							"key": "region",
 							"type": "string",
 							"default_value": "eu-gb",
-							"description": "The region in which all resources are deployed except SCC and Event Notifications that default to us-south but can be changed in optional properties.",
+							"description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
 							"display_name": "Region",
 							"required": true,
 							"custom_config": {
@@ -108,70 +108,70 @@
 							"key": "prefix",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "Default prefix for repos and resources",
+							"description": "The value set in this variable when set acts as a prefix for the various resources that get created. A hyphen `-` will automatically be inserted as a separator between the prefix and resource names.",
 							"required": false
 						},
 						{
 							"key": "resource_group_name",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The name of the resource group",
+							"description": "The name of the resource group in which all the resources are created.",
 							"required": false
 						},
 						{
 							"key": "bucket_name",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The name of the COS bucket that is created.",
+							"description": "The name of the Cloud Object Storage bucket created as evidence storage for the DevSecOps toolchains.",
 							"required": false
 						},
 						{
 							"key": "registry_namespace",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The name of the registry namespace.",
+							"description": "The name of the registry namespace where images are stored.",
 							"required": false
 						},
 						{
 							"key": "create_cd_instance",
 							"type": "boolean",
-							"default_value": false,
-							"description": "Set to `true` to create Continuous Delivery Service. ",
+							"default_value": true,
+							"description": "Set to `true` to create a Continuous Delivery Service. This is required for running the DevSecOps toolchain pipelines and to successfuly interact with a DevOps Insights integration.",
 							"required": false
 						},
 						{
 							"key": "pipeline_ibmcloud_api_key_secret_name",
 							"type": "string",
 							"default_value": "ibmcloud-api-key",
-							"description": "The name of the IBMcloud api key for running the pipelines.",
+							"description": "The name of the IBM Cloud api key used for running the pipelines.",
 							"required": false
 						},
 						{
 							"key": "ci_signing_key_secret_name",
 							"type": "string",
 							"default_value": "signing_key",
-							"description": "The name of the signing key.",
+							"description": "The name of the signing key in Secrets Manager that is required for signing the images.",
 							"required": false
 						},
 						{
 							"key": "cd_code_signing_cert_secret_name",
 							"type": "string",
 							"default_value": "signing-certificate",
-							"description": "The name of the signing certificate.",
+							"description": "The name of the signing certificate in Secrets Manager that is used for validating the integrity of signed images.",
 							"required": false
 						},
 						{
 							"key": "cos_api_key_secret_name",
 							"type": "string",
 							"default_value": "cos-api-key",
-							"description": "The name of the COS api key.",
+							"description": "The name of the Cloud Object Storage api key in Secrets Manager that is used for reading/writing to the evidence bucket.",
 							"required": false
 						},
 						{
 							"key": "sm_secret_group",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The secrets group created in Secrets Manager",
+							"description": "The secrets group created in Secrets Manager containing the secrets required by the DevSecOps toolchains.",
 							"required": false
 						},
 						{
@@ -212,7 +212,7 @@
 							"key": "scc_region",
 							"type": "string",
 							"default_value": "us-south",
-							"description": "The region in which all resources are deployed except SCC and Event Notifications which default to us-south but can do change in optional properties.",
+							"description": "The region in which the Security and Compliance Center instance is provisioned.",
 							"display_name": "Region",
 							"required": false,
 							"custom_config": {
@@ -234,7 +234,7 @@
 							"key": "en_region",
 							"type": "string",
 							"default_value": "us-south",
-							"description": "The region in which all resources are deployed except SCC and Event Notifications which default to us-south but can do change in optional properties.",
+							"description": "The region in which the Events Notification instance is created.",
 							"display_name": "Region",
 							"required": false,
 							"custom_config": {
@@ -256,7 +256,7 @@
 							"key": "use_existing_resource_group",
 							"type": "boolean",
 							"default_value": true,
-							"description": "Set to `true` to create and add a `cos-api-key` to the Secrets Provider.",
+							"description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
 							"required": true
 						}
 					],
@@ -312,14 +312,14 @@
 						{
 							"key": "ibmcloud_api_key",
 							"type": "password",
-							"description": "The API Key used to provision all resources created in this solution.",
+							"description": "The API Key used to provision all the resources created in this solution.",
 							"required": true
 						},
 						{
 							"key": "region",
 							"type": "string",
 							"default_value": "eu-gb",
-							"description": "The region in which all resources are deployed except SCC and Event Notifications that default to us-south but can be changed in optional properties.",
+							"description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
 							"display_name": "Region",
 							"required": true,
 							"custom_config": {
@@ -348,35 +348,35 @@
 							"key": "prefix",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "Default prefix for repos and resources",
+							"description": "The value set in this variable when set acts as a prefix for the various resources that get created. A hyphen `-` will automatically be inserted as a separator between the prefix and resource names.",
 							"required": false
 						},
 						{
 							"key": "resource_group_name",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The name of the resource group",
+							"description": "The name of the resource group in which all the resources are created.",
 							"required": false
 						},
 						{
 							"key": "bucket_name",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The name of the COS bucket that is created.",
+							"description": "The name of the Cloud Object Storage bucket created as evidence storage for the DevSecOps toolchains.",
 							"required": false
 						},
 						{
 							"key": "registry_namespace",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The name of the registry namespace.",
+							"description": "The name of the registry namespace where images are stored.",
 							"required": false
 						},
 						{
 							"key": "create_cd_instance",
 							"type": "boolean",
 							"default_value": false,
-							"description": "Set to `true` to create Continuous Delivery Service. ",
+							"description": "Set to `true` to create a Continuous Delivery Service. This is required for running the DevSecOps toolchain pipelines and to successfuly interact with a DevOps Insights integration.",
 							"required": false
 						},
 						{
@@ -425,35 +425,35 @@
 							"key": "pipeline_ibmcloud_api_key_secret_name",
 							"type": "string",
 							"default_value": "ibmcloud-api-key",
-							"description": "The name of the IBMcloud api key for running the pipelines.",
+							"description": "The name of the IBM Cloud api key used for running the pipelines.",
 							"required": false
 						},
 						{
 							"key": "ci_signing_key_secret_name",
 							"type": "string",
 							"default_value": "signing_key",
-							"description": "The name of the signing key.",
+							"description": "The name of the signing key in Secrets Manager that is required for signing the images.",
 							"required": false
 						},
 						{
 							"key": "cd_code_signing_cert_secret_name",
 							"type": "string",
 							"default_value": "signing-certificate",
-							"description": "The name of the signing certificate.",
+							"description": "The name of the signing certificate in Secrets Manager that is used for validating the integrity of signed images.",
 							"required": false
 						},
 						{
 							"key": "cos_api_key_secret_name",
 							"type": "string",
 							"default_value": "cos-api-key",
-							"description": "The name of the COS api key.",
+							"description": "The name of the Cloud Object Storage api key in Secrets Manager that is used for reading/writing to the evidence bucket.",
 							"required": false
 						},
 						{
 							"key": "sm_secret_group",
 							"type": "string",
 							"default_value": "devsecops",
-							"description": "The secrets group created in Secrets Manager",
+							"description": "The secrets group created in Secrets Manager containing the secrets required by the DevSecOps toolchains.",
 							"required": false
 						},
 						{
@@ -494,7 +494,7 @@
 							"key": "scc_region",
 							"type": "string",
 							"default_value": "us-south",
-							"description": "The region in which all resources are deployed except SCC and Event Notifications which default to us-south but can do change in optional properties.",
+							"description": "The region in which the Security and Compliance Center instance is provisioned.",
 							"display_name": "Region",
 							"required": false,
 							"custom_config": {
@@ -516,7 +516,7 @@
 							"key": "en_region",
 							"type": "string",
 							"default_value": "us-south",
-							"description": "The region in which all resources are deployed except SCC and Event Notifications which default to us-south but can do change in optional properties.",
+							"description": "The region in which the Events Notification instance is created.",
 							"display_name": "Region",
 							"required": false,
 							"custom_config": {
@@ -538,7 +538,7 @@
 							"key": "use_existing_resource_group",
 							"type": "boolean",
 							"default_value": true,
-							"description": "Set to `true` to create and add a `cos-api-key` to the Secrets Provider.",
+							"description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
 							"required": true
 						}
 					],
