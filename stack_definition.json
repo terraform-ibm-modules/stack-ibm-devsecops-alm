@@ -124,11 +124,11 @@
 			"custom_config": {}
 		},
 		{
-			"name": "project_name",
-			"required": true,
-			"type": "string",
+			"name": "project_names",
+			"required": false,
+			"type": "array",
 			"hidden": false,
-			"default": "__NULL__"
+			"default": ["CI_Project", "CD_Project"]
 		}
 	],
 	"members": [
@@ -336,15 +336,15 @@
 				},
 				{
 					"name": "existing_project_id",
-					"value": "core-services"
+					"value": "__NULL__"
 				},
 				{
-					"name": "project_name",
-					"value": "ref:../../inputs/project_name"
+					"name": "project_names",
+					"value": "ref:../../inputs/project_names"
 				}
 			],
 			"name": "6- Code Engine Project",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.8327e747-4afb-4f42-86f1-ddd120019cd5-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.524cca67-fad4-4842-a52a-3c54677a6b3e-global"
 		},
 		{
 			"name": "7 - DevSecOps Toolchains",
@@ -447,8 +447,12 @@
 					"value" : "ref:../../inputs/cos_api_key_secret_name"
 				},
 				{
-					"name" : "code_engine_project",
-					"value" : "ref:../../inputs/project_name"
+					"name" : "ci_code_engine_project",
+					"value" : "ref:../../members/6- Code Engine Project/outputs/project_1_name"
+				},
+				{
+					"name" : "cd_code_engine_project",
+					"value" : "ref:../../members/6- Code Engine Project/outputs/project_2_name"
 				}
 			]
 		}

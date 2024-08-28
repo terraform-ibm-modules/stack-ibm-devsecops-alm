@@ -265,6 +265,13 @@
 							"default_value": true,
 							"description": "Set to `true` to create and add a `cos-api-key` to the Secrets Provider.",
 							"required": true
+						},
+						{
+						   "key": "project_names",
+						   "required": false,
+						   "type": "array",
+						   "default_value": "__NULL__",
+						   "description": "The names of the projects to add the IBM Cloud Code Engine."
 						}
 					],
 					"outputs": [
