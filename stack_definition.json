@@ -1,6 +1,14 @@
 {
 	"inputs": [
 		{
+			"name": "resource_group_name",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "__NULL__",
+			"custom_config": {}
+		},
+		{
 			"name": "region",
 			"required": true,
 			"type": "string",
@@ -8,11 +16,19 @@
 			"default": "us-south"
 		},
 		{
-			"name": "resource_group_name",
+			"name": "en_region",
 			"required": true,
 			"type": "string",
 			"hidden": false,
-			"default": "__NULL__",
+			"default": "us-south",
+			"custom_config": {}
+		},
+		{
+			"name": "scc_region",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "us-south",
 			"custom_config": {}
 		},
 		{
@@ -100,27 +116,11 @@
 			"custom_config": {}
 		},
 		{
-			"name": "en_region",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "us-south",
-			"custom_config": {}
-		},
-		{
 			"name": "scc_service_plan",
 			"required": false,
 			"type": "string",
 			"hidden": false,
 			"default": "security-compliance-center-standard-plan",
-			"custom_config": {}
-		},
-		{
-			"name": "scc_region",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "us-south",
 			"custom_config": {}
 		}
 	],
@@ -420,6 +420,14 @@
 				{
 					"name" : "cos_api_key_secret_name",
 					"value" : "ref:../../inputs/cos_api_key_secret_name"
+				},
+				{
+					"name" : "cc_opt_in_cra_auto_remediation",
+					"value" : true
+				},
+				{
+					"name" : "cc_opt_in_cra_auto_remediation_force",
+					"value" : true
 				}
 			]
 		}
