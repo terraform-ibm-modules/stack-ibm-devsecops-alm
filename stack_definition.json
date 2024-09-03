@@ -347,8 +347,8 @@
 					"value": true
 				},
 				{
-					"name": "existing_project_id",
-					"value": "__NULL__"
+					"name": "prefix",
+					"value": "ref:../../inputs/prefix"
 				},
 				{
 					"name": "project_names",
