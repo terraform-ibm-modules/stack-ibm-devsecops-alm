@@ -1,6 +1,14 @@
 {
 	"inputs": [
 		{
+			"name": "resource_group_name",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "__NULL__",
+			"custom_config": {}
+		},
+		{
 			"name": "region",
 			"required": true,
 			"type": "string",
@@ -8,11 +16,19 @@
 			"default": "us-south"
 		},
 		{
-			"name": "resource_group_name",
+			"name": "en_region",
 			"required": true,
 			"type": "string",
 			"hidden": false,
-			"default": "__NULL__",
+			"default": "us-south",
+			"custom_config": {}
+		},
+		{
+			"name": "scc_region",
+			"required": true,
+			"type": "string",
+			"hidden": false,
+			"default": "us-south",
 			"custom_config": {}
 		},
 		{
@@ -97,14 +113,6 @@
 			"type": "string",
 			"hidden": false,
 			"default": "signing-certificate",
-			"custom_config": {}
-		},
-		{
-			"name": "en_region",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "us-south",
 			"custom_config": {}
 		},
 		{
@@ -318,7 +326,11 @@
 				},
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
+					"value": "ref:../../members/1b- Cloud Object Storage/outputs/cos_instance_id"
+				},
+				{
+					"name" : "provision_scc_workload_protection",
+					"value" : false
 				}
 			],
 			"name": "6 - Security and Compliance Center",
@@ -453,6 +465,13 @@
 				{
 					"name" : "cd_code_engine_project",
 					"value" : "ref:../../members/7 - Code Engine Project/outputs/project_1_name"
+        },
+					"name" : "cc_opt_in_cra_auto_remediation",
+					"value" : true
+				},
+				{
+					"name" : "cc_opt_in_cra_auto_remediation_force",
+					"value" : true
 				}
 			]
 		}
