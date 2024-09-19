@@ -326,7 +326,7 @@
         },
         {
           "name": "existing_cos_instance_crn",
-          "value": "ref:../../members/2- Cloud Object Storage/outputs/cos_instance_id"
+          "value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
         },
         {
           "name": "provision_scc_workload_protection",
