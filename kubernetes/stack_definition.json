@@ -503,16 +503,7 @@
 				{
 					"name" : "ci_cluster_resource_group",
 					"value" : "ref:../../inputs/ci_cluster_resource_group"
-				},
-				{
-					"name" : "cc_opt_in_cra_auto_remediation",
-					"value" : true
-				},
-				{
-					"name" : "cc_opt_in_cra_auto_remediation_force",
-					"value" : true
 				}
-
 			]
 		}
 	],
