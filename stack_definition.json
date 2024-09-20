@@ -1,14 +1,6 @@
 {
   "inputs": [
     {
-      "name": "resource_group_name",
-      "required": true,
-      "type": "string",
-      "hidden": false,
-      "default": "__NULL__",
-      "custom_config": {}
-    },
-    {
       "name": "region",
       "required": true,
       "type": "string",
@@ -32,11 +24,26 @@
       "custom_config": {}
     },
     {
-      "name": "bucket_name",
-      "required": true,
+			"name": "app_repo_existing_url",
+			"type": "string",
+			"hidden": false,
+			"default": "__NOTSET__",
+			"required": true
+		},
+    {
+      "name": "resource_group_name",
+      "required": false,
       "type": "string",
       "hidden": false,
-      "default": ""
+      "default": "__NULL__",
+      "custom_config": {}
+    },
+    {
+      "name": "bucket_name",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "devsecops"
     },
     {
       "name": "prefix",
@@ -135,21 +142,14 @@
 			"type": "string",
 			"hidden": false,
 			"default": "main",
-			"required": true
-		},
-		{
-			"name": "app_repo_existing_url",
-			"type": "string",
-			"hidden": false,
-			"default": "__NOTSET__",
-			"required": true
+			"required": false
 		},
 		{
 			"name": "app_repo_git_token_secret_name",
 			"type": "string",
 			"hidden": false,
 			"default": "",
-			"required": true
+			"required": false
 		}
   ],
   "members": [

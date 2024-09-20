@@ -1,14 +1,6 @@
 {
 	"inputs": [
 		{
-			"name": "resource_group_name",
-			"required": true,
-			"type": "string",
-			"hidden": false,
-			"default": "__NULL__",
-			"custom_config": {}
-		},
-		{
 			"name": "region",
 			"required": true,
 			"type": "string",
@@ -32,11 +24,11 @@
 			"custom_config": {}
 		},
 		{
-			"name": "bucket_name",
-			"required": true,
+			"name": "app_repo_existing_url",
 			"type": "string",
 			"hidden": false,
-			"default": ""
+			"default": "__NOTSET__",
+			"required": true
 		},
 		{
 			"name": "cluster_name",
@@ -44,6 +36,69 @@
 			"type": "string",
 			"hidden": false,
 			"default": "mycluster"
+		},
+		{
+			"name": "ci_cluster_resource_group",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "ref:../../inputs/resource_group_name",
+			"custom_config": {}
+		},
+		{
+			"name": "ci_cluster_name",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "ref:../../inputs/cluster_name",
+			"custom_config": {}
+		},
+		{
+			"name": "ci_cluster_namespace",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "dev",
+			"custom_config": {}
+		},
+		{
+			"name": "ci_cluster_region",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "us-south",
+			"custom_config": {}
+		},
+		{
+			"name": "cd_cluster_name",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "ref:../../inputs/cluster_name",
+			"custom_config": {}
+		},
+		{
+			"name": "cd_cluster_namespace",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "prod",
+			"custom_config": {}
+		},
+		{
+			"name": "bucket_name",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "devsecops"
+		},
+		{
+			"name": "resource_group_name",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "__NULL__",
+			"custom_config": {}
 		},
 		{
 			"name": "prefix",
@@ -72,54 +127,6 @@
 			"type": "boolean",
 			"hidden": false,
 			"default": true,
-			"custom_config": {}
-		},
-		{
-			"name": "ci_cluster_name",
-			"required": true,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "ci_cluster_namespace",
-			"required": true,
-			"type": "string",
-			"hidden": false,
-			"default": "dev",
-			"custom_config": {}
-		},
-		{
-			"name": "ci_cluster_region",
-			"required": true,
-			"type": "string",
-			"hidden": false,
-			"default": "us-south",
-			"custom_config": {}
-		},
-		{
-			"name": "ci_cluster_resource_group",
-			"required": true,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "cd_cluster_name",
-			"required": true,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "cd_cluster_namespace",
-			"required": true,
-			"type": "string",
-			"hidden": false,
-			"default": "prod",
 			"custom_config": {}
 		},
 		{
@@ -183,21 +190,14 @@
 			"type": "string",
 			"hidden": false,
 			"default": "main",
-			"required": true
-		},
-		{
-			"name": "app_repo_existing_url",
-			"type": "string",
-			"hidden": false,
-			"default": "__NOTSET__",
-			"required": true
+			"required": false
 		},
 		{
 			"name": "app_repo_git_token_secret_name",
 			"type": "string",
 			"hidden": false,
 			"default": "",
-			"required": true
+			"required": false
 		}
 	],
 	"members": [
