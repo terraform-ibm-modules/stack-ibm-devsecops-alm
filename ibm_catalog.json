@@ -196,7 +196,7 @@
 							"type": "string",
 							"default_value": "security-compliance-center-standard-plan",
 							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
-							"required": true,
+							"required": false,
 							"options": [
 								{
 									"displayname": "standard",
