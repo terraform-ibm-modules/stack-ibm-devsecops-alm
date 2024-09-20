@@ -35,7 +35,7 @@
       "required": false,
       "type": "string",
       "hidden": false,
-      "default": "__NULL__",
+      "default": "devsecops-rg",
       "custom_config": {}
     },
     {
