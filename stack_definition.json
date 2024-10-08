@@ -221,7 +221,7 @@
         }
       ],
       "name": "3 - Cloud Object Bucket",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.715785dc-e514-4dd9-9140-5a576b582f73-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.993946ad-43d0-4774-929c-22954b20af95-global"
     },
     {
       "inputs": [
@@ -347,7 +347,7 @@
         }
       ],
       "name": "6 - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1491b4df-b62d-4c44-9418-76b69b1fbb03-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c689955e-d4ad-4f9e-8bdc-c8929dd5991a-global"
     },
     {
       "inputs": [
@@ -369,7 +369,7 @@
         }
       ],
       "name": "7 - Code Engine Project",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.524cca67-fad4-4842-a52a-3c54677a6b3e-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.10aa04ed-4d19-4fcf-8522-478b78598acd-global"
     },
     {
       "name": "8 - DevSecOps Toolchains",
