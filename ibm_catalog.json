@@ -85,7 +85,7 @@
 						{
 							"key": "region",
 							"type": "string",
-							"default_value": "eu-gb",
+							"default_value": "us-south",
 							"description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
 							"display_name": "Region",
 							"required": true,
@@ -149,7 +149,7 @@
 						{
 							"key": "ci_signing_key_secret_name",
 							"type": "string",
-							"default_value": "signing_key",
+							"default_value": "signing-key",
 							"description": "The name of the signing key in Secrets Manager that is required for signing the images.",
 							"required": false
 						},
@@ -346,7 +346,7 @@
 						{
 							"key": "region",
 							"type": "string",
-							"default_value": "eu-gb",
+							"default_value": "us-south",
 							"description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
 							"display_name": "Region",
 							"required": true,
@@ -403,7 +403,7 @@
 						{
 							"key": "create_cd_instance",
 							"type": "boolean",
-							"default_value": false,
+							"default_value": true,
 							"description": "Set to `true` to create a Continuous Delivery Service. This is required for running the DevSecOps toolchain pipelines and to successfuly interact with a DevOps Insights integration.",
 							"required": false
 						},
@@ -459,7 +459,7 @@
 						{
 							"key": "ci_signing_key_secret_name",
 							"type": "string",
-							"default_value": "signing_key",
+							"default_value": "signing-key",
 							"description": "The name of the signing key in Secrets Manager that is required for signing the images.",
 							"required": false
 						},

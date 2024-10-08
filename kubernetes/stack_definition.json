@@ -221,7 +221,7 @@
 				}
 			],
 			"name": "1 - Key Management",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.206bfa3d-3bbe-435e-adb9-dd244fdaad86-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.58ca29c8-694e-41a8-8beb-866cb24b48e6-global"
 		},
 		{
 			"inputs": [
@@ -243,7 +243,7 @@
 				}
 			],
 			"name": "2 - Cloud Object Storage",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1db2434c-c55f-4a5e-9814-1b39f9580b86-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.48d7439d-aaf6-42a1-bb4d-a73775caf0c2-global"
 		},
 		{
 			"inputs": [
@@ -268,14 +268,14 @@
 					"value": false
 				}
 			],
-			"name": "3 - Cloud Object Storage",
+			"name": "3 - Cloud Object Bucket",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.993946ad-43d0-4774-929c-22954b20af95-global"
 		},
 		{
 			"inputs": [
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/3 - Cloud Object Storage/outputs/cos_instance_id"
+					"value": "ref:../../members/3 - Cloud Object Bucket/outputs/cos_instance_id"
 				},
 				{
 					"name": "kms_endpoint_url",
@@ -307,7 +307,7 @@
 				}
 			],
 			"name": "4 - Event Notifications",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ee7b0d6c-3603-40fb-953b-4bdbd43c3cbe-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ef41f37e-25b7-4dc2-89b3-08d38df6789d-global"
 		},
 		{
 			"inputs": [
@@ -341,7 +341,7 @@
 				}
 			],
 			"name": "5 - Secrets Manager",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f98df044-b1c7-4f38-86db-6438e76a35bf-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.03587d2d-38bd-42c3-983b-72469702e038-global"
 		},
 		{
 			"inputs": [
@@ -395,7 +395,7 @@
 				}
 			],
 			"name": "6 - Security and Compliance Center",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c689955e-d4ad-4f9e-8bdc-c8929dd5991a-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.88be4381-4dfe-45ee-a2f9-1d48bb6f300a-global"
 		},
 		{
 			"name": "7 - DevSecOps Toolchains",
@@ -439,11 +439,11 @@
 				},
 				{
 					"name" : "cos_bucket_name",
-					"value" : "ref:../../members/3 - Cloud Object Storage/outputs/bucket_name"
+					"value" : "ref:../../members/3 - Cloud Object Bucket/outputs/bucket_name"
 				},
 				{
 					"name" : "cos_endpoint",
-					"value" : "ref:../../members/3 - Cloud Object Storage/outputs/s3_endpoint_direct"
+					"value" : "ref:../../members/3 - Cloud Object Bucket/outputs/s3_endpoint_direct"
 				},
 				{
 					"name" : "registry_namespace",
