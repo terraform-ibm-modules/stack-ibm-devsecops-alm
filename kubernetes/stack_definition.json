@@ -221,7 +221,7 @@
 				}
 			],
 			"name": "1 - Key Management",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.650ff7c9-5a41-4d32-a0db-6720ff56a016-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.206bfa3d-3bbe-435e-adb9-dd244fdaad86-global"
 		},
 		{
 			"inputs": [
@@ -243,7 +243,7 @@
 				}
 			],
 			"name": "2 - Cloud Object Storage",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.75709d42-41a3-41ca-8f45-807652f0d1f7-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1db2434c-c55f-4a5e-9814-1b39f9580b86-global"
 		},
 		{
 			"inputs": [
@@ -269,7 +269,7 @@
 				}
 			],
 			"name": "3 - Cloud Object Storage",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1218c52a-4c9c-433a-817d-ae2f0cdc8be4-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.993946ad-43d0-4774-929c-22954b20af95-global"
 		},
 		{
 			"inputs": [
@@ -307,7 +307,7 @@
 				}
 			],
 			"name": "4 - Event Notifications",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3910e11e-c90b-48b0-b271-ec5d5049ad84-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.ee7b0d6c-3603-40fb-953b-4bdbd43c3cbe-global"
 		},
 		{
 			"inputs": [
@@ -341,7 +341,7 @@
 				}
 			],
 			"name": "5 - Secrets Manager",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e806bb05-dfb9-40a8-99bf-1b9272cf8d82-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f98df044-b1c7-4f38-86db-6438e76a35bf-global"
 		},
 		{
 			"inputs": [
@@ -395,7 +395,7 @@
 				}
 			],
 			"name": "6 - Security and Compliance Center",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1491b4df-b62d-4c44-9418-76b69b1fbb03-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c689955e-d4ad-4f9e-8bdc-c8929dd5991a-global"
 		},
 		{
 			"name": "7 - DevSecOps Toolchains",
@@ -531,15 +531,15 @@
 	"outputs": [
 		{
 			"name": "compliance-ci-toolchain",
-			"value": "ref:./members/8 - DevSecOps Toolchains/outputs/compliance_ci_toolchain_url"
+			"value": "ref:./members/7 - DevSecOps Toolchains/outputs/compliance_ci_toolchain_url"
 		},
 		{
 			"name": "compliance-cd-toolchain",
-			"value": "ref:./members/8 - DevSecOps Toolchains/outputs/compliance_cd_toolchain_url"
+			"value": "ref:./members/7 - DevSecOps Toolchains/outputs/compliance_cd_toolchain_url"
 		},
 		{
 			"name": "compliance-cc-toolchain",
-			"value": "ref:./members/8 - DevSecOps Toolchains/outputs/compliance_cc_toolchain_url"
+			"value": "ref:./members/7 - DevSecOps Toolchains/outputs/compliance_cc_toolchain_url"
 		}
 	]
   }
