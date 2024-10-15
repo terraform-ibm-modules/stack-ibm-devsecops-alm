@@ -1,7 +1,7 @@
 {
 	"products": [
 		{
-			"label": "DevSecOps Application Lifecycle Management Stack",
+			"label": "DevSecOps Solution for Apps",
 			"name": "deploy-arch-ibm-alm-stack",
 			"product_kind": "solution",
 			"tags": [
