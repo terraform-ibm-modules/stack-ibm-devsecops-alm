@@ -254,8 +254,8 @@
 						},
 						{
 							"key": "use_existing_resource_group",
-							"type": "boolean",
-							"default_value": false,
+							"type": "string",
+							"default_value": "false",
 							"description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
 							"required": false
 						},
@@ -284,7 +284,7 @@
 						   "key": "project_names",
 						   "required": false,
 						   "type": "array",
-						   "default_value": "[\"CI_Project\", \"CD_Project\"]",
+						   "default_value": ["CI_Project", "CD_Project"],
 						   "description": "The names of the projects to add the IBM Cloud Code Engine."
 						}
 					],
@@ -564,8 +564,8 @@
 						},
 						{
 							"key": "use_existing_resource_group",
-							"type": "boolean",
-							"default_value": false,
+							"type": "string",
+							"default_value": "false",
 							"description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
 							"required": false
 						},
