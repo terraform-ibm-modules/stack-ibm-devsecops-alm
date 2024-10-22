@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32.05 32.01">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#New_Gradient_Swatch);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        mask: url(#mask);
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="2.53" y1="19.56" x2="29.47" y2="19.56" gradientUnits="userSpaceOnUse">
+      <stop offset=".1" stop-color="#a46eff"/>
+      <stop offset=".9" stop-color="#ff7eb5"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-258.01" y1="-1032.96" x2="-252.12" y2="-1032.96" gradientTransform="translate(920.57 702.03) rotate(-28.42) scale(1.76 1) skewX(.41)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".82" stop-color="#000"/>
+    </linearGradient>
+    <mask id="mask" x="2.01" y="2.02" width="27.15" height="16" maskUnits="userSpaceOnUse">
+      <g>
+        <path class="cls-5" d="M26.59,10.11l-10.55,5.77L5.12,10.09,15.97,4.16l12.25,6.49,.94-1.77L16.43,2.14c-.3-.16-.65-.16-.95,0L2.53,9.23c-.17,.09-.31,.24-.4,.41-.26,.49-.07,1.09,.42,1.35l13.05,6.91c.15,.08,.31,.12,.48,.12,.17,0,.33-.04,.47-.12l11.02-6.03-.96-1.75Z"/>
+        <polygon class="cls-6" points="27.7 11.79 18.63 16.75 17.69 14.98 26.75 10.02 27.7 11.79"/>
+      </g>
+    </mask>
+    <linearGradient id="New_Gradient_Swatch" data-name="New Gradient Swatch" x1="-1043.48" y1="-6095.94" x2="-999.96" y2="-6095.94" gradientTransform="translate(4846.31 -3840.58) rotate(-119.09)" gradientUnits="userSpaceOnUse">
+      <stop offset=".1" stop-color="#ff7eb5"/>
+      <stop offset=".9" stop-color="#a46eff"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_7" data-name="Layer 7">
+    <g>
+      <g id="Stack">
+        <path class="cls-3" d="M16,24c-.17,0-.33-.04-.47-.12L2.53,16.88l.95-1.76,12.53,6.74,12.53-6.74,.95,1.76-13,7c-.15,.08-.31,.12-.47,.12Z"/>
+        <path class="cls-5" d="M16,30c-.17,0-.33-.04-.47-.12L2.53,22.88l.95-1.76,12.53,6.74,12.53-6.74,.95,1.76-13,7c-.15,.08-.31,.12-.47,.12Z"/>
+        <rect id="_Transparent_Rectangle_" data-name=" Transparent Rectangle " class="cls-1" x="0" y="0" width="32.05" height="32"/>
+      </g>
+      <g class="cls-4">
+        <rect class="cls-2" x=".05" y=".01" width="32" height="32"/>
+      </g>
+    </g>
+  </g>
+</svg>
