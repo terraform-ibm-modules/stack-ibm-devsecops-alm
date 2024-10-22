@@ -135,7 +135,10 @@
       "required": false,
       "type": "array",
       "hidden": false,
-      "default": "[\"CI_Project\",\"CD_Project\"]"
+      "value": [
+        "CI_Project",
+        "CD_Project"
+      ]
     },
 		{
 			"name": "app_repo_branch",
@@ -150,6 +153,14 @@
 			"hidden": false,
 			"default": "",
 			"required": false
+		},
+    {
+			"name": "existing_secrets_manager_crn",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "__NULL__",
+			"custom_config": {}
 		}
   ],
   "members": [
@@ -279,6 +290,10 @@
           "name": "prefix",
           "value": "ref:../../inputs/prefix"
         },
+        {
+					"name": "existing_secrets_manager_crn",
+					"value": "ref:../../inputs/existing_secrets_manager_crn"
+				},
         {
           "name": "existing_kms_instance_crn",
           "value": "ref:../../members/1 - Key Management/outputs/kms_instance_crn"
