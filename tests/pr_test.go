@@ -44,7 +44,12 @@ func TestProjectsFullTest(t *testing.T) {
 			"existing_secrets_manager_instance_crn": permanentResources["secretsManagerCRN"],
 		},
 		"8 - DevSecOps Toolchains": {
-			"autostart": "false",
+			"autostart":                  "false",
+			"create_cos_api_key":         "false",
+			"create_secret_group":        "false",
+			"create_signing_certificate": "false",
+			"create_signing_key":         "false",
+			"create_ibmcloud_api_key":    "false",
 		},
 	}
 
