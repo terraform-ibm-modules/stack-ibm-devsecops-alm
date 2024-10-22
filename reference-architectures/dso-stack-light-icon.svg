@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32.01">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        mask: url(#mask);
+      }
+
+      .cls-4 {
+        fill: #001d6c;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: url(#New_Gradient_Swatch_copy_2);
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="New_Gradient_Swatch_copy_2" data-name="New Gradient Swatch copy 2" x1="2.55" y1="19.56" x2="29.5" y2="19.56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9529ff"/>
+      <stop offset="1" stop-color="#ff3f96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="-288.24" y1="-1004.37" x2="-282.35" y2="-1004.37" gradientTransform="translate(953.48 651.72) rotate(-28.42) scale(1.76 1) skewX(.41)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".82" stop-color="#000"/>
+    </linearGradient>
+    <mask id="mask" x="2.03" y="2.02" width="27.15" height="16" maskUnits="userSpaceOnUse">
+      <g>
+        <path class="cls-5" d="M26.62,10.11l-10.55,5.77L5.14,10.09,15.99,4.16l12.25,6.49,.94-1.77L16.45,2.14c-.3-.16-.65-.16-.95,0L2.55,9.23c-.17,.09-.31,.24-.4,.41-.26,.49-.07,1.09,.42,1.35l13.05,6.91c.15,.08,.31,.12,.48,.12,.17,0,.33-.04,.47-.12l11.02-6.03-.96-1.75Z"/>
+        <polygon class="cls-2" points="27.73 11.79 18.65 16.75 17.71 14.98 26.77 10.02 27.73 11.79"/>
+      </g>
+    </mask>
+    <linearGradient id="linear-gradient-2" x1="-1132.7" y1="-6043.51" x2="-1089.18" y2="-6043.51" gradientTransform="translate(4757.07 -3893.05) rotate(-119.09)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff3f96"/>
+      <stop offset="1" stop-color="#9529ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Build_icon_here" data-name="Build icon here">
+    <g>
+      <g id="Stack">
+        <path class="cls-6" d="M16.02,24c-.17,0-.33-.04-.47-.12L2.55,16.88l.95-1.76,12.53,6.74,12.53-6.74,.95,1.76-13,7c-.15,.08-.31,.12-.47,.12Z"/>
+        <path class="cls-4" d="M16.02,30c-.17,0-.33-.04-.47-.12L2.55,22.88l.95-1.76,12.53,6.74,12.53-6.74,.95,1.76-13,7c-.15,.08-.31,.12-.47,.12Z"/>
+        <rect id="_Transparent_Rectangle_" data-name=" Transparent Rectangle " class="cls-1" x=".02" y="0" width="31.98" height="32"/>
+      </g>
+      <g class="cls-3">
+        <rect class="cls-7" y=".01" width="32" height="32"/>
+      </g>
+    </g>
+  </g>
+</svg>
