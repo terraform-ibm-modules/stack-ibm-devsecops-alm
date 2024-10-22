@@ -291,6 +291,10 @@
           "value": "ref:../../inputs/prefix"
         },
         {
+					"name": "existing_secrets_manager_crn",
+					"value": "ref:../../inputs/existing_secrets_manager_crn"
+				},
+        {
           "name": "existing_kms_instance_crn",
           "value": "ref:../../members/1 - Key Management/outputs/kms_instance_crn"
         },
@@ -332,10 +336,6 @@
           "name": "existing_kms_instance_crn",
           "value": "ref:../../members/1 - Key Management/outputs/kms_instance_crn"
         },
-        {
-					"name": "existing_secrets_manager_crn",
-					"value": "ref:../../inputs/existing_secrets_manager_crn"
-				},
         {
           "name": "existing_en_crn",
           "value": "ref:../../members/4 - Event Notifications/outputs/crn"

@@ -38,6 +38,16 @@ func TestProjectsFullTest(t *testing.T) {
 
 	//fmt.Print(permanentResources["secretsManagerCRN"])
 
+	options.StackMemberInputs = map[string]map[string]interface{}{
+		"5 - Secrets Manager": {
+			"resource_group_name":                   "default",
+			"existing_secrets_manager_instance_crn": permanentResources["secretsManagerCRN"],
+		},
+		"8 - DevSecOps Toolchains": {
+			"autostart": "default",
+		},
+	}
+
 	options.StackInputs = map[string]interface{}{
 		"prefix":                       options.Prefix,
 		"resource_group_name":          options.Prefix,
