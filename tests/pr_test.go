@@ -44,7 +44,7 @@ func TestProjectsFullTest(t *testing.T) {
 			"existing_secrets_manager_instance_crn": permanentResources["secretsManagerCRN"],
 		},
 		"8 - DevSecOps Toolchains": {
-			"autostart": "default",
+			"autostart": "false",
 		},
 	}
 
