@@ -1,7 +1,7 @@
 {
 	"products": [
 		{
-			"label": "DevSecOps Application Lifecycle Management Stack",
+			"label": "DevSecOps Solution For Apps",
 			"name": "deploy-arch-ibm-alm-stack",
 			"product_kind": "solution",
 			"tags": [
@@ -20,12 +20,13 @@
 				"secret manager",
 				"key protect",
 				"scc",
-				"devsecops"
+				"devsecops",
+				"pipelines"
 			],
-			"short_description": "Deploys a sample DevSecOps application, including all supporting IBM Cloud services.",
-			"long_description": "This deployable architecture provides a comprehensive foundation for trust, observability, security, and regulatory compliance by configuring and deploying various services, including:\n- Deploying Keys and Secrets Management Services: for storage and management of encryption keys and secrets\n- Deploying CI/CD/CC Pipelines: for secure application lifecycle management\n\n# Objective\n\nThis deployable architecture is designed to showcase a fully automated deployment of a sample Node application through an IBM Cloud Project, providing a flexible and customizable foundation for your own application deployments on IBM Cloud. This architecture deploys the following [Sample application](https://us-south.git.cloud.ibm.com/open-toolchain/code-engine-compliance-app) by default.\n\nBy leveraging this architecture, you can accelerate your deployment and tailor it to meet your unique business needs and enterprise goals.",
-            "offering_docs_url": "https://github.com/terraform-ibm-modules/stack-ibm-devescops-alm/blob/main/README.md",
-			"offering_icon_url": "https://globalcatalog.cloud.ibm.com/api/v1/1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc/artifacts/solution.svg",
+			"short_description": "Comprehensive solution with prerequisite services and pipelines from the DevSecOps Foundation for secure app development.",
+			"long_description": "This deployable architecture provides a comprehensive foundation for trust, observability, security, and regulatory compliance by configuring and deploying various services, including:\n- Creates CI/CD/CC Pipelines for secure application lifecycle management.\n- Creates and configures a Key Protect instance and creates root keys for IBM Cloud Object Storage, Event Notifications, and Secrets Manager.\n- Creates and configures a Secrets Manager instance and creates rotatable secrets required to run secure pipelines.\n- Creates and configures an IBM Security Compliance Center instance.\n- Creates and configures an IBM Cloud Object Storage instance and multiple Object Storage buckets that are encrypted by Key Protect.\n- Deploy and configures service-to-service authorizations for the following services: KMS, Event Notifications, Object Storage, Secrets Manager, and Security and Compliance Center.\n- (Optionally) Creates a Code Engine Project for that variation.\n\n# Objective\n\nThis deployable architecture is designed to showcase a fully automated deployment of a sample Node application through an IBM Cloud Project, providing a flexible and customizable foundation for your own application deployments on IBM Cloud. This architecture deploys the following [Sample application](https://us-south.git.cloud.ibm.com/open-toolchain/code-engine-compliance-app) by default.\n\nBy leveraging this architecture, you can accelerate your deployment and tailor it to meet your unique business needs and enterprise goals.",
+			"offering_docs_url": "https://github.com/terraform-ibm-modules/stack-ibm-devescops-alm/blob/main/README.md",
+			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/main/reference-architectures/dso-stack-light-icon.svg",
 			"provider_name": "IBM",
 			"features": [
 				{
@@ -51,8 +52,8 @@
 					"architecture": {
 						"features": [
 							{
-								"title": "Implement Security",
-								"description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
+								"title": "IBM Code Engine",
+								"description": "Build, test, scan and deploy an app to Code Engine on IBM Cloud, using a Tekton pipeline."
 							},
 							{
 								"title": "Achieve Regulatory Compliance",
@@ -61,17 +62,21 @@
 							{
 								"title": "Establish Trust",
 								"description": "The architecture ensures trust by configuring the IBM Cloud account to align with compliance settings as defined in the Financial Services framework."
+							},
+							{
+								"title": "Implement Security",
+								"description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
 							}
 						],
 						"diagrams": [
 							{
 								"diagram": {
-									"url": "https://github.com/terraform-ibm-modules/terraform-ibm-devsecops-alm/blob/main/reference-architectures/diagram-deploy-arch-ibm-devsecops-alm-diagram.svg",
-									"caption": "Reference architecture",
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-code-engine.svg",
+									"caption": "DevSecOps Code Engine ",
 									"type": "image/svg+xml",
-									"thumbnail_url": "https://github.com/terraform-ibm-modules/terraform-ibm-devsecops-alm/blob/main/reference-architectures/diagram-deploy-arch-ibm-devsecops-alm-diagram.svg"
+									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-code-engine.svg"
 								},
-								"description": "Reference architecture"
+								"description": "DevSecOps reference architecture for Code Engine that includes all the toolchains needed for a complete secure pipeline solution."
 							}
 						]
 					},
@@ -312,8 +317,8 @@
 					"architecture": {
 						"features": [
 							{
-								"title": "Implement Security",
-								"description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
+								"title": "Managed Kubernetes Solution",
+								"description": "Build, test and deploy an app to a Kubernetes cluster on IBM Cloud, using a Tekton pipeline."
 							},
 							{
 								"title": "Achieve Regulatory Compliance",
@@ -322,17 +327,21 @@
 							{
 								"title": "Establish Trust",
 								"description": "The architecture ensures trust by configuring the IBM Cloud account to align with compliance settings as defined in the Financial Services framework."
+							},
+							{
+								"title": "Implement Security",
+								"description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
 							}
 						],
 						"diagrams": [
 							{
 								"diagram": {
-									"url": "https://github.com/terraform-ibm-modules/terraform-ibm-devsecops-alm/blob/main/reference-architectures/diagram-deploy-arch-ibm-devsecops-alm-diagram.svg",
-									"caption": "Reference architecture",
+									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-kube.svg",
+									"caption": "DevSecOps Reference architecture for Kubernetes",
 									"type": "image/svg+xml",
-									"thumbnail_url": "https://github.com/terraform-ibm-modules/terraform-ibm-devsecops-alm/blob/main/reference-architectures/diagram-deploy-arch-ibm-devsecops-alm-diagram.svg"
+									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-kube.svg"
 								},
-								"description": "Reference architecture"
+								"description": "DevSecOps reference architecture for Kubernetes that includes all the toolchains needed for a complete secure pipeline solution."
 							}
 						]
 					},
