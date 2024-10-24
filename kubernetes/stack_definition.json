@@ -524,6 +524,10 @@
 				{
 					"name" : "ci_cluster_resource_group",
 					"value" : "ref:../../inputs/ci_cluster_resource_group"
+				},
+				{
+					"name": "add_container_name_suffix",
+					"value": "true"
 				}
 			]
 		}
