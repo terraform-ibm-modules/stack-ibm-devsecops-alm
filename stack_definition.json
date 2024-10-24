@@ -447,6 +447,10 @@
           "value": "ref:../../inputs/prefix"
         },
         {
+          "name": "add_container_name_suffix",
+          "value": "true"
+        },
+        {
           "name": "create_cd_instance",
           "value": "ref:../../inputs/create_cd_instance"
         },
