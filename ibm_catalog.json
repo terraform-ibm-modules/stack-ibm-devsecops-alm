@@ -291,7 +291,14 @@
 						   "type": "array",
 						   "default_value": ["CI_Project", "CD_Project"],
 						   "description": "The names of the projects to add the IBM Cloud Code Engine."
-						}
+						},
+						{
+							"key": "existing_secrets_manager_crn",
+							"required": false,
+							"type": "string",
+							"default_value": "",
+							"description": "The CRN of an existing Secrets Manager instance"
+						 }
 					],
 					"outputs": [
 						{
