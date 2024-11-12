@@ -7,8 +7,8 @@
 			"tags": [
 				"solution",
 				"enterprise_app",
-				"ibm_beta",
-				"security"
+				"security",
+				"ibm_created"
 			],
 			"keywords": [
 				"compliance",
@@ -296,9 +296,44 @@
 							"key": "existing_secrets_manager_crn",
 							"required": false,
 							"type": "string",
-							"default_value": "",
+							"default_value": "__NULL__",
 							"description": "The CRN of an existing Secrets Manager instance"
-						 }
+						},
+						{
+							"key": "autostart",
+							"required": false,
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set to `true` to automatically run the CI pipeline."
+						},
+						{
+							"key": "create_git_token",
+							"required": false,
+							"type": "boolean",
+							"default_value": false,
+							"description": "Set to `true` to create a Git Token secret in the speficied Secrets Manager, using the name set in `repo_git_token_secret_name` and the value set in `repo_git_token_secret_value`."
+						},
+						{
+							"key": "repo_git_token_secret_name",
+							"required": false,
+							"type": "string",
+							"default_value": "",
+							"description": "The name for the Git Token secret in Secrets Manager."
+						},
+						{
+							"key": "repo_git_token_secret_value",
+							"required": false,
+							"type": "password",
+							"default_value": "",
+							"description": "The value of the Git Token secret that is created if `create_git_token` is set to `true`."
+						},
+						{
+							"key": "repo_group",
+							"required": false,
+							"type": "string",
+							"default_value": "",
+							"description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
+						}
 					],
 					"outputs": [
 						{
@@ -605,7 +640,49 @@
                             "default_value": "",
                             "description": "Name of the Git token secret in the secret provider used for accessing the sample (or bring your own) application repository.",
                             "required": false
-                        }
+                        },
+						{
+							"key": "existing_secrets_manager_crn",
+							"required": false,
+							"type": "string",
+							"default_value": "__NULL__",
+							"description": "The CRN of an existing Secrets Manager instance"
+						 },
+						 {
+							 "key": "autostart",
+							 "required": false,
+							 "type": "boolean",
+							 "default_value": false,
+							 "description": "Set to `true` to automatically run the CI pipeline."
+						 },
+						 {
+							 "key": "create_git_token",
+							 "required": false,
+							 "type": "boolean",
+							 "default_value": false,
+							 "description": "Set to `true` to create a Git Token secret in the speficied Secrets Manager, using the name set in `repo_git_token_secret_name` and the value set in `repo_git_token_secret_value`."
+						 },
+						 {
+							 "key": "repo_git_token_secret_name",
+							 "required": false,
+							 "type": "string",
+							 "default_value": "",
+							 "description": "The name for the Git Token secret in Secrets Manager."
+						 },
+						 {
+							 "key": "repo_git_token_secret_value",
+							 "required": false,
+							 "type": "password",
+							 "default_value": "",
+							 "description": "The value of the Git Token secret that is created if `create_git_token` is set to `true`."
+						 },
+						 {
+							 "key": "repo_group",
+							 "required": false,
+							 "type": "string",
+							 "default_value": "",
+							 "description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
+						 }
 					],
 					"outputs": [
 						{
