@@ -201,6 +201,14 @@
 			"hidden": false,
 			"default": "",
 			"custom_config": {}
+		},
+		{
+			"name": "create_icr_namespace",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": true,
+			"custom_config": {}
 		}
   ],
   "members": [
@@ -491,6 +499,10 @@
           "value": "true"
         },
         {
+					"name": "create_icr_namespace",
+					"value": "ref:../../inputs/create_icr_namespace"
+				},
+        {
           "name": "create_cd_instance",
           "value": "ref:../../inputs/create_cd_instance"
         },
@@ -508,10 +520,6 @@
         },
         {
           "name": "create_signing_key",
-          "value": true
-        },
-        {
-          "name": "create_signing_certificate",
           "value": true
         },
         {

@@ -246,6 +246,14 @@
 			"hidden": false,
 			"default": "",
 			"custom_config": {}
+		},
+		{
+			"name": "create_icr_namespace",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": true,
+			"custom_config": {}
 		}
 	],
 	"members": [
@@ -530,10 +538,6 @@
 					"value" : true
 				},
 				{
-					"name" : "create_signing_certificate",
-					"value" : true
-				},
-				{
 					"name" : "pipeline_ibmcloud_api_key_secret_name",
 					"value" : "ref:../../inputs/pipeline_ibmcloud_api_key_secret_name"
 				},
@@ -580,6 +584,10 @@
 				{
 					"name": "add_container_name_suffix",
 					"value": "true"
+				},
+				{
+					"name": "create_icr_namespace",
+					"value": "ref:../../inputs/create_icr_namespace"
 				},
 				{
 				  "name": "create_git_token",
