@@ -595,7 +595,7 @@
 				},
 				{
 				  "name": "repo_group",
-				  "value": "ref:../../inputs/repo_git_token_secret_value"
+				  "value": "ref:../../inputs/repo_group"
 				}
 			]
 		}
