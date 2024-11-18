@@ -201,6 +201,14 @@
 			"hidden": false,
 			"default": "",
 			"custom_config": {}
+		},
+		{
+			"name": "create_icr_namespace",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": true,
+			"custom_config": {}
 		}
   ],
   "members": [
@@ -428,7 +436,7 @@
     },
     {
       "name": "8 - DevSecOps Toolchains",
-      "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.4efc4831-c0ce-4c27-8f88-021d5985e7f5-global",
+      "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.9974cbde-5213-46d3-9dfb-c0f2716e4464-global",
       "inputs": [
         {
           "name": "ibmcloud_api_key",
@@ -491,6 +499,10 @@
           "value": "true"
         },
         {
+					"name": "create_icr_namespace",
+					"value": "ref:../../inputs/create_icr_namespace"
+				},
+        {
           "name": "create_cd_instance",
           "value": "ref:../../inputs/create_cd_instance"
         },
@@ -508,10 +520,6 @@
         },
         {
           "name": "create_signing_key",
-          "value": true
-        },
-        {
-          "name": "create_signing_certificate",
           "value": true
         },
         {
@@ -552,7 +560,7 @@
         },
         {
           "name": "repo_group",
-          "value": "ref:../../inputs/repo_git_token_secret_value"
+          "value": "ref:../../inputs/repo_group"
         }
       ]
     }
