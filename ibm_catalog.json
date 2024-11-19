@@ -340,7 +340,119 @@
 							"type": "string",
 							"default_value": "",
 							"description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
-						}
+						},
+						{
+                            "key": "repo_git_provider",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab. Applies to all the default DevSecOps repositories, except the `Compliance Pipelines` repository that get created at the time of running the DA.",
+                            "required": false
+                        },
+                        {
+                            "key": "repo_title",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "(Optional) The title of the server. e.g. My Git Enterprise Server.",
+                            "required": false
+                        },
+                        {
+                            "key": "repo_root_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "(Optional) The Root URL of the server. e.g. https://git.example.com.",
+                            "required": false
+                        },
+                        {
+                            "key": "repo_blind_connection",
+                            "type": "boolean",
+                            "default_value": false,
+                            "description": "Setting this value to `true` means the server is not addressable on the public internet. IBM Cloud will not be able to validate the connection details you provide. Certain functionality that requires API access to the git server will be disabled. Delivery pipeline will only work using a private worker that has network access to the git server.",
+                            "required": false
+                        },
+                        {
+                            "key": "repo_git_id",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
+                            "required": false
+                        },
+                        {
+                            "key": "evidence_repo_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set to use an existing evidence repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "issues_repo_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set to use an existing issues repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "inventory_repo_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set to use an existing inventory repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "cd_deployment_repo_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Override to bring your own existing deployment repository URL, which is used directly instead of cloning the default deployment sample.",
+                            "required": false
+                        },
+                        {
+                            "key": "change_management_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Override to bring your own existing change management repository URL, which is used directly instead of cloning the default change management repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "create_triggers",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to create the triggers used by the DevSecOps pipelines.",
+                            "required": false
+                        },
+                        {
+                            "key": "compliance_pipeline_repo_use_group_settings",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to apply group level repository settings to the compliance pipeline repository. See `repo_git_provider` as an example.",
+                            "required": false
+                        },
+                        {
+                            "key": "compliance_pipeline_repo_git_provider",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab.",
+                            "required": false
+                        },
+                        {
+                            "key": "compliance_pipeline_repo_git_id",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
+                            "required": false
+                        },
+                        {
+                            "key": "compliance_pipeline_existing_repo_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Override to bring your own existing compliance pipelines repository URL, which is used directly instead of cloning the default change compliance pipelines repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "add_pipeline_definitions",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to add the compliance pipelines definitions to the DevSecOps pipelines.",
+                            "required": false
+                        }
 					],
 					"outputs": [
 						{
@@ -696,7 +808,119 @@
 							 "type": "string",
 							 "default_value": "",
 							 "description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
-						 }
+						 },
+						 {
+                            "key": "repo_git_provider",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab. Applies to all the default DevSecOps repositories, except the `Compliance Pipelines` repository that get created at the time of running the DA.",
+                            "required": false
+                        },
+                        {
+                            "key": "repo_title",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "(Optional) The title of the server. e.g. My Git Enterprise Server.",
+                            "required": false
+                        },
+                        {
+                            "key": "repo_root_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "(Optional) The Root URL of the server. e.g. https://git.example.com.",
+                            "required": false
+                        },
+                        {
+                            "key": "repo_blind_connection",
+                            "type": "boolean",
+                            "default_value": false,
+                            "description": "Setting this value to `true` means the server is not addressable on the public internet. IBM Cloud will not be able to validate the connection details you provide. Certain functionality that requires API access to the git server will be disabled. Delivery pipeline will only work using a private worker that has network access to the git server.",
+                            "required": false
+                        },
+                        {
+                            "key": "repo_git_id",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
+                            "required": false
+                        },
+                        {
+                            "key": "evidence_repo_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set to use an existing evidence repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "issues_repo_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set to use an existing issues repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "inventory_repo_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set to use an existing inventory repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "cd_deployment_repo_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Override to bring your own existing deployment repository URL, which is used directly instead of cloning the default deployment sample.",
+                            "required": false
+                        },
+                        {
+                            "key": "change_management_existing_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Override to bring your own existing change management repository URL, which is used directly instead of cloning the default change management repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "create_triggers",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to create the triggers used by the DevSecOps pipelines.",
+                            "required": false
+                        },
+                        {
+                            "key": "compliance_pipeline_repo_use_group_settings",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to apply group level repository settings to the compliance pipeline repository. See `repo_git_provider` as an example.",
+                            "required": false
+                        },
+                        {
+                            "key": "compliance_pipeline_repo_git_provider",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab.",
+                            "required": false
+                        },
+                        {
+                            "key": "compliance_pipeline_repo_git_id",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
+                            "required": false
+                        },
+                        {
+                            "key": "compliance_pipeline_existing_repo_url",
+                            "type": "string",
+                            "default_value": "",
+                            "description": "Override to bring your own existing compliance pipelines repository URL, which is used directly instead of cloning the default change compliance pipelines repository.",
+                            "required": false
+                        },
+                        {
+                            "key": "add_pipeline_definitions",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to add the compliance pipelines definitions to the DevSecOps pipelines.",
+                            "required": false
+                        }
 					],
 					"outputs": [
 						{

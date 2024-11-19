@@ -254,6 +254,134 @@
 			"hidden": false,
 			"default": true,
 			"custom_config": {}
+		},
+		{
+			"name": "repo_git_provider",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "repo_title",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "repo_root_url",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "repo_blind_connection",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "repo_git_id",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "evidence_repo_existing_url",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "issues_repo_existing_url",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "inventory_repo_existing_url",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "cd_deployment_repo_existing_url",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "change_management_existing_url",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "create_triggers",
+			"required": false,
+			"type": "boolean",
+			"hidden": true,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "compliance_pipeline_repo_use_group_settings",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": true,
+			"custom_config": {}
+		},
+		{
+			"name": "compliance_pipeline_repo_git_provider",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "compliance_pipeline_repo_git_id",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "compliance_pipeline_existing_repo_url",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
+		},
+		{
+			"name": "add_pipeline_definitions",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": true,
+			"custom_config": {}
 		}
 	],
 	"members": [
@@ -590,20 +718,84 @@
 					"value": "ref:../../inputs/create_icr_namespace"
 				},
 				{
-				  "name": "create_git_token",
-				  "value": "ref:../../inputs/create_git_token"
+					"name": "create_git_token",
+					"value": "ref:../../inputs/create_git_token"
 				},
 				{
-				  "name": "repo_git_token_secret_name",
-				  "value": "ref:../../inputs/repo_git_token_secret_name"
+					"name": "repo_git_token_secret_name",
+					"value": "ref:../../inputs/repo_git_token_secret_name"
 				},
 				{
-				  "name": "repo_git_token_secret_value",
-				  "value": "ref:../../inputs/repo_git_token_secret_value"
+					"name": "repo_git_token_secret_value",
+					"value": "ref:../../inputs/repo_git_token_secret_value"
 				},
 				{
-				  "name": "repo_group",
-				  "value": "ref:../../inputs/repo_group"
+					"name": "repo_group",
+					"value": "ref:../../inputs/repo_group"
+				},
+				{
+					"name": "repo_git_provider",
+					"value": "ref:../../inputs/repo_git_provider"
+				},
+				{
+					"name": "repo_title",
+					"value": "ref:../../inputs/repo_title"
+				},
+				{
+					"name": "repo_root_url",
+					"value": "ref:../../inputs/repo_root_url"
+				},
+				{
+					"name": "repo_blind_connection",
+					"value": "ref:../../inputs/repo_blind_connection"
+				},
+				{
+					"name": "repo_git_id",
+					"value": "ref:../../inputs/repo_git_id"
+				},
+				{
+					"name": "evidence_repo_existing_url",
+					"value": "ref:../../inputs/evidence_repo_existing_url"
+				},
+				{
+					"name": "issues_repo_existing_url",
+					"value": "ref:../../inputs/issues_repo_existing_url"
+				},
+				{
+					"name": "inventory_repo_existing_url",
+					"value": "ref:../../inputs/inventory_repo_existing_url"
+				},
+				{
+					"name": "cd_deployment_repo_existing_url",
+					"value": "ref:../../inputs/cd_deployment_repo_existing_url"
+				},
+				{
+					"name": "change_management_existing_url",
+					"value": "ref:../../inputs/change_management_existing_url"
+				},
+				{
+					"name": "create_triggers",
+					"value": "ref:../../inputs/create_triggers"
+				},
+				{
+					"name": "compliance_pipeline_repo_use_group_settings",
+					"value": "ref:../../inputs/compliance_pipeline_repo_use_group_settings"
+				},
+				{
+					"name": "compliance_pipeline_repo_git_provider",
+					"value": "ref:../../inputs/compliance_pipeline_repo_git_provider"
+				},
+				{
+					"name": "compliance_pipeline_repo_git_id",
+					"value": "ref:../../inputs/compliance_pipeline_repo_git_id"
+				},
+				{
+					"name": "compliance_pipeline_existing_repo_url",
+					"value": "ref:../../inputs/compliance_pipeline_existing_repo_url"
+				},
+				{
+					"name": "add_pipeline_definitions",
+					"value": "ref:../../inputs/add_pipeline_definitions"
 				}
 			]
 		}
