@@ -627,6 +627,10 @@
           "value": "true"
         },
         {
+          "name": "add_code_engine_prefix",
+          "value": "false"
+        },
+        {
 					"name": "create_icr_namespace",
 					"value": "ref:../../inputs/create_icr_namespace"
 				},
