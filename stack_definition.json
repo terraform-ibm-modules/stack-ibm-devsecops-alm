@@ -237,9 +237,9 @@
 		{
 			"name": "repo_blind_connection",
 			"required": false,
-			"type": "string",
+			"type": "boolean",
 			"hidden": false,
-			"default": "",
+			"default": false,
 			"custom_config": {}
 		},
 		{
