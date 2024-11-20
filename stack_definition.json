@@ -294,8 +294,8 @@
 			"name": "create_triggers",
 			"required": false,
 			"type": "boolean",
-			"hidden": true,
-			"default": "",
+			"hidden": false,
+			"default": true,
 			"custom_config": {}
 		},
     {
