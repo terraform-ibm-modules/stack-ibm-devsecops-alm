@@ -339,8 +339,16 @@
 			"name": "create_triggers",
 			"required": false,
 			"type": "boolean",
-			"hidden": true,
-			"default": "",
+			"hidden": false,
+			"default": true,
+			"custom_config": {}
+		},
+		{
+			"name": "create_git_triggers",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": true,
 			"custom_config": {}
 		},
 		{
@@ -776,6 +784,10 @@
 				{
 					"name": "create_triggers",
 					"value": "ref:../../inputs/create_triggers"
+				},
+				{
+					"name": "create_git_triggers",
+					"value": "ref:../../inputs/create_git_triggers"
 				},
 				{
 					"name": "compliance_pipeline_repo_use_group_settings",
