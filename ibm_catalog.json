@@ -418,6 +418,13 @@
                             "description": "Set to `true` to create the triggers used by the DevSecOps pipelines.",
                             "required": false
                         },
+						{
+                            "key": "create_git_triggers",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to create the Git triggers used by the DevSecOps pipelines.",
+                            "required": false
+                        },
                         {
                             "key": "compliance_pipeline_repo_use_group_settings",
                             "type": "boolean",
