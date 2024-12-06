@@ -27,8 +27,8 @@
 			"name": "app_repo_existing_url",
 			"type": "string",
 			"hidden": false,
-			"default": "",
-			"required": false
+			"default": "__NOTSET__",
+			"required": true
 		},
 		{
 			"name": "cluster_name",
