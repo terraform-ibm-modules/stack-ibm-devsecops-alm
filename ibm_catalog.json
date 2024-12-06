@@ -281,9 +281,9 @@
                         {
                             "key": "app_repo_existing_url",
                             "type": "string",
-                            "default_value": "__NOTSET__",
+                            "default_value": "",
                             "description": "Bring your own existing application repository by providing the URL. This will create an integration for your application repository instead of cloning the default sample. Repositories existing in a different org will require the use of Git token. See `app_repo_git_token_secret_name` under optional variables. ",
-                            "required": true
+                            "required": false
                         },
 						{
                             "key": "app_repo_git_token_secret_name",
@@ -458,6 +458,33 @@
                             "type": "boolean",
                             "default_value": true,
                             "description": "Set to `true` to add the compliance pipelines definitions to the DevSecOps pipelines.",
+                            "required": false
+                        },
+						{
+                            "key": "create_privateworker_secret",
+                            "type": "boolean",
+                            "default_value": false,
+                            "description": "Set to `true` to add a specified private worker service api key to the Secrets Provider.",
+                            "required": false
+                        },
+						{
+                            "key": "enable_privateworker",
+                            "type": "boolean",
+                            "default_value": false,
+                            "description": "Set to `true` to enable private workers for the CI, CD, CC and PR pipelines. A valid service api key must be set in Secrets Manager. The name of this secret can be specified using `privateworker_credentials_secret_name`.",
+                            "required": false
+                        },
+						{
+                            "key": "privateworker_credentials_secret_name",
+                            "type": "string",
+                            "default_value": "private-worker-key",
+                            "description": "Name of the private worker secret in the secret provider.",
+                            "required": false
+                        },
+						{
+                            "key": "privateworker_secret_value",
+                            "type": "password",
+                            "description": "The private worker service api key that will be added to the `privateworker_credentials_secret_name` secret in the secrets provider.",
                             "required": false
                         }
 					],
@@ -763,9 +790,9 @@
                         {
                             "key": "app_repo_existing_url",
                             "type": "string",
-                            "default_value": "__NOTSET__",
+                            "default_value": "",
                             "description": "Bring your own existing application repository by providing the URL. This will create an integration for your application repository instead of cloning the default sample. Repositories existing in a different org will require the use of Git token. See `app_repo_git_token_secret_name` under optional variables. ",
-                            "required": true
+                            "required": false
                         },
 						{
                             "key": "app_repo_git_token_secret_name",
@@ -933,6 +960,33 @@
                             "type": "boolean",
                             "default_value": true,
                             "description": "Set to `true` to add the compliance pipelines definitions to the DevSecOps pipelines.",
+                            "required": false
+                        },
+						{
+                            "key": "create_privateworker_secret",
+                            "type": "boolean",
+                            "default_value": false,
+                            "description": "Set to `true` to add a specified private worker service api key to the Secrets Provider.",
+                            "required": false
+                        },
+						{
+                            "key": "enable_privateworker",
+                            "type": "boolean",
+                            "default_value": false,
+                            "description": "Set to `true` to enable private workers for the CI, CD, CC and PR pipelines. A valid service api key must be set in Secrets Manager. The name of this secret can be specified using `privateworker_credentials_secret_name`.",
+                            "required": false
+                        },
+						{
+                            "key": "privateworker_credentials_secret_name",
+                            "type": "string",
+                            "default_value": "private-worker-key",
+                            "description": "Name of the private worker secret in the secret provider.",
+                            "required": false
+                        },
+						{
+                            "key": "privateworker_secret_value",
+                            "type": "password",
+                            "description": "The private worker service api key that will be added to the `privateworker_credentials_secret_name` secret in the secrets provider.",
                             "required": false
                         }
 					],

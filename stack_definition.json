@@ -27,7 +27,7 @@
 			"name": "app_repo_existing_url",
 			"type": "string",
 			"hidden": false,
-			"default": "__NOTSET__",
+			"default": "",
 			"required": true
 		},
     {
@@ -111,7 +111,7 @@
       "required": false,
       "type": "string",
       "hidden": false,
-      "default": "signing_key",
+      "default": "signing-key",
       "custom_config": {}
     },
     {
@@ -345,6 +345,38 @@
 			"hidden": false,
 			"default": true,
 			"custom_config": {}
+		},
+		{
+			"name": "create_privateworker_secret",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": false,
+			"custom_config": {}
+		},
+    {
+			"name": "enable_privateworker",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": false,
+			"custom_config": {}
+		},
+   	{
+			"name": "privateworker_credentials_secret_name",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": "private-worker-key",
+			"custom_config": {}
+		},
+    {
+			"name": "privateworker_secret_value",
+			"required": false,
+			"type": "password",
+			"hidden": false,
+			"default": "",
+			"custom_config": {}
 		}
   ],
   "members": [
@@ -368,7 +400,7 @@
         }
       ],
       "name": "1 - Key Management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3b5c0ef5-6438-4e7b-8a88-88636bc590c6-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.574fbd37-8075-49d1-a625-c7bba78288bd-global"
     },
     {
       "inputs": [
@@ -390,7 +422,7 @@
         }
       ],
       "name": "2 - Cloud Object Storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.f039fa0e-24f7-4c12-a617-1dee12997859-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.88467b63-10ca-4d2f-b846-6d4d0e5cd2ee-global"
     },
     {
       "inputs": [
@@ -416,7 +448,7 @@
         }
       ],
       "name": "3 - Cloud Object Bucket",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.993946ad-43d0-4774-929c-22954b20af95-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.441d6b2f-a89c-43b7-93ac-022db693e9be-global"
     },
     {
       "inputs": [
@@ -454,7 +486,7 @@
         }
       ],
       "name": "4 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.dfffe742-c7a1-452e-90b1-3080f1f57f78-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.73d82d41-7a60-46b1-99c7-dbae7a1ec937-global"
     },
     {
       "inputs": [
@@ -492,7 +524,7 @@
         }
       ],
       "name": "5 - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.e314e905-ca89-4947-aa94-23d270516f0e-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.2cb2aa12-1005-4b28-9756-f6cd629c4d73-global"
     },
     {
       "inputs": [
@@ -546,7 +578,7 @@
         }
       ],
       "name": "6 - Security and Compliance Center",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.29b5ef2b-a3c1-4798-9595-ed1263945f82-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.0e4e8fc9-8953-4456-a51c-6ed6a3ca1bd7-global"
     },
     {
       "inputs": [
@@ -568,11 +600,11 @@
         }
       ],
       "name": "7 - Code Engine Project",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.10aa04ed-4d19-4fcf-8522-478b78598acd-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.77ac98d0-a734-4747-b5a6-19de3bd872da-global"
     },
     {
       "name": "8 - DevSecOps Toolchains",
-      "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.9974cbde-5213-46d3-9dfb-c0f2716e4464-global",
+      "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.1f5e0b6e-e03f-4988-8fba-6810ed59de29-global",
       "inputs": [
         {
           "name": "ibmcloud_api_key",
@@ -723,6 +755,10 @@
           "value": "ref:../../inputs/repo_git_id"
         },
         {
+          "name": "app_repo_existing_url",
+          "value": "ref:../../inputs/app_repo_existing_url"
+        },
+        {
           "name": "evidence_repo_existing_url",
           "value": "ref:../../inputs/evidence_repo_existing_url"
         },
@@ -769,7 +805,27 @@
         {
           "name": "add_pipeline_definitions",
           "value": "ref:../../inputs/add_pipeline_definitions"
-        }
+        },
+        {
+					"name": "add_pipeline_definitions",
+					"value": "ref:../../inputs/add_pipeline_definitions"
+				},
+				{
+					"name": "create_privateworker_secret",
+					"value": "ref:../../inputs/create_privateworker_secret"
+				},
+				{
+					"name": "enable_privateworker",
+					"value": "ref:../../inputs/enable_privateworker"
+				},
+				{
+					"name": "privateworker_credentials_secret_name",
+					"value": "ref:../../inputs/privateworker_credentials_secret_name"
+				},
+				{
+					"name": "privateworker_secret_value",
+					"value": "ref:../../inputs/privateworker_secret_value"
+				}
       ]
     }
   ],
