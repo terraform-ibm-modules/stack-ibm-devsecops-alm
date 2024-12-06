@@ -806,10 +806,6 @@
           "name": "add_pipeline_definitions",
           "value": "ref:../../inputs/add_pipeline_definitions"
         },
-        {
-					"name": "add_pipeline_definitions",
-					"value": "ref:../../inputs/add_pipeline_definitions"
-				},
 				{
 					"name": "create_privateworker_secret",
 					"value": "ref:../../inputs/create_privateworker_secret"
