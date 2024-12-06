@@ -189,7 +189,7 @@
 			"name": "app_repo_branch",
 			"type": "string",
 			"hidden": false,
-			"default": "main",
+			"default": "master",
 			"required": false
 		},
 		{
