@@ -1,23 +1,23 @@
 module github.com/terraform-ibm-modules/stack-ibm-devsecops-alm
 
-go 1.22.0
+go 1.22.4
 
-toolchain go1.23.3
+toolchain go1.23.4
 
 require (
-	github.com/stretchr/testify v1.9.0
-	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.41.5
+	github.com/stretchr/testify v1.10.0
+	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.42.4
 )
 
 require (
 	github.com/IBM-Cloud/bluemix-go v0.0.0-20240719075425-078fcb3a55be // indirect
-	github.com/IBM-Cloud/power-go-client v1.8.3 // indirect
-	github.com/IBM/cloud-databases-go-sdk v0.7.0 // indirect
+	github.com/IBM-Cloud/power-go-client v1.9.0 // indirect
+	github.com/IBM/cloud-databases-go-sdk v0.7.1 // indirect
 	github.com/IBM/go-sdk-core/v5 v5.18.1 // indirect
-	github.com/IBM/platform-services-go-sdk v0.71.0 // indirect
+	github.com/IBM/platform-services-go-sdk v0.72.0 // indirect
 	github.com/IBM/project-go-sdk v0.3.6 // indirect
-	github.com/IBM/schematics-go-sdk v0.3.0 // indirect
-	github.com/IBM/vpc-go-sdk v0.62.0 // indirect
+	github.com/IBM/schematics-go-sdk v0.4.0 // indirect
+	github.com/IBM/vpc-go-sdk v0.63.1 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/cyphar/filepath-securejoin v0.2.4 // indirect
@@ -65,12 +65,12 @@ require (
 	go.opentelemetry.io/otel v1.16.0 // indirect
 	go.opentelemetry.io/otel/metric v1.16.0 // indirect
 	go.opentelemetry.io/otel/trace v1.16.0 // indirect
-	golang.org/x/crypto v0.29.0 // indirect
+	golang.org/x/crypto v0.30.0 // indirect
 	golang.org/x/mod v0.17.0 // indirect
-	golang.org/x/net v0.25.0 // indirect
-	golang.org/x/sync v0.9.0 // indirect
-	golang.org/x/sys v0.27.0 // indirect
-	golang.org/x/text v0.20.0 // indirect
+	golang.org/x/net v0.30.0 // indirect
+	golang.org/x/sync v0.10.0 // indirect
+	golang.org/x/sys v0.28.0 // indirect
+	golang.org/x/text v0.21.0 // indirect
 	golang.org/x/tools v0.21.1-0.20240508182429-e35e4ccd0d2d // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
