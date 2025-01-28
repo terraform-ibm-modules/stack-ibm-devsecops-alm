@@ -187,6 +187,14 @@
 			"custom_config": {}
 		},
     {
+      "name": "force_create_standard_api_key",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": false,
+      "custom_config": {}
+    },
+    {
 			"name": "custom_app_repo_git_token_secret_name",
 			"required": false,
 			"type": "string",
@@ -786,6 +794,10 @@
           "name": "create_git_token",
           "value": "ref:../../inputs/create_git_token"
         },
+        {
+					"name": "force_create_standard_api_key",
+					"value": "ref:../../inputs/force_create_standard_api_key"
+				},
         {
 					"name": "custom_app_repo_git_token_secret_name",
 					"value": "ref:../../inputs/custom_app_repo_git_token_secret_name"
