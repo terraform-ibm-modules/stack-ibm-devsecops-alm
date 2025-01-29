@@ -676,7 +676,7 @@
     },
     {
       "name": "8 - DevSecOps Toolchains",
-      "version_locator": "2848e775-16bb-4e6a-aa0a-f11629c5f21f.bb9335aa-c29e-4aaa-aca4-10c96eabda8e",
+      "version_locator": "052cba69-29c3-4c01-bf93-40fd943dc34f.d38264f1-6412-4787-b511-3831dcd3efb9",
       "inputs": [
         {
           "name": "ibmcloud_api_key",
