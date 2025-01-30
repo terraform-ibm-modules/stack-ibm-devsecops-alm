@@ -253,9 +253,9 @@
 		{
 			"name": "custom_app_repo_blind_connection",
 			"required": false,
-			"type": "boolean",
+			"type": "string",
 			"hidden": false,
-			"default": false,
+			"default": "false",
 			"custom_config": {}
 		},
     {
