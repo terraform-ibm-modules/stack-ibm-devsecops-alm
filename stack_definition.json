@@ -203,6 +203,14 @@
 			"custom_config": {}
 		},
     {
+      "name": "use_app_repo_for_cd_deploy",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": false,
+      "custom_config": {}
+    },
+    {
 			"name": "custom_app_repo_git_token_secret_value",
 			"required": false,
 			"type": "password",
@@ -794,6 +802,10 @@
           "name": "create_git_token",
           "value": "ref:../../inputs/create_git_token"
         },
+        {
+					"name": "use_app_repo_for_cd_deploy",
+					"value": "ref:../../inputs/use_app_repo_for_cd_deploy"
+				},
         {
 					"name": "force_create_standard_api_key",
 					"value": "ref:../../inputs/force_create_standard_api_key"
