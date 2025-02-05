@@ -350,8 +350,8 @@
                         },
                         {
                             "key": "custom_app_repo_blind_connection",
-                            "type": "boolean",
-                            "default_value": false,
+                            "type": "string",
+                            "default_value": "",
                             "description": "Setting this value to `true` means the server is not addressable on the public internet. IBM Cloud will not be able to validate the connection details you provide. Certain functionality that requires API access to the git server will be disabled. Delivery pipeline will only work using a private worker that has network access to the git server.",
                             "required": false
                         },
