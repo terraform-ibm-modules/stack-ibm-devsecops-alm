@@ -266,8 +266,8 @@
 						},
 						{
 							"key": "use_existing_resource_group",
-							"type": "string",
-							"default_value": "false",
+							"type": "boolean",
+							"default_value": false,
 							"description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
 							"required": false
 						},
@@ -350,8 +350,8 @@
                         },
                         {
                             "key": "custom_app_repo_blind_connection",
-                            "type": "string",
-                            "default_value": "false",
+                            "type": "boolean",
+                            "default_value": false,
                             "description": "Setting this value to `true` means the server is not addressable on the public internet. IBM Cloud will not be able to validate the connection details you provide. Certain functionality that requires API access to the git server will be disabled. Delivery pipeline will only work using a private worker that has network access to the git server.",
                             "required": false
                         },
@@ -845,8 +845,8 @@
 						},
 						{
 							"key": "use_existing_resource_group",
-							"type": "string",
-							"default_value": "false",
+							"type": "boolean",
+							"default_value": false,
 							"description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
 							"required": false
 						},

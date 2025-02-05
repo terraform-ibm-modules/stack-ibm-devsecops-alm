@@ -110,9 +110,9 @@
 		{
 			"name": "use_existing_resource_group",
 			"required": false,
-			"type": "string",
+			"type": "boolean",
 			"hidden": false,
-			"default": ""
+			"default": false
 		},
 		{
 			"name": "registry_namespace",
