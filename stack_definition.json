@@ -784,11 +784,11 @@
         },
         {
           "name": "ci_code_engine_project",
-          "value": "ref:../../members/7 - Code Engine Project/outputs/project_2_name"
+          "value": "ref:../../members/7 - Code Engine Project/outputs/project_1_name"
         },
         {
           "name": "cd_code_engine_project",
-          "value": "ref:../../members/7 - Code Engine Project/outputs/project_1_name"
+          "value": "ref:../../members/7 - Code Engine Project/outputs/project_2_name"
         },
         {
           "name": "create_git_token",
