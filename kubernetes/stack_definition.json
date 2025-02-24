@@ -101,6 +101,14 @@
 			"custom_config": {}
 		},
 		{
+			"name": "force_create_standard_api_key",
+			"required": false,
+			"type": "boolean",
+			"hidden": false,
+			"default": true,
+			"custom_config": {}
+		  },
+		{
 			"name": "prefix",
 			"required": false,
 			"type": "string",
@@ -756,6 +764,10 @@
 				{
 					"name": "create_icr_namespace",
 					"value": "ref:../../inputs/create_icr_namespace"
+				},
+				{
+					"name": "force_create_standard_api_key",
+					"value": "ref:../../inputs/force_create_standard_api_key"
 				},
 				{
 					"name": "create_git_token",
