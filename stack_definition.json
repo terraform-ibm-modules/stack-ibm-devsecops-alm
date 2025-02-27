@@ -393,7 +393,7 @@
       "custom_config": {}
     },
     {
-      "name": "project_ci_name",
+      "name": "ci_code_engine_project",
       "required": false,
       "type": "string",
       "hidden": false,
@@ -401,7 +401,7 @@
       "custom_config": {}
     },
     {
-      "name": "project_cd_name",
+      "name": "cd_code_engine_project",
       "required": false,
       "type": "string",
       "hidden": false,
@@ -836,11 +836,11 @@
 				},
         {
           "name": "ci_code_engine_project",
-          "value": "ref:../../inputs/project_ci_name"
+          "value": "ref:../../inputs/ci_code_engine_project"
         },
         {
           "name": "cd_code_engine_project",
-          "value": "ref:../../inputs/project_cd_name"
+          "value": "ref:../../inputs/cd_code_engine_project"
         },
         {
           "name": "use_app_repo_for_cd_deploy",
@@ -864,7 +864,7 @@
         },
         {
           "name": "project_name",
-          "value": "ref:../../inputs/project_name"
+          "value": "ref:../../inputs/ci_code_engine_project"
         }
       ],
       "name": "8a - Code Engine CI Project",
@@ -886,7 +886,7 @@
         },
         {
           "name": "project_name",
-          "value": "ref:../../inputs/project_name"
+          "value": "ref:../../inputs/cd_code_engine_project"
         }
       ],
       "name": "8b - Code Engine CD Project",
