@@ -152,6 +152,20 @@
 							"required": false
 						},
 						{
+							"key": "project_ci_name",
+							"required": false,
+							"type": "string",
+							"default_value": "CI_Project",
+							"description": "The name of the IBM Cloud Code Engine CI project."
+						 },
+						 {
+							 "key": "project_cd_name",
+							 "required": false,
+							 "type": "string",
+							 "default_value": "CD_Project",
+							 "description": "The name of the IBM Cloud Code Engine CD project."
+						 },
+						{
 							"key": "pipeline_ibmcloud_api_key_secret_name",
 							"type": "string",
 							"default_value": "ibmcloud-api-key",
@@ -293,25 +307,11 @@
                             "required": false
                         },
 						{
-						   "key": "project_names",
-						   "required": false,
-						   "type": "array",
-						   "default_value": ["CI_Project", "CD_Project"],
-						   "description": "The names of the projects to add the IBM Cloud Code Engine."
-						},
-						{
 							"key": "existing_secrets_manager_crn",
 							"required": false,
 							"type": "string",
 							"default_value": "__NULL__",
 							"description": "The CRN of an existing Secrets Manager instance"
-						},
-						{
-							"key": "autostart",
-							"required": false,
-							"type": "boolean",
-							"default_value": false,
-							"description": "Set to `true` to automatically run the CI pipeline."
 						},
 						{
 							"key": "create_git_token",
@@ -320,62 +320,6 @@
 							"default_value": false,
 							"description": "Set to `true` to create a Git Token secret in the speficied Secrets Manager, using the name set in `repo_git_token_secret_name` and the value set in `repo_git_token_secret_value`."
 						},
-                        {
-                            "key": "custom_app_repo_title",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "(Optional) The title of the server. e.g. My Git Enterprise Server. Applies to the sample application repository, pipeline config repository and additionally the deployment repository of the CD toolchain. Takes precedence over `repo_title`, if also set.",
-                            "required": false
-                        },
-                        {
-                            "key": "custom_app_repo_root_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "(Optional) The Root URL of the server. e.g. https://git.example.com. Applies to the sample application repository, pipeline config repository and additionally the deployment repository of the CD toolchain. Takes precedence over `repo_root_url`, if also set.",
-                            "required": false
-                        },
-                        {
-                            "key": "custom_app_repo_blind_connection",
-                            "type": "string",
-                            "default_value": "false",
-                            "description": "Setting this value to `true` means the server is not addressable on the public internet. IBM Cloud will not be able to validate the connection details you provide. Certain functionality that requires API access to the git server will be disabled. Delivery pipeline will only work using a private worker that has network access to the git server.",
-                            "required": false
-                        },
-						{
-                            "key": "custom_app_repo_git_id",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "The Git ID for the application repositories. Used by the sample application repository, pipeline config repository and additionally the deployment repository of the CD toolchain. Takes precedence for these repositories over the value set in `repo_git_id`.",
-                            "required": false
-                        },
-                        {
-                            "key": "custom_app_repo_group",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Specify the Git user or group for your application. This must be set if the repository authentication type is `pat` (personal access token). Used by the sample application repository, pipeline config repository and additionally the deployment repository of the CD toolchain. Takes precedence for these repositories over the value set in `repo_group`.",
-                            "required": false
-                        },
-                        {
-                            "key": "custom_app_repo_git_provider",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "The Git provider type. Used by the sample application repository, pipeline config repository and additionally the deployment repository of the CD toolchain. Takes precedence for these repositories over the value set in `repo_git_provider`.",
-                            "required": false
-                        },
-                        {
-                            "key": "custom_app_repo_git_token_secret_name",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "The name of the Git token secret in the secret provider used for accessing the sample application repository, pipeline config repository and additionally the deployment repository of the CD toolchain. Takes precedence for these repositories over the value set in `repo_git_token_secret_name`.",
-                            "required": false
-                        },
-                        {
-                            "key": "custom_app_repo_git_token_secret_value",
-                            "type": "password",
-                            "default_value": "",
-                            "description": "The personal access token that will be added to the `custom_app_repo_git_token_secret_name` secret in the secrets provider. Note if also using `repo_git_token_secret_name` to set a Git Token in Secrets Manager, the names of the secrets must be different.",
-                            "required": false
-                        },
 						{
 							"key": "repo_git_token_secret_name",
 							"required": false,
@@ -397,6 +341,13 @@
 							"default_value": "",
 							"description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
 						},
+                        {
+                            "key": "repo_apply_settings_to_compliance_repos",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to apply the same settings to all the default compliance repositories. Set to `false` to apply these settings to only the sample application, pipeline config and the deployment repositories.",
+                            "required": false
+                        },
 						{
                             "key": "repo_git_provider",
                             "type": "string",
@@ -542,6 +493,20 @@
                             "type": "password",
                             "description": "The private worker service api key that will be added to the `privateworker_credentials_secret_name` secret in the secrets provider.",
                             "required": false
+                        },
+						{
+                            "key": "toolchain_access_group_name",
+                            "type": "string",
+                            "default_value": "devsecops-toolchain",
+                            "description": "The name of the DevSecOps access group that is created.",
+                            "required": false
+                        },
+                        {
+                            "key": "use_legacy_ref",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to use the legacy secret reference format for Secrets Manager secrets.",
+                            "required": false
                         }
 					],
 					"outputs": [
@@ -626,13 +591,6 @@
 							}
 						},
 						{
-							"key": "cluster_name",
-							"type": "string",
-							"default_value": "mycluster",
-							"description": "The name of cluster. Treats the dev and prod cluster as the same cluster.",
-							"required": true
-						},
-						{
 							"key": "prefix",
 							"type": "string",
 							"default_value": "devsecops",
@@ -675,6 +633,13 @@
 							"required": false
 						},
 						{
+							"key": "cluster_name",
+							"type": "string",
+							"default_value": "mycluster",
+							"description": "The name of cluster. Treats the dev and prod cluster as the same cluster.",
+							"required": true
+						},
+						{
 							"key": "ci_cluster_name",
 							"type": "string",
 							"default_value": "",
@@ -712,7 +677,7 @@
 						{
 							"key": "cd_cluster_namespace",
 							"type": "string",
-							"default_value": "dev",
+							"default_value": "prod",
 							"description": "The name of production cluster namespace.",
 							"required": false
 						},
@@ -865,13 +830,6 @@
 							"description": "The CRN of an existing Secrets Manager instance"
 						 },
 						 {
-							 "key": "autostart",
-							 "required": false,
-							 "type": "boolean",
-							 "default_value": false,
-							 "description": "Set to `true` to automatically run the CI pipeline."
-						 },
-						 {
 							 "key": "create_git_token",
 							 "required": false,
 							 "type": "boolean",
@@ -899,6 +857,13 @@
 							 "default_value": "",
 							 "description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
 						 },
+						 {
+                            "key": "repo_apply_settings_to_compliance_repos",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to apply the same settings to all the default compliance repositories. Set to `false` to apply these settings to only the sample application, pipeline config and the deployment repositories.",
+                            "required": false
+                        },
 						 {
                             "key": "repo_git_provider",
                             "type": "string",
@@ -1043,6 +1008,20 @@
                             "key": "privateworker_secret_value",
                             "type": "password",
                             "description": "The private worker service api key that will be added to the `privateworker_credentials_secret_name` secret in the secrets provider.",
+                            "required": false
+                        },
+						{
+                            "key": "toolchain_access_group_name",
+                            "type": "string",
+                            "default_value": "devsecops-toolchain",
+                            "description": "The name of the DevSecOps access group that is created.",
+                            "required": false
+                        },
+                        {
+                            "key": "use_legacy_ref",
+                            "type": "boolean",
+                            "default_value": true,
+                            "description": "Set to `true` to use the legacy secret reference format for Secrets Manager secrets.",
                             "required": false
                         }
 					],
