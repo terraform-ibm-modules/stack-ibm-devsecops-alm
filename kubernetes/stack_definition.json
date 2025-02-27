@@ -698,6 +698,10 @@
 					"value" : "ref:../../members/3 - Cloud Object Bucket/outputs/s3_endpoint_direct"
 				},
 				{
+					"name": "cos_instance_crn",
+					"value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
+				},
+				{
 					"name" : "registry_namespace",
 					"value" : "ref:../../inputs/registry_namespace"
 				},
