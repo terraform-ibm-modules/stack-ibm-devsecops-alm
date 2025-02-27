@@ -377,6 +377,14 @@
 			"custom_config": {}
 		},
     {
+      "name": "toolchain_access_group_name",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "devsecops-toolchain",
+      "custom_config": {}
+    },
+    {
       "name": "use_legacy_ref",
       "required": false,
       "type": "boolean",
@@ -817,6 +825,10 @@
 				{
 					"name": "privateworker_secret_value",
 					"value": "ref:../../inputs/privateworker_secret_value"
+				},
+				{
+					"name": "toolchain_access_group_name",
+					"value": "ref:../../inputs/toolchain_access_group_name"
 				},
         {
 					"name": "use_legacy_ref",
