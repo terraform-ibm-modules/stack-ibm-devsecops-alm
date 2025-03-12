@@ -22,7 +22,7 @@ func TestProjectsFullTest(t *testing.T) {
 	}
 
 	//const codeEngineStackDefPath = "stack_definition.json"
-	const kubernetesStackDefPath = "./kubernetes/stack_definition.json"
+	const kubernetesStackDefPath = "kubernetes/stack_definition.json"
 
 	//const ceFlavour = "alm-stack-ce"
 	const kubeFlavour = "alm-stack-kube"
@@ -44,12 +44,11 @@ func TestProjectsFullTest(t *testing.T) {
 			"existing_secrets_manager_instance_crn": permanentResources["secretsManagerCRN"],
 		},
 		"7 - DevSecOps Toolchains": {
-			"autostart":                  "false",
-			"create_cos_api_key":         "false",
-			"create_secret_group":        "false",
-			"create_signing_certificate": "false",
-			"create_signing_key":         "false",
-			"create_ibmcloud_api_key":    "false",
+			"autostart":               "false",
+			"create_cos_api_key":      "false",
+			"create_secret_group":     "false",
+			"create_signing_key":      "false",
+			"create_ibmcloud_api_key": "false",
 		},
 	}
 
