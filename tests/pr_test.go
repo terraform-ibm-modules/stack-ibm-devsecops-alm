@@ -21,19 +21,19 @@ func TestProjectsFullTest(t *testing.T) {
 		log.Fatal(err)
 	}
 
-	const codeEngineStackDefPath = "stack_definition.json"
-	//const kubernetesStackDefPath = "kubernetes/stack_definition.json"
+	//const codeEngineStackDefPath = "stack_definition.json"
+	const kubernetesStackDefPath = "kubernetes/stack_definition.json"
 
-	const ceFlavour = "alm-stack-ce"
-	//const kubeFlavour = "alm-stack-kube"
+	//const ceFlavour = "alm-stack-ce"
+	const kubeFlavour = "alm-stack-kube"
 
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 		Testing:                t,
 		ResourceGroup:          "default",
 		Prefix:                 "alm", // setting prefix here gets a random string appended to it
-		StackConfigurationPath: codeEngineStackDefPath,
+		StackConfigurationPath: kubernetesStackDefPath,
 		CatalogProductName:     "deploy-arch-ibm-alm-stack",
-		CatalogFlavorName:      ceFlavour,
+		CatalogFlavorName:      kubeFlavour,
 	})
 
 	//fmt.Print(permanentResources["secretsManagerCRN"])
@@ -43,7 +43,7 @@ func TestProjectsFullTest(t *testing.T) {
 			"resource_group_name":                   "default",
 			"existing_secrets_manager_instance_crn": permanentResources["secretsManagerCRN"],
 		},
-		"8 - DevSecOps Toolchains": {
+		"7 - DevSecOps Toolchains": {
 			"autostart":                  "false",
 			"create_cos_api_key":         "false",
 			"create_secret_group":        "false",
