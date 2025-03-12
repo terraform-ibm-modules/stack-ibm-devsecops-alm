@@ -22,7 +22,7 @@ func TestProjectsFullTest(t *testing.T) {
 	}
 
 	//const codeEngineStackDefPath = "stack_definition.json"
-	const kubernetesStackDefPath = "kubernetes/stack_definition.json"
+	const kubernetesStackDefPath = "./kubernetes/stack_definition.json"
 
 	//const ceFlavour = "alm-stack-ce"
 	const kubeFlavour = "alm-stack-kube"
