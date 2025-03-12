@@ -25,15 +25,15 @@ func TestProjectsFullTest(t *testing.T) {
 	const kubernetesStackDefPath = "kubernetes/stack_definition.json"
 
 	//const ceFlavour = "alm-stack-ce"
-	const kubeFlavour = "alm-stack-kube"
+	//const kubeFlavour = "alm-stack-kube"
 
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 		Testing:                t,
 		ResourceGroup:          "default",
 		Prefix:                 "alm", // setting prefix here gets a random string appended to it
 		StackConfigurationPath: kubernetesStackDefPath,
-		CatalogProductName:     "deploy-arch-ibm-alm-stack",
-		CatalogFlavorName:      kubeFlavour,
+		//CatalogProductName:     "deploy-arch-ibm-alm-stack",
+		//CatalogFlavorName:      kubeFlavour,
 	})
 
 	//fmt.Print(permanentResources["secretsManagerCRN"])
