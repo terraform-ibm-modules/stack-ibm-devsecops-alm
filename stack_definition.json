@@ -60,6 +60,13 @@
       "default": ""
     },
     {
+      "name": "ibmcloud_api",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": ""
+    },
+    {
       "name": "registry_namespace",
       "required": false,
       "type": "string",
@@ -663,6 +670,10 @@
           "value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
         },
         {
+					"name" : "ibmcloud_api",
+					"value" : "ref:../../inputs/ibmcloud_api"
+				},
+        {
           "name": "registry_namespace",
           "value": "ref:../../inputs/registry_namespace"
         },
@@ -849,7 +860,11 @@
         {
           "name": "use_app_repo_for_cd_deploy",
           "value": true
-        }
+        },
+				{
+					"name" : "use_legacy_ref",
+					"value" : false
+				}
       ]
     },
     {
