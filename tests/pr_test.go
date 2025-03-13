@@ -43,24 +43,29 @@ func TestProjectsFullTest(t *testing.T) {
 			"resource_group_name":                   "default",
 			"existing_secrets_manager_instance_crn": permanentResources["secretsManagerCRN"],
 		},
-		"8 - DevSecOps Toolchains": {
-			"autostart":                  "false",
-			"create_cos_api_key":         "false",
-			"create_secret_group":        "false",
-			"create_signing_certificate": "false",
-			"create_signing_key":         "false",
-			"create_ibmcloud_api_key":    "false",
+		"7 - DevSecOps Toolchains": {
+			"autostart":               "false",
+			"create_cos_api_key":      "false",
+			"create_secret_group":     "false",
+			"create_signing_key":      "false",
+			"create_ibmcloud_api_key": "false",
 		},
 	}
 
 	options.StackInputs = map[string]interface{}{
-		"prefix":                       options.Prefix,
-		"resource_group_name":          options.Prefix,
-		"sm_service_plan":              "trial",
-		"scc_service_plan":             "security-compliance-center-standard-plan",
-		"region":                       "us-south",
-		"existing_secrets_manager_crn": permanentResources["secretsManagerCRN"],
-		"ibmcloud_api_key":             options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+		"prefix":                          options.Prefix,
+		"resource_group_name":             options.Prefix,
+		"sm_service_plan":                 "trial",
+		"scc_service_plan":                "security-compliance-center-standard-plan",
+		"region":                          "us-south",
+		"existing_secrets_manager_crn":    permanentResources["secretsManagerCRN"],
+		"ibmcloud_api_key":                options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
+		"app_repo_existing_url":           "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
+		"evidence_repo_existing_url":      "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
+		"issues_repo_existing_url":        "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
+		"inventory_repo_existing_url":     "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
+		"cd_deployment_repo_existing_url": "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
+		"change_management_existing_url":  "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
 	}
 
 	err1 := options.RunProjectsTest()
