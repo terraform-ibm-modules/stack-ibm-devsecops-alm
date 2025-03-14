@@ -860,11 +860,7 @@
         {
           "name": "use_app_repo_for_cd_deploy",
           "value": true
-        },
-				{
-					"name" : "use_legacy_ref",
-					"value" : false
-				}
+        }
       ]
     },
     {

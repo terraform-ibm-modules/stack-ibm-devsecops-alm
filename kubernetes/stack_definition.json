@@ -916,10 +916,6 @@
 				{
 					"name" : "cd_cluster_namespace",
 					"value" : "ref:../../inputs/cd_cluster_namespace"
-				},
-				{
-					"name" : "use_legacy_ref",
-					"value" : false
 				}
 			]
 		}
