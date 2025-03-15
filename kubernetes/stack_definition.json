@@ -60,6 +60,13 @@
 			"default": ""
 		},
 		{
+			"name": "ibmcloud_api",
+			"required": false,
+			"type": "string",
+			"hidden": false,
+			"default": ""
+		},
+		{
 			"name": "registry_namespace",
 			"required": false,
 			"type": "string",
@@ -651,7 +658,7 @@
 		},
 		{
 			"name": "7 - DevSecOps Toolchains",
-			"version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.dbe53da3-d4cf-41ce-9f60-553aab0a2014-global",
+			"version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.40c697e5-a339-4bf2-90ed-c598f103c16b-global",
 			"inputs": [
 				{
 					"name": "ibmcloud_api_key",
@@ -700,6 +707,10 @@
 				{
 					"name": "cos_instance_crn",
 					"value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
+				},
+				{
+					"name" : "ibmcloud_api",
+					"value" : "ref:../../inputs/ibmcloud_api"
 				},
 				{
 					"name" : "registry_namespace",
