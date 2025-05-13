@@ -1,1075 +1,1075 @@
 {
-	"products": [
-		{
-			"label": "DevSecOps Solution For Apps",
-			"name": "deploy-arch-ibm-alm-stack",
-			"product_kind": "solution",
-			"tags": [
-				"solution",
-				"enterprise_app",
-				"security",
-				"ibm_created"
-			],
-			"keywords": [
-				"compliance",
-				"fscloud",
-				"sample",
-				"ibmcloud",
-				"financial services",
-				"secure",
-				"secret manager",
-				"key protect",
-				"scc",
-				"devsecops",
-				"pipelines"
-			],
-			"short_description": "Comprehensive solution with prerequisite services and pipelines from the DevSecOps Foundation for secure app development.",
-			"long_description": "This deployable architecture provides a comprehensive foundation for trust, observability, security, and regulatory compliance by configuring and deploying various services, including:\n- Creates CI/CD/CC Pipelines for secure application lifecycle management.\n- Creates and configures a Key Protect instance and creates root keys for IBM Cloud Object Storage, Event Notifications, and Secrets Manager.\n- Creates and configures a Secrets Manager instance and creates rotatable secrets required to run secure pipelines.\n- Creates and configures an IBM Security Compliance Center instance.\n- Creates and configures an IBM Cloud Object Storage instance and multiple Object Storage buckets that are encrypted by Key Protect.\n- Deploy and configures service-to-service authorizations for the following services: KMS, Event Notifications, Object Storage, Secrets Manager, and Security and Compliance Center.\n- (Optionally) Creates a Code Engine Project for that variation.\n\n# Objective\n\nThis deployable architecture is designed to showcase a fully automated deployment of a sample Node application through an IBM Cloud Project, providing a flexible and customizable foundation for your own application deployments on IBM Cloud. This architecture deploys the following [Sample application](https://us-south.git.cloud.ibm.com/open-toolchain/code-engine-compliance-app) by default.\n\nBy leveraging this architecture, you can accelerate your deployment and tailor it to meet your unique business needs and enterprise goals.",
-			"offering_docs_url": "https://github.com/terraform-ibm-modules/stack-ibm-devescops-alm/blob/main/README.md",
-			"offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/main/reference-architectures/dso-stack-light-icon.svg",
-			"provider_name": "IBM",
-			"features": [
-				{
-					"title": "Implement Security",
-					"description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
-				},
-				{
-					"title": "Achieve Regulatory Compliance",
-					"description": "Ensures regulatory compliance by implementing CI/CD/CC pipelines, along with IBM SCC for secure application lifecycle management."
-				},
-				{
-					"title": "Establish Trust",
-					"description": "Ensures trust by configuring the IBM Cloud account to align with compliance settings as defined in the Financial Services framework."
-				}
-			],
-			"support_details": "This product is in the community registry, as such support is handled through the originated repo. If you experience issues please open an issue in that repository [https://github.com/terraform-ibm-modules/stack-ibm-devsecops-alm/issues](https://github.com/terraform-ibm-modules/stack-ibm-devsecops-alm/issues). Please note this product is not supported via the IBM Cloud Support Center.",
-			"flavors": [
-				{
-					"label": "Deploy on Code Engine",
-					"name": "alm-stack-ce",
-					"working_directory": "./",
-					"compliance": {},
-					"architecture": {
-						"features": [
-							{
-								"title": "IBM Code Engine",
-								"description": "Build, test, scan and deploy an app to Code Engine on IBM Cloud, using a Tekton pipeline."
-							},
-							{
-								"title": "Achieve Regulatory Compliance",
-								"description": "The architecture ensures regulatory compliance by implementing CI/CD/CC pipelines, along with IBM Security Compliance Center (SCC) for secure application lifecycle management."
-							},
-							{
-								"title": "Establish Trust",
-								"description": "The architecture ensures trust by configuring the IBM Cloud account to align with compliance settings as defined in the Financial Services framework."
-							},
-							{
-								"title": "Implement Security",
-								"description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
-							}
-						],
-						"diagrams": [
-							{
-								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-code-engine.svg",
-									"caption": "DevSecOps Code Engine ",
-									"type": "image/svg+xml",
-									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-code-engine.svg"
-								},
-								"description": "DevSecOps reference architecture for Code Engine that includes all the toolchains needed for a complete secure pipeline solution."
-							}
-						]
-					},
-					"configuration": [
-						{
-							"key": "ibmcloud_api_key",
-							"type": "password",
-							"description": "The API Key used to provision all the resources created in this solution.",
-							"required": true
-						},
-						{
-							"key": "region",
-							"type": "string",
-							"default_value": "us-south",
-							"description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
-							"display_name": "Region",
-							"required": true,
-							"custom_config": {
-								"type": "region",
-								"grouping": "deployment",
-								"original_grouping": "deployment",
-								"config_constraints": {
-									"filterString": "id:au-syd,br-sao,ca-tor,eu-de,eu-es,eu-gb,jp-osa,jp-tok,us-east,us-south",
-									"showKinds": [
-										"region",
-										"zone",
-										"dc",
-										"location"
-									]
-								}
-							}
-						},
-						{
-							"key": "prefix",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The value set in this variable when set acts as a prefix for the various resources that get created. A hyphen `-` will automatically be inserted as a separator between the prefix and resource names.",
-							"required": false
-						},
-						{
-							"key": "resource_group_name",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The name of the resource group in which all the resources are created.",
-							"required": false
-						},
-						{
-							"key": "bucket_name",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The name of the Cloud Object Storage bucket created as evidence storage for the DevSecOps toolchains.",
-							"required": false
-						},
-						{
-                            "key": "create_icr_namespace",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to have Terraform create the registry namespace. Setting to `false` will have the CI pipeline create the namespace if it does not already exist. Note: If a Terraform destroy is used, the ICR namespace along with all images will be removed.",
-                            "required": false
-                        },
-						{
-							"key": "registry_namespace",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The name of the registry namespace where images are stored.",
-							"required": false
-						},
-						{
-							"key": "create_cd_instance",
-							"type": "boolean",
-							"default_value": true,
-							"description": "Set to `true` to create a Continuous Delivery Service. This is required for running the DevSecOps toolchain pipelines and to successfuly interact with a DevOps Insights integration.",
-							"required": false
-						},
-						{
-							"key": "project_ci_name",
-							"required": false,
-							"type": "string",
-							"default_value": "CI_Project",
-							"description": "The name of the IBM Cloud Code Engine CI project."
-						 },
-						 {
-							 "key": "project_cd_name",
-							 "required": false,
-							 "type": "string",
-							 "default_value": "CD_Project",
-							 "description": "The name of the IBM Cloud Code Engine CD project."
-						 },
-						{
-							"key": "pipeline_ibmcloud_api_key_secret_name",
-							"type": "string",
-							"default_value": "ibmcloud-api-key",
-							"description": "The name of the IBM Cloud api key used for running the pipelines.",
-							"required": false
-						},
-						{
-							"key": "ci_signing_key_secret_name",
-							"type": "string",
-							"default_value": "signing-key",
-							"description": "The name of the signing key in Secrets Manager that is required for signing the images.",
-							"required": false
-						},
-						{
-							"key": "cd_code_signing_cert_secret_name",
-							"type": "string",
-							"default_value": "signing-certificate",
-							"description": "The name of the signing certificate in Secrets Manager that is used for validating the integrity of signed images.",
-							"required": false
-						},
-						{
-							"key": "cos_api_key_secret_name",
-							"type": "string",
-							"default_value": "cos-api-key",
-							"description": "The name of the Cloud Object Storage api key in Secrets Manager that is used for reading/writing to the evidence bucket.",
-							"required": false
-						},
-						{
-							"key": "sm_secret_group",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The secrets group created in Secrets Manager containing the secrets required by the DevSecOps toolchains.",
-							"required": false
-						},
-						{
-							"key": "sm_service_plan",
-							"type": "string",
-							"default_value": "standard",
-							"description": "The pricing plan to use for Secrets Manager.",
-							"required": false,
-							"options": [
-								{
-									"displayname": "standard",
-									"value": "standard"
-								},
-								{
-									"displayname": "trial",
-									"value": "trial"
-								}
-							]
-						},
-						{
-							"key": "scc_service_plan",
-							"type": "string",
-							"default_value": "security-compliance-center-standard-plan",
-							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
-							"required": false,
-							"options": [
-								{
-									"displayname": "standard",
-									"value": "security-compliance-center-standard-plan"
-								},
-								{
-									"displayname": "trial",
-									"value": "security-compliance-center-trial-plan"
-								}
-							]
-						},
-						{
-							"key": "scc_region",
-							"type": "string",
-							"default_value": "us-south",
-							"description": "The region in which the Security and Compliance Center instance is provisioned.",
-							"display_name": "Region",
-							"required": true,
-							"custom_config": {
-								"type": "region",
-								"grouping": "deployment",
-								"original_grouping": "deployment",
-								"config_constraints": {
-									"filterString": "id:ca-tor,eu-es,eu-de,eu-fr2,us-south",
-									"showKinds": [
-										"region",
-										"zone",
-										"dc",
-										"location"
-									]
-								}
-							}
-						},
-						{
-							"key": "en_region",
-							"type": "string",
-							"default_value": "us-south",
-							"description": "The region in which the Events Notification instance is created.",
-							"display_name": "Region",
-							"required": true,
-							"custom_config": {
-								"type": "region",
-								"grouping": "deployment",
-								"original_grouping": "deployment",
-								"config_constraints": {
-									"filterString": "id:eu-gb,au-syd,eu-es,eu-de,eu-fr2,us-south",
-									"showKinds": [
-										"region",
-										"zone",
-										"dc",
-										"location"
-									]
-								}
-							}
-						},
-						{
-							"key": "use_existing_resource_group",
-							"type": "string",
-							"default_value": "false",
-							"description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
-							"required": false
-						},
-						{
-                            "key": "app_repo_branch",
-                            "type": "string",
-                            "default_value": "main",
-                            "description": "This is the repository branch used by the default sample application. Alternatively if `app_repo_existing_url` is provided, then the branch must reflect the default branch for that repository. Typically these branches are `main` or `master`.",
-                            "required": false
-                        },
-                        {
-                            "key": "app_repo_existing_url",
-                            "type": "string",
-                            "default_value": "__NOTSET__",
-                            "description": "Bring your own existing application repository by providing the URL. This will create an integration for your application repository instead of cloning the default sample. Repositories existing in a different org will require the use of Git token. See `app_repo_git_token_secret_name` under optional variables. ",
-                            "required": true
-                        },
-						{
-                            "key": "app_repo_git_token_secret_name",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Name of the Git token secret in the secret provider used for accessing the sample (or bring your own) application repository.",
-                            "required": false
-                        },
-						{
-							"key": "existing_secrets_manager_crn",
-							"required": false,
-							"type": "string",
-							"default_value": "__NULL__",
-							"description": "The CRN of an existing Secrets Manager instance"
-						},
-						{
-                            "key": "force_create_standard_api_key",
-                            "type": "boolean",
-                            "default_value": false,
-                            "description": "Set to `true` to force create a standard api key. By default the generated apikey will be a service api key. It is recommended to use a Git Token when using the service api key. In the case where the user has been invited to an account and that user not the account owner, during toolchain creation the default compliance repositories will be created in that user's account and the service api will not have access to those repositories. In this case a Git Token for the repositories is required. See `repo_git_token_secret_name` for more details. The alternative is to set `force_create_standard_api_key` to `true` to create a standard api key.",
-                            "required": false
-                        },
-						{
-                            "key": "ibmcloud_api",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "The environment URL. When left unset this will default to `https://cloud.ibm.com`",
-                            "required": false
-                        },
-						{
-							"key": "create_git_token",
-							"required": false,
-							"type": "boolean",
-							"default_value": false,
-							"description": "Set to `true` to create a Git Token secret in the speficied Secrets Manager, using the name set in `repo_git_token_secret_name` and the value set in `repo_git_token_secret_value`."
-						},
-						{
-							"key": "repo_git_token_secret_name",
-							"required": false,
-							"type": "string",
-							"default_value": "",
-							"description": "The name for the Git Token secret in Secrets Manager."
-						},
-						{
-							"key": "repo_git_token_secret_value",
-							"required": false,
-							"type": "password",
-							"default_value": "",
-							"description": "The value of the Git Token secret that is created if `create_git_token` is set to `true`."
-						},
-						{
-							"key": "repo_group",
-							"required": false,
-							"type": "string",
-							"default_value": "",
-							"description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
-						},
-                        {
-                            "key": "repo_apply_settings_to_compliance_repos",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to apply the same settings to all the default compliance repositories. Set to `false` to apply these settings to only the sample application, pipeline config and the deployment repositories.",
-                            "required": false
-                        },
-						{
-                            "key": "repo_git_provider",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab. Applies to all the default DevSecOps repositories, except the `Compliance Pipelines` repository that get created at the time of running the DA.",
-                            "required": false
-                        },
-                        {
-                            "key": "repo_title",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "(Optional) The title of the server. e.g. My Git Enterprise Server.",
-                            "required": false
-                        },
-                        {
-                            "key": "repo_root_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "(Optional) The Root URL of the server. e.g. https://git.example.com.",
-                            "required": false
-                        },
-                        {
-                            "key": "repo_blind_connection",
-                            "type": "boolean",
-                            "default_value": false,
-                            "description": "Setting this value to `true` means the server is not addressable on the public internet. IBM Cloud will not be able to validate the connection details you provide. Certain functionality that requires API access to the git server will be disabled. Delivery pipeline will only work using a private worker that has network access to the git server.",
-                            "required": false
-                        },
-                        {
-                            "key": "repo_git_id",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
-                            "required": false
-                        },
-                        {
-                            "key": "evidence_repo_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set to use an existing evidence repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "issues_repo_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set to use an existing issues repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "inventory_repo_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set to use an existing inventory repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "cd_deployment_repo_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Override to bring your own existing deployment repository URL, which is used directly instead of cloning the default deployment sample.",
-                            "required": false
-                        },
-                        {
-                            "key": "change_management_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Override to bring your own existing change management repository URL, which is used directly instead of cloning the default change management repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "create_triggers",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to create the triggers used by the DevSecOps pipelines.",
-                            "required": false
-                        },
-						{
-                            "key": "create_git_triggers",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to create the Git triggers used by the DevSecOps pipelines.",
-                            "required": false
-                        },
-                        {
-                            "key": "compliance_pipeline_repo_use_group_settings",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to apply group level repository settings to the compliance pipeline repository. See `repo_git_provider` as an example.",
-                            "required": false
-                        },
-                        {
-                            "key": "compliance_pipeline_repo_git_provider",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab.",
-                            "required": false
-                        },
-                        {
-                            "key": "compliance_pipeline_repo_git_id",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
-                            "required": false
-                        },
-                        {
-                            "key": "compliance_pipeline_existing_repo_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Override to bring your own existing compliance pipelines repository URL, which is used directly instead of cloning the default change compliance pipelines repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "add_pipeline_definitions",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to add the compliance pipelines definitions to the DevSecOps pipelines.",
-                            "required": false
-                        },
-						{
-                            "key": "create_privateworker_secret",
-                            "type": "boolean",
-                            "default_value": false,
-                            "description": "Set to `true` to add a specified private worker service api key to the Secrets Provider.",
-                            "required": false
-                        },
-						{
-                            "key": "enable_privateworker",
-                            "type": "boolean",
-                            "default_value": false,
-                            "description": "Set to `true` to enable private workers for the CI, CD, CC and PR pipelines. A valid service api key must be set in Secrets Manager. The name of this secret can be specified using `privateworker_credentials_secret_name`.",
-                            "required": false
-                        },
-						{
-                            "key": "privateworker_credentials_secret_name",
-                            "type": "string",
-                            "default_value": "private-worker-key",
-                            "description": "Name of the private worker secret in the secret provider.",
-                            "required": false
-                        },
-						{
-                            "key": "privateworker_secret_value",
-                            "type": "password",
-                            "description": "The private worker service api key that will be added to the `privateworker_credentials_secret_name` secret in the secrets provider.",
-                            "required": false
-                        },
-						{
-                            "key": "toolchain_access_group_name",
-                            "type": "string",
-                            "default_value": "devsecops-toolchain",
-                            "description": "The name of the DevSecOps access group that is created.",
-                            "required": false
-                        },
-                        {
-                            "key": "use_legacy_ref",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to use the legacy secret reference format for Secrets Manager secrets.",
-                            "required": false
-                        }
-					],
-					"outputs": [
-						{
-							"key": "compliance-ci-url",
-							"description": "The URL to the Continuous Integration toolchain for the sample application."
-						},
-						{
-							"key": "compliance-cd-url",
-							"description": "The URL to the Continuous Deployment toolchain for the sample application."
-						},
-						{
-							"key": "compliance-cc-url",
-							"description": "The URL to the Continuous Compliance toolchain for the sample application."
-						}
-					],
-					"install_type": "fullstack"
-				},
-				{
-					"label": "Deploy on Kubernetes",
-					"name": "alm-stack-kube",
-					"working_directory": "./kubernetes",
-					"compliance": {},
-					"architecture": {
-						"features": [
-							{
-								"title": "Managed Kubernetes Solution",
-								"description": "Build, test and deploy an app to a Kubernetes cluster on IBM Cloud, using a Tekton pipeline."
-							},
-							{
-								"title": "Achieve Regulatory Compliance",
-								"description": "The architecture ensures regulatory compliance by implementing CI/CD/CC pipelines, along with IBM Security Compliance Center (SCC) for secure application lifecycle management."
-							},
-							{
-								"title": "Establish Trust",
-								"description": "The architecture ensures trust by configuring the IBM Cloud account to align with compliance settings as defined in the Financial Services framework."
-							},
-							{
-								"title": "Implement Security",
-								"description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
-							}
-						],
-						"diagrams": [
-							{
-								"diagram": {
-									"url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-kube.svg",
-									"caption": "DevSecOps Reference architecture for Kubernetes",
-									"type": "image/svg+xml",
-									"thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-kube.svg"
-								},
-								"description": "DevSecOps reference architecture for Kubernetes that includes all the toolchains needed for a complete secure pipeline solution."
-							}
-						]
-					},
-					"configuration": [
-						{
-							"key": "ibmcloud_api_key",
-							"type": "password",
-							"description": "The API Key used to provision all the resources created in this solution.",
-							"required": true
-						},
-						{
-							"key": "region",
-							"type": "string",
-							"default_value": "us-south",
-							"description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
-							"display_name": "Region",
-							"required": true,
-							"custom_config": {
-								"type": "region",
-								"grouping": "deployment",
-								"original_grouping": "deployment",
-								"config_constraints": {
-									"filterString": "id:au-syd,br-sao,ca-tor,eu-de,eu-es,eu-gb,jp-osa,jp-tok,us-east,us-south",
-									"showKinds": [
-										"region",
-										"zone",
-										"dc",
-										"location"
-									]
-								}
-							}
-						},
-						{
-							"key": "prefix",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The value set in this variable when set acts as a prefix for the various resources that get created. A hyphen `-` will automatically be inserted as a separator between the prefix and resource names.",
-							"required": false
-						},
-						{
-							"key": "resource_group_name",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The name of the resource group in which all the resources are created.",
-							"required": false
-						},
-						{
-							"key": "bucket_name",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The name of the Cloud Object Storage bucket created as evidence storage for the DevSecOps toolchains.",
-							"required": false
-						},
-						{
-                            "key": "create_icr_namespace",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to have Terraform create the registry namespace. Setting to `false` will have the CI pipeline create the namespace if it does not already exist. Note: If a Terraform destroy is used, the ICR namespace along with all images will be removed.",
-                            "required": false
-                        },
-						{
-							"key": "registry_namespace",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The name of the registry namespace where images are stored.",
-							"required": false
-						},
-						{
-							"key": "create_cd_instance",
-							"type": "boolean",
-							"default_value": true,
-							"description": "Set to `true` to create a Continuous Delivery Service. This is required for running the DevSecOps toolchain pipelines and to successfuly interact with a DevOps Insights integration.",
-							"required": false
-						},
-						{
-							"key": "cluster_name",
-							"type": "string",
-							"default_value": "mycluster",
-							"description": "The name of cluster. Treats the dev and prod cluster as the same cluster.",
-							"required": true
-						},
-						{
-							"key": "ci_cluster_name",
-							"type": "string",
-							"default_value": "",
-							"description": "The name of dev cluster",
-							"required": false
-						},
-						{
-							"key": "ci_cluster_namespace",
-							"type": "string",
-							"default_value": "dev",
-							"description": "The name of dev cluster namespace.",
-							"required": false
-						},
-						{
-							"key": "ci_cluster_region",
-							"type": "string",
-							"default_value": "",
-							"description": "The region containing the cluster",
-							"required": false
-						},
-						{
-							"key": "ci_cluster_resource_group",
-							"type": "string",
-							"default_value": "",
-							"description": "The resource group containing the cluster",
-							"required": false
-						},
-						{
-							"key": "cd_cluster_name",
-							"type": "string",
-							"default_value": "",
-							"description": "The name of production cluster",
-							"required": false
-						},
-						{
-							"key": "cd_cluster_namespace",
-							"type": "string",
-							"default_value": "prod",
-							"description": "The name of production cluster namespace.",
-							"required": false
-						},
-						{
-							"key": "pipeline_ibmcloud_api_key_secret_name",
-							"type": "string",
-							"default_value": "ibmcloud-api-key",
-							"description": "The name of the IBM Cloud api key used for running the pipelines.",
-							"required": false
-						},
-						{
-							"key": "ci_signing_key_secret_name",
-							"type": "string",
-							"default_value": "signing-key",
-							"description": "The name of the signing key in Secrets Manager that is required for signing the images.",
-							"required": false
-						},
-						{
-							"key": "cd_code_signing_cert_secret_name",
-							"type": "string",
-							"default_value": "signing-certificate",
-							"description": "The name of the signing certificate in Secrets Manager that is used for validating the integrity of signed images.",
-							"required": false
-						},
-						{
-							"key": "cos_api_key_secret_name",
-							"type": "string",
-							"default_value": "cos-api-key",
-							"description": "The name of the Cloud Object Storage api key in Secrets Manager that is used for reading/writing to the evidence bucket.",
-							"required": false
-						},
-						{
-							"key": "sm_secret_group",
-							"type": "string",
-							"default_value": "devsecops",
-							"description": "The secrets group created in Secrets Manager containing the secrets required by the DevSecOps toolchains.",
-							"required": false
-						},
-						{
-							"key": "sm_service_plan",
-							"type": "string",
-							"default_value": "standard",
-							"description": "The pricing plan to use for Secrets Manager.",
-							"required": false,
-							"options": [
-								{
-									"displayname": "standard",
-									"value": "standard"
-								},
-								{
-									"displayname": "trial",
-									"value": "trial"
-								}
-							]
-						},
-						{
-							"key": "scc_service_plan",
-							"type": "string",
-							"default_value": "security-compliance-center-standard-plan",
-							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
-							"required": false,
-							"options": [
-								{
-									"displayname": "standard",
-									"value": "security-compliance-center-standard-plan"
-								},
-								{
-									"displayname": "trial",
-									"value": "security-compliance-center-trial-plan"
-								}
-							]
-						},
-						{
-							"key": "scc_region",
-							"type": "string",
-							"default_value": "us-south",
-							"description": "The region in which the Security and Compliance Center instance is provisioned.",
-							"display_name": "Region",
-							"required": true,
-							"custom_config": {
-								"type": "region",
-								"grouping": "deployment",
-								"original_grouping": "deployment",
-								"config_constraints": {
-									"filterString": "id:ca-tor,eu-es,eu-de,eu-fr2,us-south",
-									"showKinds": [
-										"region",
-										"zone",
-										"dc",
-										"location"
-									]
-								}
-							}
-						},
-						{
-							"key": "en_region",
-							"type": "string",
-							"default_value": "us-south",
-							"description": "The region in which the Events Notification instance is created.",
-							"display_name": "Region",
-							"required": true,
-							"custom_config": {
-								"type": "region",
-								"grouping": "deployment",
-								"original_grouping": "deployment",
-								"config_constraints": {
-									"filterString": "id:eu-gb,au-syd,eu-es,eu-de,eu-fr2,us-south",
-									"showKinds": [
-										"region",
-										"zone",
-										"dc",
-										"location"
-									]
-								}
-							}
-						},
-						{
-							"key": "use_existing_resource_group",
-							"type": "string",
-							"default_value": "false",
-							"description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
-							"required": false
-						},
-						{
-                            "key": "app_repo_branch",
-                            "type": "string",
-                            "default_value": "master",
-                            "description": "This is the repository branch used by the default sample application. Alternatively if `app_repo_existing_url` is provided, then the branch must reflect the default branch for that repository. Typically these branches are `main` or `master`.",
-                            "required": false
-                        },
-                        {
-                            "key": "app_repo_existing_url",
-                            "type": "string",
-                            "default_value": "__NOTSET__",
-                            "description": "Bring your own existing application repository by providing the URL. This will create an integration for your application repository instead of cloning the default sample. Repositories existing in a different org will require the use of Git token. See `app_repo_git_token_secret_name` under optional variables. ",
-                            "required": true
-                        },
-						{
-                            "key": "app_repo_git_token_secret_name",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Name of the Git token secret in the secret provider used for accessing the sample (or bring your own) application repository.",
-                            "required": false
-                        },
-						{
-							"key": "existing_secrets_manager_crn",
-							"required": false,
-							"type": "string",
-							"default_value": "__NULL__",
-							"description": "The CRN of an existing Secrets Manager instance"
-						 },
-						 {
-                            "key": "force_create_standard_api_key",
-                            "type": "boolean",
-                            "default_value": false,
-                            "description": "Set to `true` to force create a standard api key. By default the generated apikey will be a service api key. It is recommended to use a Git Token when using the service api key. In the case where the user has been invited to an account and that user not the account owner, during toolchain creation the default compliance repositories will be created in that user's account and the service api will not have access to those repositories. In this case a Git Token for the repositories is required. See `repo_git_token_secret_name` for more details. The alternative is to set `force_create_standard_api_key` to `true` to create a standard api key.",
-                            "required": false
-                        },
-						{
-                            "key": "ibmcloud_api",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "The environment URL. When left unset this will default to `https://cloud.ibm.com`",
-                            "required": false
-                        },
-						 {
-							 "key": "create_git_token",
-							 "required": false,
-							 "type": "boolean",
-							 "default_value": false,
-							 "description": "Set to `true` to create a Git Token secret in the speficied Secrets Manager, using the name set in `repo_git_token_secret_name` and the value set in `repo_git_token_secret_value`."
-						 },
-						 {
-							 "key": "repo_git_token_secret_name",
-							 "required": false,
-							 "type": "string",
-							 "default_value": "",
-							 "description": "The name for the Git Token secret in Secrets Manager."
-						 },
-						 {
-							 "key": "repo_git_token_secret_value",
-							 "required": false,
-							 "type": "password",
-							 "default_value": "",
-							 "description": "The value of the Git Token secret that is created if `create_git_token` is set to `true`."
-						 },
-						 {
-							 "key": "repo_group",
-							 "required": false,
-							 "type": "string",
-							 "default_value": "",
-							 "description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
-						 },
-						 {
-                            "key": "repo_apply_settings_to_compliance_repos",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to apply the same settings to all the default compliance repositories. Set to `false` to apply these settings to only the sample application, pipeline config and the deployment repositories.",
-                            "required": false
-                        },
-						 {
-                            "key": "repo_git_provider",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab. Applies to all the default DevSecOps repositories, except the `Compliance Pipelines` repository that get created at the time of running the DA.",
-                            "required": false
-                        },
-                        {
-                            "key": "repo_title",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "(Optional) The title of the server. e.g. My Git Enterprise Server.",
-                            "required": false
-                        },
-                        {
-                            "key": "repo_root_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "(Optional) The Root URL of the server. e.g. https://git.example.com.",
-                            "required": false
-                        },
-                        {
-                            "key": "repo_blind_connection",
-                            "type": "boolean",
-                            "default_value": false,
-                            "description": "Setting this value to `true` means the server is not addressable on the public internet. IBM Cloud will not be able to validate the connection details you provide. Certain functionality that requires API access to the git server will be disabled. Delivery pipeline will only work using a private worker that has network access to the git server.",
-                            "required": false
-                        },
-                        {
-                            "key": "repo_git_id",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
-                            "required": false
-                        },
-                        {
-                            "key": "evidence_repo_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set to use an existing evidence repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "issues_repo_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set to use an existing issues repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "inventory_repo_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set to use an existing inventory repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "cd_deployment_repo_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Override to bring your own existing deployment repository URL, which is used directly instead of cloning the default deployment sample.",
-                            "required": false
-                        },
-                        {
-                            "key": "change_management_existing_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Override to bring your own existing change management repository URL, which is used directly instead of cloning the default change management repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "create_triggers",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to create the triggers used by the DevSecOps pipelines.",
-                            "required": false
-                        },
-						{
-                            "key": "create_git_triggers",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to create the Git triggers used by the DevSecOps pipelines.",
-                            "required": false
-                        },
-                        {
-                            "key": "compliance_pipeline_repo_use_group_settings",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to apply group level repository settings to the compliance pipeline repository. See `repo_git_provider` as an example.",
-                            "required": false
-                        },
-                        {
-                            "key": "compliance_pipeline_repo_git_provider",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab.",
-                            "required": false
-                        },
-                        {
-                            "key": "compliance_pipeline_repo_git_id",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
-                            "required": false
-                        },
-                        {
-                            "key": "compliance_pipeline_existing_repo_url",
-                            "type": "string",
-                            "default_value": "",
-                            "description": "Override to bring your own existing compliance pipelines repository URL, which is used directly instead of cloning the default change compliance pipelines repository.",
-                            "required": false
-                        },
-                        {
-                            "key": "add_pipeline_definitions",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to add the compliance pipelines definitions to the DevSecOps pipelines.",
-                            "required": false
-                        },
-						{
-                            "key": "create_privateworker_secret",
-                            "type": "boolean",
-                            "default_value": false,
-                            "description": "Set to `true` to add a specified private worker service api key to the Secrets Provider.",
-                            "required": false
-                        },
-						{
-                            "key": "enable_privateworker",
-                            "type": "boolean",
-                            "default_value": false,
-                            "description": "Set to `true` to enable private workers for the CI, CD, CC and PR pipelines. A valid service api key must be set in Secrets Manager. The name of this secret can be specified using `privateworker_credentials_secret_name`.",
-                            "required": false
-                        },
-						{
-                            "key": "privateworker_credentials_secret_name",
-                            "type": "string",
-                            "default_value": "private-worker-key",
-                            "description": "Name of the private worker secret in the secret provider.",
-                            "required": false
-                        },
-						{
-                            "key": "privateworker_secret_value",
-                            "type": "password",
-                            "description": "The private worker service api key that will be added to the `privateworker_credentials_secret_name` secret in the secrets provider.",
-                            "required": false
-                        },
-						{
-                            "key": "toolchain_access_group_name",
-                            "type": "string",
-                            "default_value": "devsecops-toolchain",
-                            "description": "The name of the DevSecOps access group that is created.",
-                            "required": false
-                        },
-                        {
-                            "key": "use_legacy_ref",
-                            "type": "boolean",
-                            "default_value": true,
-                            "description": "Set to `true` to use the legacy secret reference format for Secrets Manager secrets.",
-                            "required": false
-                        }
-					],
-					"outputs": [
-						{
-							"key": "compliance-ci-url",
-							"description": "The URL to the Continuous Integration toolchain for the sample application."
-						},
-						{
-							"key": "compliance-cd-url",
-							"description": "The URL to the Continuous Deployment toolchain for the sample application."
-						},
-						{
-							"key": "compliance-cc-url",
-							"description": "The URL to the Continuous Compliance toolchain for the sample application."
-						}
-					],
-					"install_type": "fullstack"
-				}
-			]
-		}
-	]
+  "products": [
+    {
+      "label": "DevSecOps Solution For Apps",
+      "name": "deploy-arch-ibm-alm-stack",
+      "product_kind": "solution",
+      "tags": [
+        "solution",
+        "enterprise_app",
+        "security",
+        "ibm_created"
+      ],
+      "keywords": [
+        "compliance",
+        "fscloud",
+        "sample",
+        "ibmcloud",
+        "financial services",
+        "secure",
+        "secret manager",
+        "key protect",
+        "scc",
+        "devsecops",
+        "pipelines"
+      ],
+      "short_description": "Comprehensive solution with prerequisite services and pipelines from the DevSecOps Foundation for secure app development.",
+      "long_description": "This deployable architecture provides a comprehensive foundation for trust, observability, security, and regulatory compliance by configuring and deploying various services, including:\n- Creates CI/CD/CC Pipelines for secure application lifecycle management.\n- Creates and configures a Key Protect instance and creates root keys for IBM Cloud Object Storage, Event Notifications, and Secrets Manager.\n- Creates and configures a Secrets Manager instance and creates rotatable secrets required to run secure pipelines.\n- Creates and configures an IBM Security Compliance Center instance.\n- Creates and configures an IBM Cloud Object Storage instance and multiple Object Storage buckets that are encrypted by Key Protect.\n- Deploy and configures service-to-service authorizations for the following services: KMS, Event Notifications, Object Storage, Secrets Manager, and Security and Compliance Center.\n- (Optionally) Creates a Code Engine Project for that variation.\n\n# Objective\n\nThis deployable architecture is designed to showcase a fully automated deployment of a sample Node application through an IBM Cloud Project, providing a flexible and customizable foundation for your own application deployments on IBM Cloud. This architecture deploys the following [Sample application](https://us-south.git.cloud.ibm.com/open-toolchain/code-engine-compliance-app) by default.\n\nBy leveraging this architecture, you can accelerate your deployment and tailor it to meet your unique business needs and enterprise goals.",
+      "offering_docs_url": "https://github.com/terraform-ibm-modules/stack-ibm-devescops-alm/blob/main/README.md",
+      "offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/main/reference-architectures/dso-stack-light-icon.svg",
+      "provider_name": "IBM",
+      "features": [
+        {
+          "title": "Implement Security",
+          "description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
+        },
+        {
+          "title": "Achieve Regulatory Compliance",
+          "description": "Ensures regulatory compliance by implementing CI/CD/CC pipelines, along with IBM SCC for secure application lifecycle management."
+        },
+        {
+          "title": "Establish Trust",
+          "description": "Ensures trust by configuring the IBM Cloud account to align with compliance settings as defined in the Financial Services framework."
+        }
+      ],
+      "support_details": "This product is in the community registry, as such support is handled through the originated repo. If you experience issues please open an issue in that repository [https://github.com/terraform-ibm-modules/stack-ibm-devsecops-alm/issues](https://github.com/terraform-ibm-modules/stack-ibm-devsecops-alm/issues). Please note this product is not supported via the IBM Cloud Support Center.",
+      "flavors": [
+        {
+          "label": "Deploy on Code Engine",
+          "name": "alm-stack-ce",
+          "working_directory": "./",
+          "compliance": {},
+          "architecture": {
+            "features": [
+              {
+                "title": "IBM Code Engine",
+                "description": "Build, test, scan and deploy an app to Code Engine on IBM Cloud, using a Tekton pipeline."
+              },
+              {
+                "title": "Achieve Regulatory Compliance",
+                "description": "The architecture ensures regulatory compliance by implementing CI/CD/CC pipelines, along with IBM Security Compliance Center (SCC) for secure application lifecycle management."
+              },
+              {
+                "title": "Establish Trust",
+                "description": "The architecture ensures trust by configuring the IBM Cloud account to align with compliance settings as defined in the Financial Services framework."
+              },
+              {
+                "title": "Implement Security",
+                "description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
+              }
+            ],
+            "diagrams": [
+              {
+                "diagram": {
+                  "url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-code-engine.svg",
+                  "caption": "DevSecOps Code Engine ",
+                  "type": "image/svg+xml",
+                  "thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-code-engine.svg"
+                },
+                "description": "DevSecOps reference architecture for Code Engine that includes all the toolchains needed for a complete secure pipeline solution."
+              }
+            ]
+          },
+          "configuration": [
+            {
+              "key": "ibmcloud_api_key",
+              "type": "password",
+              "description": "The API Key used to provision all the resources created in this solution.",
+              "required": true
+            },
+            {
+              "key": "region",
+              "type": "string",
+              "default_value": "us-south",
+              "description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
+              "display_name": "Region",
+              "required": true,
+              "custom_config": {
+                "type": "region",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "filterString": "id:au-syd,br-sao,ca-tor,eu-de,eu-es,eu-gb,jp-osa,jp-tok,us-east,us-south",
+                  "showKinds": [
+                    "region",
+                    "zone",
+                    "dc",
+                    "location"
+                  ]
+                }
+              }
+            },
+            {
+              "key": "prefix",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The value set in this variable when set acts as a prefix for the various resources that get created. A hyphen `-` will automatically be inserted as a separator between the prefix and resource names.",
+              "required": false
+            },
+            {
+              "key": "resource_group_name",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The name of the resource group in which all the resources are created.",
+              "required": false
+            },
+            {
+              "key": "bucket_name",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The name of the Cloud Object Storage bucket created as evidence storage for the DevSecOps toolchains.",
+              "required": false
+            },
+            {
+              "key": "create_icr_namespace",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to have Terraform create the registry namespace. Setting to `false` will have the CI pipeline create the namespace if it does not already exist. Note: If a Terraform destroy is used, the ICR namespace along with all images will be removed.",
+              "required": false
+            },
+            {
+              "key": "registry_namespace",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The name of the registry namespace where images are stored.",
+              "required": false
+            },
+            {
+              "key": "create_cd_instance",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to create a Continuous Delivery Service. This is required for running the DevSecOps toolchain pipelines and to successfuly interact with a DevOps Insights integration.",
+              "required": false
+            },
+            {
+              "key": "project_ci_name",
+              "required": false,
+              "type": "string",
+              "default_value": "CI_Project",
+              "description": "The name of the IBM Cloud Code Engine CI project."
+            },
+            {
+              "key": "project_cd_name",
+              "required": false,
+              "type": "string",
+              "default_value": "CD_Project",
+              "description": "The name of the IBM Cloud Code Engine CD project."
+            },
+            {
+              "key": "pipeline_ibmcloud_api_key_secret_name",
+              "type": "string",
+              "default_value": "ibmcloud-api-key",
+              "description": "The name of the IBM Cloud api key used for running the pipelines.",
+              "required": false
+            },
+            {
+              "key": "ci_signing_key_secret_name",
+              "type": "string",
+              "default_value": "signing-key",
+              "description": "The name of the signing key in Secrets Manager that is required for signing the images.",
+              "required": false
+            },
+            {
+              "key": "cd_code_signing_cert_secret_name",
+              "type": "string",
+              "default_value": "signing-certificate",
+              "description": "The name of the signing certificate in Secrets Manager that is used for validating the integrity of signed images.",
+              "required": false
+            },
+            {
+              "key": "cos_api_key_secret_name",
+              "type": "string",
+              "default_value": "cos-api-key",
+              "description": "The name of the Cloud Object Storage api key in Secrets Manager that is used for reading/writing to the evidence bucket.",
+              "required": false
+            },
+            {
+              "key": "sm_secret_group",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The secrets group created in Secrets Manager containing the secrets required by the DevSecOps toolchains.",
+              "required": false
+            },
+            {
+              "key": "sm_service_plan",
+              "type": "string",
+              "default_value": "standard",
+              "description": "The pricing plan to use for Secrets Manager.",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "standard",
+                  "value": "standard"
+                },
+                {
+                  "displayname": "trial",
+                  "value": "trial"
+                }
+              ]
+            },
+            {
+              "key": "scc_service_plan",
+              "type": "string",
+              "default_value": "security-compliance-center-standard-plan",
+              "description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "standard",
+                  "value": "security-compliance-center-standard-plan"
+                },
+                {
+                  "displayname": "trial",
+                  "value": "security-compliance-center-trial-plan"
+                }
+              ]
+            },
+            {
+              "key": "scc_region",
+              "type": "string",
+              "default_value": "us-south",
+              "description": "The region in which the Security and Compliance Center instance is provisioned.",
+              "display_name": "Region",
+              "required": true,
+              "custom_config": {
+                "type": "region",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "filterString": "id:ca-tor,eu-es,eu-de,eu-fr2,us-south",
+                  "showKinds": [
+                    "region",
+                    "zone",
+                    "dc",
+                    "location"
+                  ]
+                }
+              }
+            },
+            {
+              "key": "en_region",
+              "type": "string",
+              "default_value": "us-south",
+              "description": "The region in which the Events Notification instance is created.",
+              "display_name": "Region",
+              "required": true,
+              "custom_config": {
+                "type": "region",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "filterString": "id:eu-gb,au-syd,eu-es,eu-de,eu-fr2,us-south",
+                  "showKinds": [
+                    "region",
+                    "zone",
+                    "dc",
+                    "location"
+                  ]
+                }
+              }
+            },
+            {
+              "key": "use_existing_resource_group",
+              "type": "string",
+              "default_value": "false",
+              "description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
+              "required": false
+            },
+            {
+              "key": "app_repo_branch",
+              "type": "string",
+              "default_value": "main",
+              "description": "This is the repository branch used by the default sample application. Alternatively if `app_repo_existing_url` is provided, then the branch must reflect the default branch for that repository. Typically these branches are `main` or `master`.",
+              "required": false
+            },
+            {
+              "key": "app_repo_existing_url",
+              "type": "string",
+              "default_value": "__NOTSET__",
+              "description": "Bring your own existing application repository by providing the URL. This will create an integration for your application repository instead of cloning the default sample. Repositories existing in a different org will require the use of Git token. See `app_repo_git_token_secret_name` under optional variables. ",
+              "required": true
+            },
+            {
+              "key": "app_repo_git_token_secret_name",
+              "type": "string",
+              "default_value": "",
+              "description": "Name of the Git token secret in the secret provider used for accessing the sample (or bring your own) application repository.",
+              "required": false
+            },
+            {
+              "key": "existing_secrets_manager_crn",
+              "required": false,
+              "type": "string",
+              "default_value": "__NULL__",
+              "description": "The CRN of an existing Secrets Manager instance"
+            },
+            {
+              "key": "force_create_standard_api_key",
+              "type": "boolean",
+              "default_value": false,
+              "description": "Set to `true` to force create a standard api key. By default the generated apikey will be a service api key. It is recommended to use a Git Token when using the service api key. In the case where the user has been invited to an account and that user not the account owner, during toolchain creation the default compliance repositories will be created in that user's account and the service api will not have access to those repositories. In this case a Git Token for the repositories is required. See `repo_git_token_secret_name` for more details. The alternative is to set `force_create_standard_api_key` to `true` to create a standard api key.",
+              "required": false
+            },
+            {
+              "key": "ibmcloud_api",
+              "type": "string",
+              "default_value": "",
+              "description": "The environment URL. When left unset this will default to `https://cloud.ibm.com`",
+              "required": false
+            },
+            {
+              "key": "create_git_token",
+              "required": false,
+              "type": "boolean",
+              "default_value": false,
+              "description": "Set to `true` to create a Git Token secret in the speficied Secrets Manager, using the name set in `repo_git_token_secret_name` and the value set in `repo_git_token_secret_value`."
+            },
+            {
+              "key": "repo_git_token_secret_name",
+              "required": false,
+              "type": "string",
+              "default_value": "",
+              "description": "The name for the Git Token secret in Secrets Manager."
+            },
+            {
+              "key": "repo_git_token_secret_value",
+              "required": false,
+              "type": "password",
+              "default_value": "",
+              "description": "The value of the Git Token secret that is created if `create_git_token` is set to `true`."
+            },
+            {
+              "key": "repo_group",
+              "required": false,
+              "type": "string",
+              "default_value": "",
+              "description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
+            },
+            {
+              "key": "repo_apply_settings_to_compliance_repos",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to apply the same settings to all the default compliance repositories. Set to `false` to apply these settings to only the sample application, pipeline config and the deployment repositories.",
+              "required": false
+            },
+            {
+              "key": "repo_git_provider",
+              "type": "string",
+              "default_value": "",
+              "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab. Applies to all the default DevSecOps repositories, except the `Compliance Pipelines` repository that get created at the time of running the DA.",
+              "required": false
+            },
+            {
+              "key": "repo_title",
+              "type": "string",
+              "default_value": "",
+              "description": "(Optional) The title of the server. e.g. My Git Enterprise Server.",
+              "required": false
+            },
+            {
+              "key": "repo_root_url",
+              "type": "string",
+              "default_value": "",
+              "description": "(Optional) The Root URL of the server. e.g. https://git.example.com.",
+              "required": false
+            },
+            {
+              "key": "repo_blind_connection",
+              "type": "boolean",
+              "default_value": false,
+              "description": "Setting this value to `true` means the server is not addressable on the public internet. IBM Cloud will not be able to validate the connection details you provide. Certain functionality that requires API access to the git server will be disabled. Delivery pipeline will only work using a private worker that has network access to the git server.",
+              "required": false
+            },
+            {
+              "key": "repo_git_id",
+              "type": "string",
+              "default_value": "",
+              "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
+              "required": false
+            },
+            {
+              "key": "evidence_repo_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Set to use an existing evidence repository.",
+              "required": false
+            },
+            {
+              "key": "issues_repo_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Set to use an existing issues repository.",
+              "required": false
+            },
+            {
+              "key": "inventory_repo_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Set to use an existing inventory repository.",
+              "required": false
+            },
+            {
+              "key": "cd_deployment_repo_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Override to bring your own existing deployment repository URL, which is used directly instead of cloning the default deployment sample.",
+              "required": false
+            },
+            {
+              "key": "change_management_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Override to bring your own existing change management repository URL, which is used directly instead of cloning the default change management repository.",
+              "required": false
+            },
+            {
+              "key": "create_triggers",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to create the triggers used by the DevSecOps pipelines.",
+              "required": false
+            },
+            {
+              "key": "create_git_triggers",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to create the Git triggers used by the DevSecOps pipelines.",
+              "required": false
+            },
+            {
+              "key": "compliance_pipeline_repo_use_group_settings",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to apply group level repository settings to the compliance pipeline repository. See `repo_git_provider` as an example.",
+              "required": false
+            },
+            {
+              "key": "compliance_pipeline_repo_git_provider",
+              "type": "string",
+              "default_value": "",
+              "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab.",
+              "required": false
+            },
+            {
+              "key": "compliance_pipeline_repo_git_id",
+              "type": "string",
+              "default_value": "",
+              "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
+              "required": false
+            },
+            {
+              "key": "compliance_pipeline_existing_repo_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Override to bring your own existing compliance pipelines repository URL, which is used directly instead of cloning the default change compliance pipelines repository.",
+              "required": false
+            },
+            {
+              "key": "add_pipeline_definitions",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to add the compliance pipelines definitions to the DevSecOps pipelines.",
+              "required": false
+            },
+            {
+              "key": "create_privateworker_secret",
+              "type": "boolean",
+              "default_value": false,
+              "description": "Set to `true` to add a specified private worker service api key to the Secrets Provider.",
+              "required": false
+            },
+            {
+              "key": "enable_privateworker",
+              "type": "boolean",
+              "default_value": false,
+              "description": "Set to `true` to enable private workers for the CI, CD, CC and PR pipelines. A valid service api key must be set in Secrets Manager. The name of this secret can be specified using `privateworker_credentials_secret_name`.",
+              "required": false
+            },
+            {
+              "key": "privateworker_credentials_secret_name",
+              "type": "string",
+              "default_value": "private-worker-key",
+              "description": "Name of the private worker secret in the secret provider.",
+              "required": false
+            },
+            {
+              "key": "privateworker_secret_value",
+              "type": "password",
+              "description": "The private worker service api key that will be added to the `privateworker_credentials_secret_name` secret in the secrets provider.",
+              "required": false
+            },
+            {
+              "key": "toolchain_access_group_name",
+              "type": "string",
+              "default_value": "devsecops-toolchain",
+              "description": "The name of the DevSecOps access group that is created.",
+              "required": false
+            },
+            {
+              "key": "use_legacy_ref",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to use the legacy secret reference format for Secrets Manager secrets.",
+              "required": false
+            }
+          ],
+          "outputs": [
+            {
+              "key": "compliance-ci-url",
+              "description": "The URL to the Continuous Integration toolchain for the sample application."
+            },
+            {
+              "key": "compliance-cd-url",
+              "description": "The URL to the Continuous Deployment toolchain for the sample application."
+            },
+            {
+              "key": "compliance-cc-url",
+              "description": "The URL to the Continuous Compliance toolchain for the sample application."
+            }
+          ],
+          "install_type": "fullstack"
+        },
+        {
+          "label": "Deploy on Kubernetes",
+          "name": "alm-stack-kube",
+          "working_directory": "./kubernetes",
+          "compliance": {},
+          "architecture": {
+            "features": [
+              {
+                "title": "Managed Kubernetes Solution",
+                "description": "Build, test and deploy an app to a Kubernetes cluster on IBM Cloud, using a Tekton pipeline."
+              },
+              {
+                "title": "Achieve Regulatory Compliance",
+                "description": "The architecture ensures regulatory compliance by implementing CI/CD/CC pipelines, along with IBM Security Compliance Center (SCC) for secure application lifecycle management."
+              },
+              {
+                "title": "Establish Trust",
+                "description": "The architecture ensures trust by configuring the IBM Cloud account to align with compliance settings as defined in the Financial Services framework."
+              },
+              {
+                "title": "Implement Security",
+                "description": "The architecture ensures security by deploying IBM Key Protect and IBM Secrets Manager."
+              }
+            ],
+            "diagrams": [
+              {
+                "diagram": {
+                  "url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-kube.svg",
+                  "caption": "DevSecOps Reference architecture for Kubernetes",
+                  "type": "image/svg+xml",
+                  "thumbnail_url": "https://raw.githubusercontent.com/terraform-ibm-modules/stack-ibm-devsecops-alm/refs/heads/addSVGs/reference-architectures/dso-stack-kube.svg"
+                },
+                "description": "DevSecOps reference architecture for Kubernetes that includes all the toolchains needed for a complete secure pipeline solution."
+              }
+            ]
+          },
+          "configuration": [
+            {
+              "key": "ibmcloud_api_key",
+              "type": "password",
+              "description": "The API Key used to provision all the resources created in this solution.",
+              "required": true
+            },
+            {
+              "key": "region",
+              "type": "string",
+              "default_value": "us-south",
+              "description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
+              "display_name": "Region",
+              "required": true,
+              "custom_config": {
+                "type": "region",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "filterString": "id:au-syd,br-sao,ca-tor,eu-de,eu-es,eu-gb,jp-osa,jp-tok,us-east,us-south",
+                  "showKinds": [
+                    "region",
+                    "zone",
+                    "dc",
+                    "location"
+                  ]
+                }
+              }
+            },
+            {
+              "key": "prefix",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The value set in this variable when set acts as a prefix for the various resources that get created. A hyphen `-` will automatically be inserted as a separator between the prefix and resource names.",
+              "required": false
+            },
+            {
+              "key": "resource_group_name",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The name of the resource group in which all the resources are created.",
+              "required": false
+            },
+            {
+              "key": "bucket_name",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The name of the Cloud Object Storage bucket created as evidence storage for the DevSecOps toolchains.",
+              "required": false
+            },
+            {
+              "key": "create_icr_namespace",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to have Terraform create the registry namespace. Setting to `false` will have the CI pipeline create the namespace if it does not already exist. Note: If a Terraform destroy is used, the ICR namespace along with all images will be removed.",
+              "required": false
+            },
+            {
+              "key": "registry_namespace",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The name of the registry namespace where images are stored.",
+              "required": false
+            },
+            {
+              "key": "create_cd_instance",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to create a Continuous Delivery Service. This is required for running the DevSecOps toolchain pipelines and to successfuly interact with a DevOps Insights integration.",
+              "required": false
+            },
+            {
+              "key": "cluster_name",
+              "type": "string",
+              "default_value": "mycluster",
+              "description": "The name of cluster. Treats the dev and prod cluster as the same cluster.",
+              "required": true
+            },
+            {
+              "key": "ci_cluster_name",
+              "type": "string",
+              "default_value": "",
+              "description": "The name of dev cluster",
+              "required": false
+            },
+            {
+              "key": "ci_cluster_namespace",
+              "type": "string",
+              "default_value": "dev",
+              "description": "The name of dev cluster namespace.",
+              "required": false
+            },
+            {
+              "key": "ci_cluster_region",
+              "type": "string",
+              "default_value": "",
+              "description": "The region containing the cluster",
+              "required": false
+            },
+            {
+              "key": "ci_cluster_resource_group",
+              "type": "string",
+              "default_value": "",
+              "description": "The resource group containing the cluster",
+              "required": false
+            },
+            {
+              "key": "cd_cluster_name",
+              "type": "string",
+              "default_value": "",
+              "description": "The name of production cluster",
+              "required": false
+            },
+            {
+              "key": "cd_cluster_namespace",
+              "type": "string",
+              "default_value": "prod",
+              "description": "The name of production cluster namespace.",
+              "required": false
+            },
+            {
+              "key": "pipeline_ibmcloud_api_key_secret_name",
+              "type": "string",
+              "default_value": "ibmcloud-api-key",
+              "description": "The name of the IBM Cloud api key used for running the pipelines.",
+              "required": false
+            },
+            {
+              "key": "ci_signing_key_secret_name",
+              "type": "string",
+              "default_value": "signing-key",
+              "description": "The name of the signing key in Secrets Manager that is required for signing the images.",
+              "required": false
+            },
+            {
+              "key": "cd_code_signing_cert_secret_name",
+              "type": "string",
+              "default_value": "signing-certificate",
+              "description": "The name of the signing certificate in Secrets Manager that is used for validating the integrity of signed images.",
+              "required": false
+            },
+            {
+              "key": "cos_api_key_secret_name",
+              "type": "string",
+              "default_value": "cos-api-key",
+              "description": "The name of the Cloud Object Storage api key in Secrets Manager that is used for reading/writing to the evidence bucket.",
+              "required": false
+            },
+            {
+              "key": "sm_secret_group",
+              "type": "string",
+              "default_value": "devsecops",
+              "description": "The secrets group created in Secrets Manager containing the secrets required by the DevSecOps toolchains.",
+              "required": false
+            },
+            {
+              "key": "sm_service_plan",
+              "type": "string",
+              "default_value": "standard",
+              "description": "The pricing plan to use for Secrets Manager.",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "standard",
+                  "value": "standard"
+                },
+                {
+                  "displayname": "trial",
+                  "value": "trial"
+                }
+              ]
+            },
+            {
+              "key": "scc_service_plan",
+              "type": "string",
+              "default_value": "security-compliance-center-standard-plan",
+              "description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
+              "required": false,
+              "options": [
+                {
+                  "displayname": "standard",
+                  "value": "security-compliance-center-standard-plan"
+                },
+                {
+                  "displayname": "trial",
+                  "value": "security-compliance-center-trial-plan"
+                }
+              ]
+            },
+            {
+              "key": "scc_region",
+              "type": "string",
+              "default_value": "us-south",
+              "description": "The region in which the Security and Compliance Center instance is provisioned.",
+              "display_name": "Region",
+              "required": true,
+              "custom_config": {
+                "type": "region",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "filterString": "id:ca-tor,eu-es,eu-de,eu-fr2,us-south",
+                  "showKinds": [
+                    "region",
+                    "zone",
+                    "dc",
+                    "location"
+                  ]
+                }
+              }
+            },
+            {
+              "key": "en_region",
+              "type": "string",
+              "default_value": "us-south",
+              "description": "The region in which the Events Notification instance is created.",
+              "display_name": "Region",
+              "required": true,
+              "custom_config": {
+                "type": "region",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "filterString": "id:eu-gb,au-syd,eu-es,eu-de,eu-fr2,us-south",
+                  "showKinds": [
+                    "region",
+                    "zone",
+                    "dc",
+                    "location"
+                  ]
+                }
+              }
+            },
+            {
+              "key": "use_existing_resource_group",
+              "type": "string",
+              "default_value": "false",
+              "description": "Setting to `true` will treat the `resource_group_name` as an existing resource group. Setting `false` will provision a new resource group based on the value in `resource_group_name`.",
+              "required": false
+            },
+            {
+              "key": "app_repo_branch",
+              "type": "string",
+              "default_value": "master",
+              "description": "This is the repository branch used by the default sample application. Alternatively if `app_repo_existing_url` is provided, then the branch must reflect the default branch for that repository. Typically these branches are `main` or `master`.",
+              "required": false
+            },
+            {
+              "key": "app_repo_existing_url",
+              "type": "string",
+              "default_value": "__NOTSET__",
+              "description": "Bring your own existing application repository by providing the URL. This will create an integration for your application repository instead of cloning the default sample. Repositories existing in a different org will require the use of Git token. See `app_repo_git_token_secret_name` under optional variables. ",
+              "required": true
+            },
+            {
+              "key": "app_repo_git_token_secret_name",
+              "type": "string",
+              "default_value": "",
+              "description": "Name of the Git token secret in the secret provider used for accessing the sample (or bring your own) application repository.",
+              "required": false
+            },
+            {
+              "key": "existing_secrets_manager_crn",
+              "required": false,
+              "type": "string",
+              "default_value": "__NULL__",
+              "description": "The CRN of an existing Secrets Manager instance"
+            },
+            {
+              "key": "force_create_standard_api_key",
+              "type": "boolean",
+              "default_value": false,
+              "description": "Set to `true` to force create a standard api key. By default the generated apikey will be a service api key. It is recommended to use a Git Token when using the service api key. In the case where the user has been invited to an account and that user not the account owner, during toolchain creation the default compliance repositories will be created in that user's account and the service api will not have access to those repositories. In this case a Git Token for the repositories is required. See `repo_git_token_secret_name` for more details. The alternative is to set `force_create_standard_api_key` to `true` to create a standard api key.",
+              "required": false
+            },
+            {
+              "key": "ibmcloud_api",
+              "type": "string",
+              "default_value": "",
+              "description": "The environment URL. When left unset this will default to `https://cloud.ibm.com`",
+              "required": false
+            },
+            {
+              "key": "create_git_token",
+              "required": false,
+              "type": "boolean",
+              "default_value": false,
+              "description": "Set to `true` to create a Git Token secret in the speficied Secrets Manager, using the name set in `repo_git_token_secret_name` and the value set in `repo_git_token_secret_value`."
+            },
+            {
+              "key": "repo_git_token_secret_name",
+              "required": false,
+              "type": "string",
+              "default_value": "",
+              "description": "The name for the Git Token secret in Secrets Manager."
+            },
+            {
+              "key": "repo_git_token_secret_value",
+              "required": false,
+              "type": "password",
+              "default_value": "",
+              "description": "The value of the Git Token secret that is created if `create_git_token` is set to `true`."
+            },
+            {
+              "key": "repo_group",
+              "required": false,
+              "type": "string",
+              "default_value": "",
+              "description": "The name of the Git repository owner/group. This setting applies to all all the compliance repositories and sample app."
+            },
+            {
+              "key": "repo_apply_settings_to_compliance_repos",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to apply the same settings to all the default compliance repositories. Set to `false` to apply these settings to only the sample application, pipeline config and the deployment repositories.",
+              "required": false
+            },
+            {
+              "key": "repo_git_provider",
+              "type": "string",
+              "default_value": "",
+              "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab. Applies to all the default DevSecOps repositories, except the `Compliance Pipelines` repository that get created at the time of running the DA.",
+              "required": false
+            },
+            {
+              "key": "repo_title",
+              "type": "string",
+              "default_value": "",
+              "description": "(Optional) The title of the server. e.g. My Git Enterprise Server.",
+              "required": false
+            },
+            {
+              "key": "repo_root_url",
+              "type": "string",
+              "default_value": "",
+              "description": "(Optional) The Root URL of the server. e.g. https://git.example.com.",
+              "required": false
+            },
+            {
+              "key": "repo_blind_connection",
+              "type": "boolean",
+              "default_value": false,
+              "description": "Setting this value to `true` means the server is not addressable on the public internet. IBM Cloud will not be able to validate the connection details you provide. Certain functionality that requires API access to the git server will be disabled. Delivery pipeline will only work using a private worker that has network access to the git server.",
+              "required": false
+            },
+            {
+              "key": "repo_git_id",
+              "type": "string",
+              "default_value": "",
+              "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
+              "required": false
+            },
+            {
+              "key": "evidence_repo_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Set to use an existing evidence repository.",
+              "required": false
+            },
+            {
+              "key": "issues_repo_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Set to use an existing issues repository.",
+              "required": false
+            },
+            {
+              "key": "inventory_repo_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Set to use an existing inventory repository.",
+              "required": false
+            },
+            {
+              "key": "cd_deployment_repo_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Override to bring your own existing deployment repository URL, which is used directly instead of cloning the default deployment sample.",
+              "required": false
+            },
+            {
+              "key": "change_management_existing_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Override to bring your own existing change management repository URL, which is used directly instead of cloning the default change management repository.",
+              "required": false
+            },
+            {
+              "key": "create_triggers",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to create the triggers used by the DevSecOps pipelines.",
+              "required": false
+            },
+            {
+              "key": "create_git_triggers",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to create the Git triggers used by the DevSecOps pipelines.",
+              "required": false
+            },
+            {
+              "key": "compliance_pipeline_repo_use_group_settings",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to apply group level repository settings to the compliance pipeline repository. See `repo_git_provider` as an example.",
+              "required": false
+            },
+            {
+              "key": "compliance_pipeline_repo_git_provider",
+              "type": "string",
+              "default_value": "",
+              "description": "By default this gets set as 'hostedgit', else set to 'githubconsolidated' for GitHub repositories or `gitlab` for GitLab.",
+              "required": false
+            },
+            {
+              "key": "compliance_pipeline_repo_git_id",
+              "type": "string",
+              "default_value": "",
+              "description": "Set this value to `github` for github.com, `gitlabcustom` for GitLab or to the ID of a custom GitHub Enterprise server.",
+              "required": false
+            },
+            {
+              "key": "compliance_pipeline_existing_repo_url",
+              "type": "string",
+              "default_value": "",
+              "description": "Override to bring your own existing compliance pipelines repository URL, which is used directly instead of cloning the default change compliance pipelines repository.",
+              "required": false
+            },
+            {
+              "key": "add_pipeline_definitions",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to add the compliance pipelines definitions to the DevSecOps pipelines.",
+              "required": false
+            },
+            {
+              "key": "create_privateworker_secret",
+              "type": "boolean",
+              "default_value": false,
+              "description": "Set to `true` to add a specified private worker service api key to the Secrets Provider.",
+              "required": false
+            },
+            {
+              "key": "enable_privateworker",
+              "type": "boolean",
+              "default_value": false,
+              "description": "Set to `true` to enable private workers for the CI, CD, CC and PR pipelines. A valid service api key must be set in Secrets Manager. The name of this secret can be specified using `privateworker_credentials_secret_name`.",
+              "required": false
+            },
+            {
+              "key": "privateworker_credentials_secret_name",
+              "type": "string",
+              "default_value": "private-worker-key",
+              "description": "Name of the private worker secret in the secret provider.",
+              "required": false
+            },
+            {
+              "key": "privateworker_secret_value",
+              "type": "password",
+              "description": "The private worker service api key that will be added to the `privateworker_credentials_secret_name` secret in the secrets provider.",
+              "required": false
+            },
+            {
+              "key": "toolchain_access_group_name",
+              "type": "string",
+              "default_value": "devsecops-toolchain",
+              "description": "The name of the DevSecOps access group that is created.",
+              "required": false
+            },
+            {
+              "key": "use_legacy_ref",
+              "type": "boolean",
+              "default_value": true,
+              "description": "Set to `true` to use the legacy secret reference format for Secrets Manager secrets.",
+              "required": false
+            }
+          ],
+          "outputs": [
+            {
+              "key": "compliance-ci-url",
+              "description": "The URL to the Continuous Integration toolchain for the sample application."
+            },
+            {
+              "key": "compliance-cd-url",
+              "description": "The URL to the Continuous Deployment toolchain for the sample application."
+            },
+            {
+              "key": "compliance-cc-url",
+              "description": "The URL to the Continuous Compliance toolchain for the sample application."
+            }
+          ],
+          "install_type": "fullstack"
+        }
+      ]
+    }
+  ]
 }
