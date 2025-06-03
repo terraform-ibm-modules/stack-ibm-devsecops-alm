@@ -218,45 +218,6 @@
 							]
 						},
 						{
-							"key": "scc_service_plan",
-							"type": "string",
-							"default_value": "security-compliance-center-standard-plan",
-							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
-							"required": false,
-							"options": [
-								{
-									"displayname": "standard",
-									"value": "security-compliance-center-standard-plan"
-								},
-								{
-									"displayname": "trial",
-									"value": "security-compliance-center-trial-plan"
-								}
-							]
-						},
-						{
-							"key": "scc_region",
-							"type": "string",
-							"default_value": "us-south",
-							"description": "The region in which the Security and Compliance Center instance is provisioned.",
-							"display_name": "Region",
-							"required": true,
-							"custom_config": {
-								"type": "region",
-								"grouping": "deployment",
-								"original_grouping": "deployment",
-								"config_constraints": {
-									"filterString": "id:ca-tor,eu-es,eu-de,eu-fr2,us-south",
-									"showKinds": [
-										"region",
-										"zone",
-										"dc",
-										"location"
-									]
-								}
-							}
-						},
-						{
 							"key": "en_region",
 							"type": "string",
 							"default_value": "us-south",
@@ -746,45 +707,6 @@
 									"value": "trial"
 								}
 							]
-						},
-						{
-							"key": "scc_service_plan",
-							"type": "string",
-							"default_value": "security-compliance-center-standard-plan",
-							"description": "The pricing plan to use for the IBM Cloud Security and Compliance Center.",
-							"required": false,
-							"options": [
-								{
-									"displayname": "standard",
-									"value": "security-compliance-center-standard-plan"
-								},
-								{
-									"displayname": "trial",
-									"value": "security-compliance-center-trial-plan"
-								}
-							]
-						},
-						{
-							"key": "scc_region",
-							"type": "string",
-							"default_value": "us-south",
-							"description": "The region in which the Security and Compliance Center instance is provisioned.",
-							"display_name": "Region",
-							"required": true,
-							"custom_config": {
-								"type": "region",
-								"grouping": "deployment",
-								"original_grouping": "deployment",
-								"config_constraints": {
-									"filterString": "id:ca-tor,eu-es,eu-de,eu-fr2,us-south",
-									"showKinds": [
-										"region",
-										"zone",
-										"dc",
-										"location"
-									]
-								}
-							}
 						},
 						{
 							"key": "en_region",
