@@ -43,7 +43,7 @@ func TestProjectsFullTest(t *testing.T) {
 			"resource_group_name":                   "default",
 			"existing_secrets_manager_instance_crn": permanentResources["secretsManagerCRN"],
 		},
-		"6 - DevSecOps Toolchains": {
+		"7 - DevSecOps Toolchains": {
 			"autostart":               "false",
 			"create_cos_api_key":      "false",
 			"create_secret_group":     "false",
