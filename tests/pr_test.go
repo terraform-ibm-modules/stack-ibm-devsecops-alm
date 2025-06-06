@@ -43,7 +43,7 @@ func TestProjectsFullTest(t *testing.T) {
 			"resource_group_name":                   "default",
 			"existing_secrets_manager_instance_crn": permanentResources["secretsManagerCRN"],
 		},
-		"7 - DevSecOps Toolchains": {
+		"6 - DevSecOps Toolchains": {
 			"autostart":               "false",
 			"create_cos_api_key":      "false",
 			"create_secret_group":     "false",
@@ -54,9 +54,9 @@ func TestProjectsFullTest(t *testing.T) {
 
 	options.StackInputs = map[string]interface{}{
 		"prefix":                          options.Prefix,
-		"resource_group_name":             options.Prefix,
+		"resource_group_name":             "stack-pr-rg",
 		"sm_service_plan":                 "trial",
-		"scc_service_plan":                "security-compliance-center-standard-plan",
+		"use_existing_resource_group":     "true",
 		"region":                          "us-south",
 		"existing_secrets_manager_crn":    permanentResources["secretsManagerCRN"],
 		"ibmcloud_api_key":                options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
