@@ -16,14 +16,6 @@
 			"custom_config": {}
 		},
 		{
-			"name": "scc_region",
-			"required": true,
-			"type": "string",
-			"hidden": false,
-			"default": "us-south",
-			"custom_config": {}
-		},
-		{
 			"name": "app_repo_existing_url",
 			"type": "string",
 			"hidden": false,
@@ -127,14 +119,6 @@
 			"type": "string",
 			"hidden": false,
 			"default": "signing-certificate",
-			"custom_config": {}
-		},
-		{
-			"name": "scc_service_plan",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "security-compliance-center-standard-plan",
 			"custom_config": {}
 		},
 		{
@@ -476,7 +460,7 @@
 				}
 			],
 			"name": "1 - Key Management",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.00f91756-7287-4786-9ab0-fd12d30d8919-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.93bf5d12-a435-4510-8888-1c32db20b82b-global"
 		},
 		{
 			"inputs": [
@@ -485,7 +469,7 @@
 					"value": "ref:../../members/1 - Key Management/outputs/resource_group_name"
 				},
 				{
-					"name": "existing_resource_group",
+					"name": "use_existing_resource_group",
 					"value": true
 				},
 				{
@@ -498,7 +482,7 @@
 				}
 			],
 			"name": "2 - Cloud Object Storage",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.855893e4-62db-4f00-a867-0795231053fe-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fef2dae0-dc1a-4e7f-a663-dba29dfbc01a-global"
 		},
 		{
 			"inputs": [
@@ -601,60 +585,6 @@
 			],
 			"name": "5 - Secrets Manager",
 			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.4e7a383f-6295-4edc-b29f-858d28862e6d-global"
-		},
-		{
-			"inputs": [
-				{
-					"name": "resource_group_name",
-					"value": "ref:../../members/1 - Key Management/outputs/resource_group_name"
-				},
-				{
-					"name": "use_existing_resource_group",
-					"value": true
-				},
-				{
-					"name": "scc_region",
-					"value": "ref:../../inputs/scc_region"
-				},
-				{
-					"name": "cos_region",
-					"value": "ref:../../inputs/region"
-				},
-				{
-					"name": "prefix",
-					"value": "ref:../../inputs/prefix"
-				},
-				{
-					"name": "existing_kms_instance_crn",
-					"value": "ref:../../members/1 - Key Management/outputs/kms_instance_crn"
-				},
-				{
-					"name": "existing_en_crn",
-					"value": "ref:../../members/4 - Event Notifications/outputs/crn"
-				},
-				{
-					"name": "kms_endpoint_type",
-					"value": "private"
-				},
-				{
-					"name": "skip_cos_kms_auth_policy",
-					"value": true
-				},
-				{
-					"name": "scc_service_plan",
-					"value": "ref:../../inputs/scc_service_plan"
-				},
-				{
-					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
-				},
-				{
-					"name" : "provision_scc_workload_protection",
-					"value" : false
-				}
-			],
-			"name": "6 - Security and Compliance Center",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.0e4e8fc9-8953-4456-a51c-6ed6a3ca1bd7-global"
 		},
 		{
 			"name": "7 - DevSecOps Toolchains",
