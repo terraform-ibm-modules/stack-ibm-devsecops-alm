@@ -589,7 +589,7 @@
         },
         {
           "name": "enable_cos",
-          "value" : true
+          "value" : "true"
         },
         {
           "name": "cos_bucket_name",
