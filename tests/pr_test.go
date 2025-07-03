@@ -57,6 +57,7 @@ func TestProjectsFullTest(t *testing.T) {
 		"resource_group_name":             "stack-pr-rg",
 		"sm_service_plan":                 "trial",
 		"use_existing_resource_group":     "true",
+		"create_cd_instance":              false,
 		"region":                          "us-south",
 		"existing_secrets_manager_crn":    permanentResources["secretsManagerCRN"],
 		"ibmcloud_api_key":                options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
