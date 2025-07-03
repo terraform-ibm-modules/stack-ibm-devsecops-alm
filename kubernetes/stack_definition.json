@@ -600,7 +600,7 @@
 				},
 				{
 					"name": "toolchain_resource_group",
-					"value": "ref:../../members/6 - Security and Compliance Center/outputs/resource_group_name"
+					"value": "ref:../../members/1 - Key Management/outputs/resource_group_name"
 				},
 				{
 					"name": "sm_secret_group",
