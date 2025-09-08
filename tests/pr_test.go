@@ -59,6 +59,7 @@ func TestProjectsFullTest(t *testing.T) {
 		"use_existing_resource_group":     "true",
 		"create_cd_instance":              false,
 		"region":                          "us-south",
+		"enable_cos":                      "false",
 		"existing_secrets_manager_crn":    permanentResources["secretsManagerCRN"],
 		"ibmcloud_api_key":                options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
 		"app_repo_existing_url":           "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
