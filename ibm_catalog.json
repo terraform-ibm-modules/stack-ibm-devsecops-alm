@@ -94,8 +94,8 @@
               "key": "region",
               "type": "string",
               "default_value": "us-south",
-              "description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
-              "display_name": "Region",
+              "description": "The region in which all resources are deployed except for Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
+              "display_name": "region",
               "required": true,
               "custom_config": {
                 "type": "region",
@@ -225,7 +225,7 @@
               "type": "string",
               "default_value": "us-south",
               "description": "The region in which the Events Notification instance is created.",
-              "display_name": "Region",
+              "display_name": "en_region",
               "required": true,
               "custom_config": {
                 "type": "region",
@@ -550,8 +550,8 @@
               "key": "region",
               "type": "string",
               "default_value": "us-south",
-              "description": "The region in which all resources are deployed except for SCC and Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
-              "display_name": "Region",
+              "description": "The region in which all resources are deployed except Event Notifications. Those resources should be individually set and by default are set to `us-south`.",
+              "display_name": "region",
               "required": true,
               "custom_config": {
                 "type": "region",
@@ -716,7 +716,7 @@
               "type": "string",
               "default_value": "us-south",
               "description": "The region in which the Events Notification instance is created.",
-              "display_name": "Region",
+              "display_name": "en_region",
               "required": true,
               "custom_config": {
                 "type": "region",
