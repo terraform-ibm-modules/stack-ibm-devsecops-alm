@@ -500,11 +500,15 @@
 				},
 				{
 					"name": "existing_cos_instance_crn",
-					"value": "ref:../../members/2 - Cloud Object Storaget/outputs/cos_instance_id"
+					"value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
 				},
 				{
 					"name": "existing_kms_instance_crn",
 					"value": "ref:../../members/1 - Key Management/outputs/kms_instance_crn"
+				},
+				{
+					"name": "kms_encryption_enabled",
+					"value": true
 				},
 				{
 					"name": "skip_iam_authorization_policy",
