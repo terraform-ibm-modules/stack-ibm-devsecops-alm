@@ -421,7 +421,7 @@
         }
       ],
       "name": "1 - Key Management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.93bf5d12-a435-4510-8888-1c32db20b82b-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3820c511-3ea2-43b9-8945-5eb7772001b6-global"
     },
     {
       "inputs": [
@@ -443,7 +443,7 @@
         }
       ],
       "name": "2 - Cloud Object Storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fef2dae0-dc1a-4e7f-a663-dba29dfbc01a-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.30851389-2ab5-4be5-8674-7ef756cb372d-global"
     },
     {
       "inputs": [
@@ -469,7 +469,7 @@
         }
       ],
       "name": "3 - Cloud Object Bucket",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.993946ad-43d0-4774-929c-22954b20af95-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1a34d3eb-f57d-4246-a147-75699f395ca4-global"
     },
     {
       "inputs": [
@@ -507,7 +507,7 @@
         }
       ],
       "name": "4 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.88d7308d-c2c8-4977-92cf-f85d99e27d00-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fa8ebdf4-db44-4e25-9846-9278b516cd73-global"
     },
     {
       "inputs": [
@@ -545,7 +545,7 @@
         }
       ],
       "name": "5 - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.4e7a383f-6295-4edc-b29f-858d28862e6d-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3d0da0a9-0327-44fc-8796-edf8e0017e25-global"
     },
     {
       "name": "6 - DevSecOps Toolchains",
