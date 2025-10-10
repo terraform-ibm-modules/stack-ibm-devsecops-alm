@@ -456,6 +456,10 @@
           "value": true
         },
         {
+					"name" : "kms_encryption_enabled",
+					"value" : true
+				},
+        {
           "name": "prefix",
           "value": "ref:../../inputs/prefix"
         },
