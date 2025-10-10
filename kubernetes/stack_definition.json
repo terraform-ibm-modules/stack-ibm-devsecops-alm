@@ -473,7 +473,7 @@
 					"value": true
 				},
 				{
-					"name": "cos_instance_name",
+					"name": "instance_name",
 					"value": "evidence"
 				},
 				{
@@ -495,15 +495,7 @@
 					"value" : true
 				},
 				{
-					"name" : "kms_encryption_enabled",
-					"value" : true
-				},
-				{
-					"name": "prefix",
-					"value": "ref:../../inputs/prefix"
-				},
-				{
-					"name": "existing_cos_instance_crn",
+					"name": "existing_cos_instance_id",
 					"value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
 				},
 				{
@@ -516,7 +508,7 @@
 				}
 			],
 			"name": "3 - Cloud Object Bucket",
-			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.1a34d3eb-f57d-4246-a147-75699f395ca4-global"
+			"version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.993946ad-43d0-4774-929c-22954b20af95-global"
 		},
 		{
 			"inputs": [
