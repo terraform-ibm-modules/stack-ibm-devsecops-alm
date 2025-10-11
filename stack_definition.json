@@ -421,7 +421,7 @@
         }
       ],
       "name": "1 - Key Management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3820c511-3ea2-43b9-8945-5eb7772001b6-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.93bf5d12-a435-4510-8888-1c32db20b82b-global"
     },
     {
       "inputs": [
@@ -516,7 +516,7 @@
     {
       "inputs": [
         {
-          "name": "resource_group_name",
+          "name": "existing_resource_group_name",
           "value": "ref:../../members/1 - Key Management/outputs/resource_group_name"
         },
         {
