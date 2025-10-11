@@ -465,12 +465,8 @@
 		{
 			"inputs": [
 				{
-					"name": "resource_group_name",
+					"name": "existing_resource_group_name",
 					"value": "ref:../../members/1 - Key Management/outputs/resource_group_name"
-				},
-				{
-					"name": "use_existing_resource_group",
-					"value": true
 				},
 				{
 					"name": "instance_name",
