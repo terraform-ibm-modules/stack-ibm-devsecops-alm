@@ -56,6 +56,7 @@ func TestProjectsFullTest(t *testing.T) {
 		"prefix":                          options.Prefix,
 		"resource_group_name":             "stack-pr-rg",
 		"sm_service_plan":                 "trial",
+		"sm_resource_group":               "default",
 		"use_existing_resource_group":     "true",
 		"create_cd_instance":              false,
 		"region":                          "us-south",
