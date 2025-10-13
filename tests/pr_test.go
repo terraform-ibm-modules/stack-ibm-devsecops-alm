@@ -40,7 +40,7 @@ func TestProjectsFullTest(t *testing.T) {
 
 	options.StackMemberInputs = map[string]map[string]interface{}{
 		"5 - Secrets Manager": {
-			"resource_group_name":                   "default",
+			"existing_resource_group_name":          "default",
 			"existing_secrets_manager_instance_crn": permanentResources["secretsManagerCRN"],
 		},
 		"6 - DevSecOps Toolchains": {
@@ -56,7 +56,6 @@ func TestProjectsFullTest(t *testing.T) {
 		"prefix":                          options.Prefix,
 		"resource_group_name":             "stack-pr-rg",
 		"sm_service_plan":                 "trial",
-		"sm_resource_group":               "default",
 		"use_existing_resource_group":     "true",
 		"create_cd_instance":              false,
 		"region":                          "us-south",
