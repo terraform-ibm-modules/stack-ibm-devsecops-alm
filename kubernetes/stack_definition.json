@@ -462,7 +462,7 @@
 			"inputs": [
 				{
 					"name": "existing_resource_group_name",
-					"value": "ref:../../members/1a - Resource Group/outputs/resource_group_name"
+					"value": "ref:../../members/1a - Resource Group/outputs/single_resource_group_name"
 				},
 				{
 					"name": "region",
