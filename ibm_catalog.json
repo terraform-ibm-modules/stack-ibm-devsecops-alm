@@ -482,7 +482,7 @@
             {
               "key": "use_legacy_ref",
               "type": "boolean",
-              "default_value": true,
+              "default_value": false,
               "description": "Set to `true` to use the legacy secret reference format for Secrets Manager secrets.",
               "required": false
             }
@@ -973,7 +973,7 @@
             {
               "key": "use_legacy_ref",
               "type": "boolean",
-              "default_value": true,
+              "default_value": false,
               "description": "Set to `true` to use the legacy secret reference format for Secrets Manager secrets.",
               "required": false
             }
