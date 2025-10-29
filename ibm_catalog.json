@@ -501,7 +501,8 @@
               "description": "The URL to the Continuous Compliance toolchain for the sample application."
             }
           ],
-          "install_type": "fullstack"
+          "install_type": "fullstack",
+          "terraform_version": "1.12.2"
         },
         {
           "label": "Deploy on Kubernetes",
@@ -992,7 +993,8 @@
               "description": "The URL to the Continuous Compliance toolchain for the sample application."
             }
           ],
-          "install_type": "fullstack"
+          "install_type": "fullstack",
+          "terraform_version": "1.12.2"
         }
       ]
     }
