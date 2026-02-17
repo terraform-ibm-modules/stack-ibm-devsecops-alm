@@ -16,12 +16,12 @@
       "custom_config": {}
     },
     {
-			"name": "app_repo_existing_url",
-			"type": "string",
-			"hidden": false,
-			"default": "__NOTSET__",
-			"required": true
-		},
+      "name": "app_repo_existing_url",
+      "type": "string",
+      "hidden": false,
+      "default": "__NOTSET__",
+      "required": true
+    },
     {
       "name": "resource_group_name",
       "required": false,
@@ -121,44 +121,44 @@
       "default": "signing-certificate",
       "custom_config": {}
     },
-		{
-			"name": "app_repo_branch",
-			"type": "string",
-			"hidden": false,
-			"default": "master",
-			"required": false
-		},
-		{
-			"name": "app_repo_git_token_secret_name",
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"required": false
-		},
     {
-			"name": "existing_secrets_manager_crn",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "__NULL__",
-			"custom_config": {}
-		},
+      "name": "app_repo_branch",
+      "type": "string",
+      "hidden": false,
+      "default": "master",
+      "required": false
+    },
     {
-			"name": "create_icr_namespace",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": true,
-			"custom_config": {}
-		},
+      "name": "app_repo_git_token_secret_name",
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "required": false
+    },
     {
-			"name": "create_git_token",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": false,
-			"custom_config": {}
-		},
+      "name": "existing_secrets_manager_crn",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "__NULL__",
+      "custom_config": {}
+    },
+    {
+      "name": "create_icr_namespace",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": true,
+      "custom_config": {}
+    },
+    {
+      "name": "create_git_token",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": false,
+      "custom_config": {}
+    },
     {
       "name": "force_create_standard_api_key",
       "required": false,
@@ -168,205 +168,205 @@
       "custom_config": {}
     },
     {
-			"name": "repo_git_token_secret_name",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
+      "name": "repo_git_token_secret_name",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
     {
-			"name": "repo_git_token_secret_value",
-			"required": false,
-			"type": "password",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
+      "name": "repo_git_token_secret_value",
+      "required": false,
+      "type": "password",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
     {
-			"name": "repo_group",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
+      "name": "repo_group",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
     {
-			"name": "repo_apply_settings_to_compliance_repos",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": false,
-			"custom_config": {}
-		},
+      "name": "repo_apply_settings_to_compliance_repos",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": false,
+      "custom_config": {}
+    },
     {
-			"name": "repo_git_provider",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "repo_title",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "repo_root_url",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "repo_blind_connection",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": false,
-			"custom_config": {}
-		},
-		{
-			"name": "repo_git_id",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "evidence_repo_existing_url",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "issues_repo_existing_url",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "inventory_repo_existing_url",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "cd_deployment_repo_existing_url",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "change_management_existing_url",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "create_triggers",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": true,
-			"custom_config": {}
-		},
+      "name": "repo_git_provider",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
     {
-			"name": "create_git_triggers",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": true,
-			"custom_config": {}
-		},
-		{
-			"name": "compliance_pipeline_repo_use_group_settings",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": true,
-			"custom_config": {}
-		},
-		{
-			"name": "compliance_pipeline_repo_git_provider",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "compliance_pipeline_repo_git_id",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "compliance_pipeline_existing_repo_url",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
-		{
-			"name": "add_pipeline_definitions",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": true,
-			"custom_config": {}
-		},
+      "name": "repo_title",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
     {
-			"name": "create_privateworker_secret",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": false,
-			"custom_config": {}
-		},
-    	{
-			"name": "enable_privateworker",
-			"required": false,
-			"type": "boolean",
-			"hidden": false,
-			"default": false,
-			"custom_config": {}
-		},
-   		{
-			"name": "privateworker_credentials_secret_name",
-			"required": false,
-			"type": "string",
-			"hidden": false,
-			"default": "private-worker-key",
-			"custom_config": {}
-		},
-    	{
-			"name": "privateworker_secret_value",
-			"required": false,
-			"type": "password",
-			"hidden": false,
-			"default": "",
-			"custom_config": {}
-		},
+      "name": "repo_root_url",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "repo_blind_connection",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": false,
+      "custom_config": {}
+    },
+    {
+      "name": "repo_git_id",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "evidence_repo_existing_url",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "issues_repo_existing_url",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "inventory_repo_existing_url",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "cd_deployment_repo_existing_url",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "change_management_existing_url",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "create_triggers",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": true,
+      "custom_config": {}
+    },
+    {
+      "name": "create_git_triggers",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": true,
+      "custom_config": {}
+    },
+    {
+      "name": "compliance_pipeline_repo_use_group_settings",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": true,
+      "custom_config": {}
+    },
+    {
+      "name": "compliance_pipeline_repo_git_provider",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "compliance_pipeline_repo_git_id",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "compliance_pipeline_existing_repo_url",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
+    {
+      "name": "add_pipeline_definitions",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": true,
+      "custom_config": {}
+    },
+    {
+      "name": "create_privateworker_secret",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": false,
+      "custom_config": {}
+    },
+    {
+      "name": "enable_privateworker",
+      "required": false,
+      "type": "boolean",
+      "hidden": false,
+      "default": false,
+      "custom_config": {}
+    },
+    {
+      "name": "privateworker_credentials_secret_name",
+      "required": false,
+      "type": "string",
+      "hidden": false,
+      "default": "private-worker-key",
+      "custom_config": {}
+    },
+    {
+      "name": "privateworker_secret_value",
+      "required": false,
+      "type": "password",
+      "hidden": false,
+      "default": "",
+      "custom_config": {}
+    },
     {
       "name": "toolchain_access_group_name",
       "required": false,
@@ -417,7 +417,7 @@
         }
       ],
       "name": "1a - Resource Group",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b9726f66-d664-45e4-92fb-b1f1a7054bc7-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.bd8bf1e8-592d-44c1-b588-3f961750d28a-global"
     },
     {
       "inputs": [
@@ -435,7 +435,7 @@
         }
       ],
       "name": "1b - Key Management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.40397a62-acd4-4224-ba88-7d4bfa998222-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fba8aa38-b3d8-4c5e-af43-e125f02e5f15-global"
     },
     {
       "inputs": [
@@ -453,9 +453,9 @@
         }
       ],
       "name": "2 - Cloud Object Storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.30851389-2ab5-4be5-8674-7ef756cb372d-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.a188a45a-0cc1-4f5b-86e5-d126b6097eb2-global"
     },
-     {
+    {
       "inputs": [
         {
           "name": "bucket_name",
@@ -492,9 +492,9 @@
           "value": true
         },
         {
-					"name": "kms_encryption_enabled",
-					"value": true
-				},
+          "name": "kms_encryption_enabled",
+          "value": true
+        },
         {
           "name": "kms_endpoint_url",
           "value": "ref:../../members/1b - Key Management/outputs/kms_private_endpoint"
@@ -521,7 +521,7 @@
         }
       ],
       "name": "4 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fa8ebdf4-db44-4e25-9846-9278b516cd73-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c087bb90-4cba-4569-8a5a-8cdf70cd0f24-global"
     },
     {
       "inputs": [
@@ -542,9 +542,9 @@
           "value": "ref:../../inputs/prefix"
         },
         {
-					"name": "existing_secrets_manager_crn",
-					"value": "ref:../../inputs/existing_secrets_manager_crn"
-				},
+          "name": "existing_secrets_manager_crn",
+          "value": "ref:../../inputs/existing_secrets_manager_crn"
+        },
         {
           "name": "existing_kms_instance_crn",
           "value": "ref:../../members/1b - Key Management/outputs/kms_instance_crn"
@@ -559,11 +559,11 @@
         }
       ],
       "name": "5 - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3d0da0a9-0327-44fc-8796-edf8e0017e25-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.86f1075b-de70-46bd-a6cd-aadfdda7e1da-global"
     },
     {
       "name": "6 - DevSecOps Toolchains",
-      "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.9b435db4-ec9c-4d54-baab-210b9627b96c-global",
+      "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.12614d0c-67b8-4dd5-b729-1e96764f9ddc-global",
       "inputs": [
         {
           "name": "ibmcloud_api_key",
@@ -603,7 +603,7 @@
         },
         {
           "name": "enable_cos",
-          "value" : true
+          "value": true
         },
         {
           "name": "cos_bucket_name",
@@ -618,9 +618,9 @@
           "value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
         },
         {
-					"name" : "ibmcloud_api",
-					"value" : "ref:../../inputs/ibmcloud_api"
-				},
+          "name": "ibmcloud_api",
+          "value": "ref:../../inputs/ibmcloud_api"
+        },
         {
           "name": "registry_namespace",
           "value": "ref:../../inputs/registry_namespace"
@@ -634,9 +634,9 @@
           "value": "true"
         },
         {
-					"name": "create_icr_namespace",
-					"value": "ref:../../inputs/create_icr_namespace"
-				},
+          "name": "create_icr_namespace",
+          "value": "ref:../../inputs/create_icr_namespace"
+        },
         {
           "name": "create_cd_instance",
           "value": "ref:../../inputs/create_cd_instance"
@@ -678,9 +678,9 @@
           "value": "ref:../../inputs/cos_api_key_secret_name"
         },
         {
-					"name": "force_create_standard_api_key",
-					"value": "ref:../../inputs/force_create_standard_api_key"
-				},
+          "name": "force_create_standard_api_key",
+          "value": "ref:../../inputs/force_create_standard_api_key"
+        },
         {
           "name": "create_git_token",
           "value": "ref:../../inputs/create_git_token"
@@ -722,9 +722,9 @@
           "value": "ref:../../inputs/repo_git_id"
         },
         {
-					"name": "app_repo_existing_url",
-					"value": "ref:../../inputs/app_repo_existing_url"
-				},
+          "name": "app_repo_existing_url",
+          "value": "ref:../../inputs/app_repo_existing_url"
+        },
         {
           "name": "evidence_repo_existing_url",
           "value": "ref:../../inputs/evidence_repo_existing_url"
@@ -773,30 +773,30 @@
           "name": "add_pipeline_definitions",
           "value": "ref:../../inputs/add_pipeline_definitions"
         },
-				{
-					"name": "create_privateworker_secret",
-					"value": "ref:../../inputs/create_privateworker_secret"
-				},
-				{
-					"name": "enable_privateworker",
-					"value": "ref:../../inputs/enable_privateworker"
-				},
-				{
-					"name": "privateworker_credentials_secret_name",
-					"value": "ref:../../inputs/privateworker_credentials_secret_name"
-				},
-				{
-					"name": "privateworker_secret_value",
-					"value": "ref:../../inputs/privateworker_secret_value"
-				},
-				{
-					"name": "toolchain_access_group_name",
-					"value": "ref:../../inputs/toolchain_access_group_name"
-				},
         {
-					"name": "use_legacy_ref",
-					"value": "ref:../../inputs/use_legacy_ref"
-				},
+          "name": "create_privateworker_secret",
+          "value": "ref:../../inputs/create_privateworker_secret"
+        },
+        {
+          "name": "enable_privateworker",
+          "value": "ref:../../inputs/enable_privateworker"
+        },
+        {
+          "name": "privateworker_credentials_secret_name",
+          "value": "ref:../../inputs/privateworker_credentials_secret_name"
+        },
+        {
+          "name": "privateworker_secret_value",
+          "value": "ref:../../inputs/privateworker_secret_value"
+        },
+        {
+          "name": "toolchain_access_group_name",
+          "value": "ref:../../inputs/toolchain_access_group_name"
+        },
+        {
+          "name": "use_legacy_ref",
+          "value": "ref:../../inputs/use_legacy_ref"
+        },
         {
           "name": "ci_code_engine_project",
           "value": "ref:../../inputs/project_ci_name"
