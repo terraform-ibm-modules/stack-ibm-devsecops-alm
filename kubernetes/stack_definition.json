@@ -531,8 +531,16 @@
 					"value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
 				},
 				{
+					"name": "enable_collecting_failed_events",
+					"value": true
+				},
+				{
 					"name": "kms_encryption_enabled",
 					"value": true
+				},
+				{
+					"name": "kms_endpoint_url",
+					"value": "ref:../../members/1b - Key Management/outputs/kms_private_endpoint"
 				},
 				{
 					"name": "prefix",
@@ -545,6 +553,10 @@
 				{
 					"name": "kms_endpoint_type",
 					"value": "private"
+				},
+				{
+					"name": "existing_resource_group_name",
+					"value": "ref:../../members/1b - Key Management/outputs/resource_group_name"
 				},
 				{
 					"name": "region",
