@@ -814,50 +814,6 @@
           "value": true
         }
       ]
-    },
-    {
-      "inputs": [
-        {
-          "name": "resource_group_name",
-          "value": "ref:../../members/1b - Key Management/outputs/resource_group_name"
-        },
-        {
-          "name": "existing_resource_group",
-          "value": true
-        },
-        {
-          "name": "prefix",
-          "value": "ref:../../inputs/prefix"
-        },
-        {
-          "name": "project_name",
-          "value": "ref:../../inputs/project_ci_name"
-        }
-      ],
-      "name": "7a - Code Engine CI Project",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b82c8a79-20a1-49b5-8ec8-92d571a54e1b-global"
-    },
-    {
-      "inputs": [
-        {
-          "name": "resource_group_name",
-          "value": "ref:../../members/1b - Key Management/outputs/resource_group_name"
-        },
-        {
-          "name": "existing_resource_group",
-          "value": true
-        },
-        {
-          "name": "prefix",
-          "value": "ref:../../inputs/prefix"
-        },
-        {
-          "name": "project_name",
-          "value": "ref:../../inputs/project_cd_name"
-        }
-      ],
-      "name": "7b - Code Engine CD Project",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b82c8a79-20a1-49b5-8ec8-92d571a54e1b-global"
     }
   ],
   "outputs": [
