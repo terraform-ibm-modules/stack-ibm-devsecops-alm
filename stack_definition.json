@@ -470,6 +470,10 @@
           "value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_crn"
         },
         {
+					"name": "kms_encryption_enabled",
+					"value": true
+				},
+        {
           "name": "existing_kms_instance_crn",
           "value": "ref:../../members/1b - Key Management/outputs/kms_instance_crn"
         },
