@@ -435,7 +435,7 @@
         }
       ],
       "name": "1b - Key Management",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.40397a62-acd4-4224-ba88-7d4bfa998222-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fba8aa38-b3d8-4c5e-af43-e125f02e5f15-global"
     },
     {
       "inputs": [
@@ -453,7 +453,7 @@
         }
       ],
       "name": "2 - Cloud Object Storage",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.30851389-2ab5-4be5-8674-7ef756cb372d-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.a188a45a-0cc1-4f5b-86e5-d126b6097eb2-global"
     },
      {
       "inputs": [
@@ -466,9 +466,13 @@
           "value": true
         },
         {
-          "name": "existing_cos_instance_id",
-          "value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_id"
+          "name": "existing_cos_instance_crn",
+          "value": "ref:../../members/2 - Cloud Object Storage/outputs/cos_instance_crn"
         },
+        {
+					"name": "kms_encryption_enabled",
+					"value": true
+				},
         {
           "name": "existing_kms_instance_crn",
           "value": "ref:../../members/1b - Key Management/outputs/kms_instance_crn"
@@ -479,7 +483,7 @@
         }
       ],
       "name": "3 - Cloud Object Bucket",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.993946ad-43d0-4774-929c-22954b20af95-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.5f905015-6a66-4e52-bedf-32454c7abed4-global"
     },
     {
       "inputs": [
@@ -521,7 +525,7 @@
         }
       ],
       "name": "4 - Event Notifications",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.fa8ebdf4-db44-4e25-9846-9278b516cd73-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.c087bb90-4cba-4569-8a5a-8cdf70cd0f24-global"
     },
     {
       "inputs": [
@@ -559,11 +563,11 @@
         }
       ],
       "name": "5 - Secrets Manager",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.3d0da0a9-0327-44fc-8796-edf8e0017e25-global"
+      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.86f1075b-de70-46bd-a6cd-aadfdda7e1da-global"
     },
     {
       "name": "6 - DevSecOps Toolchains",
-      "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.9b435db4-ec9c-4d54-baab-210b9627b96c-global",
+      "version_locator": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.d13f87ae-1b4d-418f-9abe-3550463efe6a-global",
       "inputs": [
         {
           "name": "ibmcloud_api_key",
@@ -810,50 +814,6 @@
           "value": true
         }
       ]
-    },
-    {
-      "inputs": [
-        {
-          "name": "resource_group_name",
-          "value": "ref:../../members/1b - Key Management/outputs/resource_group_name"
-        },
-        {
-          "name": "existing_resource_group",
-          "value": true
-        },
-        {
-          "name": "prefix",
-          "value": "ref:../../inputs/prefix"
-        },
-        {
-          "name": "project_name",
-          "value": "ref:../../inputs/project_ci_name"
-        }
-      ],
-      "name": "7a - Code Engine CI Project",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b82c8a79-20a1-49b5-8ec8-92d571a54e1b-global"
-    },
-    {
-      "inputs": [
-        {
-          "name": "resource_group_name",
-          "value": "ref:../../members/1b - Key Management/outputs/resource_group_name"
-        },
-        {
-          "name": "existing_resource_group",
-          "value": true
-        },
-        {
-          "name": "prefix",
-          "value": "ref:../../inputs/prefix"
-        },
-        {
-          "name": "project_name",
-          "value": "ref:../../inputs/project_cd_name"
-        }
-      ],
-      "name": "7b - Code Engine CD Project",
-      "version_locator": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3.b82c8a79-20a1-49b5-8ec8-92d571a54e1b-global"
     }
   ],
   "outputs": [
