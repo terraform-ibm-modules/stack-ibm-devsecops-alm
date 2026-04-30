@@ -29,7 +29,7 @@ func TestProjectsFullTest(t *testing.T) {
 
 	options := testprojects.TestProjectOptionsDefault(&testprojects.TestProjectsOptions{
 		Testing:                t,
-		ResourceGroup:          "default",
+		ResourceGroup:          "cd-setup",
 		Prefix:                 "alm", // setting prefix here gets a random string appended to it
 		StackConfigurationPath: codeEngineStackDefPath,
 		CatalogProductName:     "deploy-arch-ibm-alm-stack",
@@ -55,20 +55,19 @@ func TestProjectsFullTest(t *testing.T) {
 
 	options.StackInputs = map[string]interface{}{
 		"prefix":                          options.Prefix,
-		"resource_group_name":             "stack-pr-rg",
+		"resource_group_name":             "cd-setup",
 		"sm_service_plan":                 "trial",
 		"use_existing_resource_group":     "true",
 		"create_cd_instance":              false,
-		"region":                          "us-south",
+		"region":                          "eu-gb",
 		"enable_cos":                      false,
 		"existing_secrets_manager_crn":    permanentResources["secretsManagerCRN"],
 		"ibmcloud_api_key":                options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-		"app_repo_existing_url":           "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
-		"evidence_repo_existing_url":      "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
-		"issues_repo_existing_url":        "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
-		"inventory_repo_existing_url":     "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
-		"cd_deployment_repo_existing_url": "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
-		"change_management_existing_url":  "https://us-south.git.cloud.ibm.com/padraic.edwards/hello-compliance-app-app-repo",
+		"app_repo_existing_url":           "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
+		"issues_repo_existing_url":        "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
+		"inventory_repo_existing_url":     "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
+		"cd_deployment_repo_existing_url": "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
+		"change_management_existing_url":  "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
 	}
 
 	err1 := options.RunProjectsTest()
