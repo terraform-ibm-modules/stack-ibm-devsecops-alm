@@ -63,11 +63,11 @@ func TestProjectsFullTest(t *testing.T) {
 		"enable_cos":                      false,
 		"existing_secrets_manager_crn":    permanentResources["secretsManagerCRN"],
 		"ibmcloud_api_key":                options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-		"app_repo_existing_url":           "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
-		"issues_repo_existing_url":        "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
-		"inventory_repo_existing_url":     "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
-		"cd_deployment_repo_existing_url": "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
-		"change_management_existing_url":  "https://eu-gb.git.cloud.ibm.com/huayuenh/hello-compliance-app",
+		"app_repo_existing_url":           "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
+		"issues_repo_existing_url":        "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
+		"inventory_repo_existing_url":     "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
+		"cd_deployment_repo_existing_url": "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
+		"change_management_existing_url":  "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
 	}
 
 	err1 := options.RunProjectsTest()
