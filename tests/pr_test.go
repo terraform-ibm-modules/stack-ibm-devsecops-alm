@@ -1,11 +1,12 @@
 package tests
 
 import (
+	"log"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/common"
 	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/testprojects"
-	"log"
-	"testing"
 	//"fmt"
 )
 
@@ -59,15 +60,15 @@ func TestProjectsFullTest(t *testing.T) {
 		"sm_service_plan":                 "trial",
 		"use_existing_resource_group":     "true",
 		"create_cd_instance":              false,
-		"region":                          "eu-gb",
+		"region":                          "us-south",
 		"enable_cos":                      false,
 		"existing_secrets_manager_crn":    permanentResources["secretsManagerCRN"],
 		"ibmcloud_api_key":                options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], // always required by the stack
-		"app_repo_existing_url":           "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
-		"issues_repo_existing_url":        "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
-		"inventory_repo_existing_url":     "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
-		"cd_deployment_repo_existing_url": "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
-		"change_management_existing_url":  "https://eu-gb.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
+		"app_repo_existing_url":           "https://us-south.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
+		"issues_repo_existing_url":        "https://us-south.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
+		"inventory_repo_existing_url":     "https://us-south.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
+		"cd_deployment_repo_existing_url": "https://us-south.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
+		"change_management_existing_url":  "https://us-south.git.cloud.ibm.com/jaunin.b/hello-compliance-app",
 	}
 
 	err1 := options.RunProjectsTest()
