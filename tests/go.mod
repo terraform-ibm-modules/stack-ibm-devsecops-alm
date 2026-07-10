@@ -2,7 +2,7 @@ module github.com/terraform-ibm-modules/stack-ibm-devsecops-alm
 
 go 1.26.1
 
-toolchain go1.26.4
+toolchain go1.26.5
 
 require (
 	github.com/stretchr/testify v1.11.1
